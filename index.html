@@ -1,0 +1,1180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Minority Partners — Strategic Capital. Enduring Impact.</title>
+<meta name="description" content="Minority Partners is a strategic investment and partnerships platform focused on long-term value creation through minority investments, infrastructure partnerships, and cross-market connectivity." />
+<meta property="og:title" content="Minority Partners — Strategic Capital. Enduring Impact." />
+<meta property="og:description" content="We partner selectively. We build patiently. We create enduring value." />
+<meta property="og:type" content="website" />
+<style>
+/* ─────────────────────────────────────────────────────────────────────────
+   MINORITY PARTNERS
+   ─ Type:    STIX Two Text (editorial serif, display + body)
+              Helvetica Neue / system-ui (sans, eyebrow + UI)
+   ─ Palette: bone #ECE6DA · ink #0E0E10 · mute #6E6961 · cobalt #151BB5
+   ─ Grid:    12-col, 80px gutters, hairline rules
+   ─ Motion:  soft fade + 8px rise, IntersectionObserver-driven
+   ───────────────────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: "STIX Two Text";
+  src: url("fonts/STIXTwoText.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "STIX General";
+  src: url("fonts/STIXGeneral.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bone:        #ECE6DA;
+  --bone-soft:   #E4DDCF;
+  --paper:       #F4EFE6;
+  --ink:         #0E0E10;
+  --ink-soft:    #1A1A1D;
+  --mute:        #6E6961;
+  --mute-soft:   #B9B2A5;
+  --rule:        rgba(14,14,16,0.14);
+  --rule-soft:   rgba(14,14,16,0.07);
+  --rule-inv:    rgba(236,230,218,0.18);
+  --cobalt:      #151BB5;
+  --cobalt-deep: #0F1490;
+
+  --serif: "STIX Two Text", "STIX General", "Times New Roman", Georgia, serif;
+  --sans:  "Helvetica Neue", "Helvetica", "Arial", system-ui, sans-serif;
+
+  --col:    minmax(0, 1fr);
+  --gutter: clamp(20px, 3vw, 56px);
+  --pad:    clamp(28px, 5vw, 88px);
+
+  --t-eyebrow: 11px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga", "calt";
+}
+
+html { scroll-behavior: smooth; }
+
+a { color: inherit; text-decoration: none; }
+
+::selection { background: var(--cobalt); color: var(--bone); }
+
+/* ── Type primitives ───────────────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--sans);
+  font-size: var(--t-eyebrow);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.eyebrow .dot {
+  display: inline-block;
+  width: 5px; height: 5px;
+  background: var(--cobalt);
+  border-radius: 50%;
+  margin-right: 0.7em;
+  vertical-align: 0.18em;
+}
+
+/* ── Page chrome ───────────────────────────────────────────────────────── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 18px var(--pad);
+  background: rgba(236, 230, 218, 0.78);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 320ms ease, padding 320ms ease, background 320ms ease;
+}
+.nav.is-scrolled {
+  border-bottom-color: var(--rule);
+  padding-top: 14px; padding-bottom: 14px;
+}
+.nav .wordmark {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: -0.005em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+}
+.nav .wordmark .mp {
+  font-weight: 600;
+}
+.nav .wordmark .name {
+  color: var(--mute);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+.nav ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; gap: clamp(20px, 2.4vw, 40px);
+  justify-self: center;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.nav ul a {
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav ul a::after {
+  content:""; position: absolute; left: 0; right: 100%; bottom: 0;
+  height: 1px; background: var(--ink);
+  transition: right 360ms cubic-bezier(.2,.7,.2,1);
+}
+.nav ul a:hover::after { right: 0; }
+.nav .meta {
+  justify-self: end;
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mute);
+  display: flex; align-items: center; gap: 14px;
+}
+.nav .meta .pulse {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--cobalt);
+  box-shadow: 0 0 0 0 rgba(21,27,181,0.55);
+  animation: pulse 2.6s ease-out infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(21,27,181,0.55); }
+  70%  { box-shadow: 0 0 0 9px rgba(21,27,181,0); }
+  100% { box-shadow: 0 0 0 0 rgba(21,27,181,0); }
+}
+
+/* ── Section frame ─────────────────────────────────────────────────────── */
+section {
+  position: relative;
+  padding-left: var(--pad);
+  padding-right: var(--pad);
+}
+.rule {
+  height: 1px; background: var(--rule);
+  margin: 0 var(--pad);
+}
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+  align-items: end;
+  padding-top: clamp(28px, 4vw, 56px);
+  padding-bottom: clamp(56px, 8vw, 120px);
+}
+.section-head .idx {
+  font-family: var(--sans);
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mute);
+  display: flex; gap: 28px; align-items: baseline;
+}
+.section-head .idx b { color: var(--ink); font-weight: 600; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   HERO
+   ───────────────────────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100svh;
+  padding-top: clamp(96px, 14vh, 160px);
+  padding-bottom: clamp(48px, 8vw, 96px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  column-gap: var(--gutter);
+  row-gap: clamp(40px, 6vw, 80px);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  /* hairline plan-drawing grid: 8 fine columns */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, var(--rule-soft) 1px, transparent 1px) 0 0 / 12.5% 100%,
+    linear-gradient(to bottom, var(--rule-soft) 1px, transparent 1px) 0 0 / 100% 18%;
+  mask-image: linear-gradient(180deg, transparent 0, #000 24%, #000 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 24%, #000 70%, transparent 100%);
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.hero__topline {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--gutter);
+}
+.hero__topline .coords {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mute);
+  line-height: 1.9;
+}
+.hero__topline .coords span { display: inline-block; min-width: 7ch; }
+
+.hero__title {
+  grid-column: 1 / -1;
+  align-self: center;
+  position: relative;
+  z-index: 2;
+}
+.hero__title h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(64px, 13.5vw, 240px);
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  margin: 0;
+  text-wrap: balance;
+  font-feature-settings: "kern","liga","ss01";
+}
+.hero__title h1 .line { display: block; }
+.hero__title h1 .line.line-2 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.66em;
+  letter-spacing: -0.022em;
+  margin-top: 0.06em;
+  color: var(--ink);
+}
+.hero__title h1 .line.line-2 .blue { color: var(--cobalt); }
+
+.hero__aside {
+  grid-column: 1 / 2;
+  align-self: end;
+  max-width: 46ch;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  display: flex; flex-direction: column; gap: 28px;
+  position: relative; z-index: 2;
+}
+.hero__aside .statement {
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.4;
+  letter-spacing: -0.008em;
+}
+.hero__aside .statement em {
+  font-style: italic; color: var(--cobalt);
+}
+
+.cta {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 18px 24px 18px 28px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 360ms ease;
+}
+.cta::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--ink);
+  transform: translateY(101%);
+  transition: transform 480ms cubic-bezier(.2,.8,.2,1);
+}
+.cta:hover { color: var(--bone); }
+.cta:hover::before { transform: translateY(0); }
+.cta > * { position: relative; z-index: 1; }
+.cta .arrow {
+  width: 22px; height: 1px;
+  background: currentColor;
+  position: relative;
+}
+.cta .arrow::after {
+  content: ""; position: absolute; right: -1px; top: -3px;
+  width: 7px; height: 7px;
+  border-right: 1px solid currentColor;
+  border-top: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+/* hero plate — logo lockup */
+.hero__plate {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+  align-self: stretch;
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--rule);
+  background: var(--bone-soft);
+  aspect-ratio: 3 / 4;
+  min-height: 360px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* subtle architectural grid overlay on plate */
+.hero__plate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, var(--rule-soft) 1px, transparent 1px) 0 0 / 20% 100%,
+    linear-gradient(to bottom, var(--rule-soft) 1px, transparent 1px) 0 0 / 100% 25%;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.hero__plate .plate__logo {
+  position: relative;
+  z-index: 2;
+  width: 72%;
+  max-width: 280px;
+  display: block;
+  opacity: 0.92;
+  filter: contrast(1.04);
+}
+
+.hero__plate .plate__rule {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  right: 28px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.hero__scroll {
+  grid-column: 1 / -1;
+  display: flex; justify-content: space-between; align-items: end;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mute);
+  position: relative; z-index: 2;
+}
+.hero__scroll .ticker {
+  display: flex; gap: 36px;
+}
+.hero__scroll .ticker b { color: var(--ink); font-weight: 600; letter-spacing: 0.18em; }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   POSITIONING
+   ───────────────────────────────────────────────────────────────────────── */
+.positioning {
+  padding-top: clamp(64px, 8vw, 120px);
+  padding-bottom: clamp(96px, 12vw, 180px);
+}
+.positioning .grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+  gap: var(--gutter);
+  align-items: start;
+}
+.positioning h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1.02;
+  letter-spacing: -0.022em;
+  margin: 0;
+  text-wrap: balance;
+}
+.positioning h2 em { font-style: italic; color: var(--cobalt); }
+
+.positioning .body {
+  max-width: 60ch;
+  display: flex; flex-direction: column; gap: 28px;
+}
+.positioning .body p {
+  font-family: var(--serif);
+  font-size: clamp(20px, 1.65vw, 26px);
+  line-height: 1.42;
+  letter-spacing: -0.012em;
+  margin: 0;
+  text-wrap: pretty;
+}
+.positioning .body .meta-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
+  margin-top: 16px;
+}
+.positioning .meta-row dt {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 8px;
+}
+.positioning .meta-row dd {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: -0.008em;
+  color: var(--ink);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PLATFORMS
+   ───────────────────────────────────────────────────────────────────────── */
+.platforms {
+  padding-top: clamp(64px, 8vw, 120px);
+  padding-bottom: clamp(96px, 12vw, 180px);
+}
+.platforms .grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.platform {
+  padding: 56px 36px;
+  display: flex; flex-direction: column;
+  gap: 28px;
+  position: relative;
+  min-height: 460px;
+  transition: background 480ms ease;
+}
+.platform + .platform { border-left: 1px solid var(--rule); }
+.platform:hover { background: var(--paper); }
+
+.platform .num {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mute);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.platform .num .tag {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  letter-spacing: 0; text-transform: none;
+  color: var(--ink);
+  font-size: 14px;
+}
+.platform h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(26px, 2.2vw, 34px);
+  line-height: 1.04;
+  letter-spacing: -0.022em;
+  margin: 0;
+  text-wrap: balance;
+  min-height: 2.2em;
+}
+.platform h3 em { font-style: italic; color: var(--cobalt); }
+.platform p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  max-width: 36ch;
+  min-height: 6em;
+}
+.platform .foot {
+  margin-top: auto;
+  display: flex; justify-content: space-between; align-items: end;
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.platform .foot span:last-child { color: var(--ink); }
+.platform .glyph {
+  width: 100%;
+  height: 64px;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+  overflow: hidden;
+}
+.platform .glyph::before {
+  content:"";
+  position: absolute; inset: 0;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+/* abstract glyphs (geometric only — circle, line, square) */
+.platform[data-glyph="ring"] .glyph::before {
+  background-image:
+    radial-gradient(circle at 22px 32px, transparent 19px, var(--ink) 19px, var(--ink) 20px, transparent 20px),
+    radial-gradient(circle at 22px 32px, transparent 9px, var(--cobalt) 9px, var(--cobalt) 10px, transparent 10px);
+}
+.platform[data-glyph="span"] .glyph::before {
+  background-image:
+    linear-gradient(var(--ink), var(--ink)),
+    linear-gradient(var(--cobalt), var(--cobalt));
+  background-size: 56px 1px, 18px 1px;
+  background-position: left 32px, left 32px;
+}
+.platform[data-glyph="cross"] .glyph::before {
+  background-image:
+    linear-gradient(var(--ink), var(--ink)),
+    linear-gradient(var(--cobalt), var(--cobalt));
+  background-size: 44px 1px, 1px 36px;
+  background-position: left 32px, 22px 14px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   PHILOSOPHY (dark)
+   ───────────────────────────────────────────────────────────────────────── */
+.philosophy {
+  background: var(--ink);
+  color: var(--bone);
+  padding-top: clamp(96px, 14vw, 200px);
+  padding-bottom: clamp(96px, 14vw, 200px);
+  position: relative;
+  overflow: hidden;
+}
+.philosophy::before {
+  content:"";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to right, var(--rule-inv) 1px, transparent 1px) 0 0 / 12.5% 100%;
+  opacity: 0.5;
+  pointer-events: none;
+  mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+}
+.philosophy .head {
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter);
+  margin-bottom: clamp(64px, 8vw, 120px);
+  position: relative; z-index: 2;
+}
+.philosophy .head .idx { color: var(--mute-soft); }
+.philosophy .head .idx b { color: var(--bone); font-weight: 600; }
+.philosophy .head .label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mute-soft);
+  text-align: right;
+}
+.philosophy .creed {
+  position: relative; z-index: 2;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(54px, 11vw, 188px);
+  line-height: 0.96;
+  letter-spacing: -0.038em;
+  margin: 0;
+  text-wrap: balance;
+  max-width: 14ch;
+}
+.philosophy .creed .l { display: block; }
+.philosophy .creed .l1 { color: var(--bone); }
+.philosophy .creed .l2 {
+  font-style: italic; font-weight: 400;
+  color: var(--bone);
+  opacity: 0.86;
+  margin-left: 0.7em;
+}
+.philosophy .creed .l3 {
+  font-weight: 500;
+  color: var(--bone);
+}
+.philosophy .creed .period { color: var(--cobalt); }
+
+.philosophy .signoff {
+  position: relative; z-index: 2;
+  margin-top: clamp(64px, 8vw, 120px);
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter);
+  align-items: end;
+  border-top: 1px solid var(--rule-inv);
+  padding-top: 28px;
+}
+.philosophy .signoff p {
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.4vw, 22px);
+  line-height: 1.45;
+  letter-spacing: -0.008em;
+  color: var(--bone);
+  margin: 0;
+  max-width: 48ch;
+  opacity: 0.86;
+}
+.philosophy .signoff .stamp {
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mute-soft);
+  line-height: 1.9;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   CLOSING / ENGAGE
+   ───────────────────────────────────────────────────────────────────────── */
+.closing {
+  padding-top: clamp(96px, 12vw, 160px);
+  padding-bottom: clamp(64px, 8vw, 120px);
+}
+.closing .grid {
+  display: grid; grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+  gap: var(--gutter);
+}
+.closing .statement {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(34px, 4.4vw, 68px);
+  line-height: 1.04;
+  letter-spacing: -0.028em;
+  margin: 0;
+  max-width: 22ch;
+  text-wrap: balance;
+}
+.closing .statement em { font-style: italic; color: var(--cobalt); font-weight: 400; }
+.closing .contact {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  margin-top: clamp(72px, 10vw, 140px);
+  border-top: 1px solid var(--rule);
+  padding-top: 36px;
+}
+.closing .contact .cell {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.closing .contact .cell .label {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+.closing .contact .cell .value {
+  font-family: var(--serif);
+  font-size: clamp(22px, 2vw, 30px);
+  letter-spacing: -0.014em;
+  line-height: 1.15;
+}
+.closing .contact .cell a {
+  display: inline-flex; align-items: baseline; gap: 10px;
+  position: relative;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 380ms ease, color 380ms ease;
+  width: max-content;
+}
+.closing .contact .cell a:hover { border-bottom-color: var(--ink); }
+.closing .contact .cell a::after {
+  content:"→";
+  font-family: var(--sans);
+  font-size: 12px;
+  position: relative; top: -0.18em;
+  color: var(--mute);
+  transition: transform 380ms ease, color 380ms ease;
+}
+.closing .contact .cell a:hover::after { color: var(--cobalt); transform: translateX(4px); }
+
+/* tiny footer / coda */
+.coda {
+  margin-top: clamp(72px, 10vw, 120px);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--gutter);
+  align-items: end;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mute);
+  border-top: 1px solid var(--rule);
+  padding-top: 22px;
+}
+.coda .center { text-align: center; }
+.coda .right  { text-align: right; }
+.coda b { color: var(--ink); font-weight: 600; }
+
+/* ── Motion: subtle scroll-reveal ──────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 1100ms cubic-bezier(.2,.7,.2,1), transform 1100ms cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--rd, 0ms);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+  .nav .meta .pulse { animation: none; }
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+
+/* Large desktop ceiling — keep type from blowing up on 4K */
+@media (min-width: 1800px) {
+  body { font-size: 18px; }
+  :root { --pad: clamp(64px, 5vw, 120px); }
+}
+
+/* Tablet wide — laptops & small desktops */
+@media (max-width: 1280px) {
+  :root { --pad: clamp(28px, 4vw, 64px); --gutter: clamp(18px, 2.4vw, 40px); }
+  .nav ul { gap: clamp(14px, 1.8vw, 30px); font-size: 11.5px; letter-spacing: 0.12em; }
+  .hero__title h1 { font-size: clamp(60px, 12vw, 192px); }
+  .platform { padding: 44px 28px; min-height: 420px; }
+  .hero__plate .plate__logo { width: 66%; }
+}
+
+/* Tablet portrait & small laptop */
+@media (max-width: 1080px) {
+  :root { --pad: clamp(24px, 4vw, 48px); }
+  .nav ul { display: none; }
+  .nav { grid-template-columns: 1fr auto; }
+  .nav .wordmark .name { display: none; }
+  .nav .meta { font-size: 10.5px; }
+
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    padding-top: clamp(96px, 12vh, 140px);
+    row-gap: clamp(32px, 5vw, 56px);
+  }
+  .hero__topline { grid-template-columns: 1fr; gap: 14px; }
+  .hero__topline .coords { text-align: left; line-height: 1.6; }
+  .hero__title { grid-column: 1; grid-row: 2; }
+  .hero__title h1 { font-size: clamp(56px, 13vw, 132px); }
+  .hero__plate {
+    grid-column: 1; grid-row: 3;
+    aspect-ratio: 16 / 9;
+    min-height: 260px;
+    width: 100%;
+    padding: 32px;
+  }
+  .hero__plate .plate__logo { width: 40%; max-width: 220px; }
+  .hero__aside { grid-column: 1; grid-row: 4; max-width: none; }
+  .hero__scroll { grid-row: 5; flex-wrap: wrap; gap: 14px; }
+  .hero__scroll .ticker { flex-wrap: wrap; gap: 22px; }
+
+  .positioning .grid { grid-template-columns: 1fr; gap: 32px; }
+  .positioning .body .meta-row { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+  .platforms .grid { grid-template-columns: repeat(2, 1fr); }
+  .platform { min-height: 380px; padding: 40px 24px; }
+  .platform:nth-child(3) {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--rule);
+    border-left: 0;
+  }
+
+  .philosophy .head { grid-template-columns: 1fr; gap: 16px; }
+  .philosophy .head .label { text-align: left; }
+  .philosophy .signoff { grid-template-columns: 1fr; gap: 28px; }
+  .philosophy .signoff .stamp { text-align: left; }
+
+  .closing .grid { grid-template-columns: 1fr; }
+  .closing .contact { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+}
+
+/* Phone */
+@media (max-width: 720px) {
+  :root { --pad: clamp(18px, 5vw, 28px); --gutter: 18px; }
+  body { font-size: 16px; }
+
+  .nav { padding: 14px var(--pad); }
+  .nav .meta { display: none; }
+
+  .hero { padding-top: 92px; padding-bottom: 56px; min-height: auto; }
+  .hero::before { background-size: 25% 100%, 100% 22%; opacity: 0.6; }
+  .hero__title h1 { font-size: clamp(52px, 16vw, 88px); letter-spacing: -0.04em; }
+  .hero__title h1 .line.line-2 { font-size: 0.62em; }
+  .hero__plate {
+    aspect-ratio: 4 / 3;
+    min-height: 220px;
+    padding: 24px;
+  }
+  .hero__plate .plate__logo { width: 52%; max-width: 180px; }
+  .hero__plate .plate__rule { bottom: 18px; left: 18px; right: 18px; font-size: 9px; }
+  .hero__aside .statement { font-size: 18px; line-height: 1.45; }
+  .cta { padding: 16px 20px; font-size: 11.5px; letter-spacing: 0.16em; }
+  .hero__scroll { font-size: 10px; }
+  .hero__scroll .ticker { gap: 16px; }
+
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-top: 24px;
+    padding-bottom: clamp(36px, 7vw, 72px);
+  }
+  .section-head .eyebrow { justify-self: start !important; text-align: left !important; }
+
+  .positioning, .platforms, .closing { padding-top: 56px; padding-bottom: 72px; }
+  .positioning .body p { font-size: 19px; }
+  .positioning .body .meta-row { grid-template-columns: 1fr; gap: 18px; padding-top: 22px; }
+
+  .platforms .grid { grid-template-columns: 1fr; }
+  .platform {
+    min-height: 0;
+    padding: 36px 4px;
+    gap: 22px;
+  }
+  .platform + .platform { border-left: 0; border-top: 1px solid var(--rule); }
+  .platform:nth-child(3) { grid-column: auto; }
+  .platform h3 { min-height: 0; font-size: 26px; }
+  .platform p { min-height: 0; font-size: 16px; max-width: none; }
+  .platform .glyph { height: 48px; }
+
+  .philosophy { padding-top: 80px; padding-bottom: 80px; }
+  .philosophy .creed { font-size: clamp(44px, 13vw, 76px); max-width: none; letter-spacing: -0.032em; }
+  .philosophy .creed .l2 { margin-left: 0.4em; }
+  .philosophy .signoff p { font-size: 17px; }
+
+  .closing .statement { font-size: clamp(30px, 8vw, 44px); max-width: none; }
+  .closing .contact { grid-template-columns: 1fr; gap: 28px; margin-top: 56px; padding-top: 28px; }
+  .closing .contact .cell .value { font-size: 20px; }
+  .closing .contact .cell a { white-space: normal; word-break: break-word; }
+
+  .coda {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin-top: 64px;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+  }
+  .coda .center, .coda .right { text-align: left; }
+}
+
+/* Small phone */
+@media (max-width: 420px) {
+  :root { --pad: 16px; }
+  .nav .wordmark { font-size: 16px; }
+  .hero__title h1 { font-size: clamp(46px, 17vw, 72px); }
+  .hero__plate .plate__logo { width: 58%; }
+  .hero__scroll .ticker span:nth-child(n+4) { display: none; }
+  .closing .statement { font-size: clamp(26px, 9vw, 36px); }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────────────────────────────────── -->
+<header class="nav" id="nav">
+  <a href="#top" class="wordmark" aria-label="Minority Partners — Home">
+    <span class="mp">MP</span><span class="name">Minority&nbsp;Partners</span>
+  </a>
+  <ul>
+    <li><a href="#position">Position</a></li>
+    <li><a href="#platforms">Platforms</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#engage">Engage</a></li>
+  </ul>
+  <div class="meta">
+    <span class="pulse" aria-hidden="true"></span>
+    <span>Established · 2026</span>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ── 01 · HERO ───────────────────────────────────────────────────────── -->
+<section class="hero" id="hero">
+
+  <div class="hero__topline reveal">
+    <div class="eyebrow"><span class="dot"></span>Minority Partners — Strategic Investment &amp; Partnerships</div>
+    <div class="coords" aria-hidden="true">
+      <div><span>MED</span><span>AUH</span><span>HOA</span></div>
+      <div>Madīnah · Abū Ẓaby · Horn of Africa</div>
+    </div>
+  </div>
+
+  <div class="hero__title reveal" style="--rd:120ms;">
+    <h1>
+      <span class="line">Strategic Capital.</span>
+      <span class="line line-2">Enduring <span class="blue">Impact</span>.</span>
+    </h1>
+  </div>
+
+  <aside class="hero__aside reveal" style="--rd:240ms;">
+    <p class="statement">
+      We partner selectively.<br>
+      We build patiently.<br>
+      We create <em>enduring value</em>.
+    </p>
+    <a href="#position" class="cta" aria-label="Explore our vision">
+      <span>Explore our vision</span>
+      <span class="arrow" aria-hidden="true"></span>
+    </a>
+  </aside>
+
+  <figure class="hero__plate reveal" style="--rd:360ms;" aria-label="Minority Partners">
+    <img
+      class="plate__logo"
+      src="assets/minority-partners-logo.png"
+      alt="Minority Partners"
+      draggable="false"
+    />
+    <div class="plate__rule" aria-hidden="true">
+      <span>Minority Partners</span>
+      <span>Est. 2026</span>
+    </div>
+  </figure>
+
+  <div class="hero__scroll reveal" style="--rd:520ms;">
+    <div class="ticker">
+      <span><b>01</b> Hero</span>
+      <span><b>02</b> Position</span>
+      <span><b>03</b> Platforms</span>
+      <span><b>04</b> Philosophy</span>
+      <span><b>05</b> Engage</span>
+    </div>
+    <span>↓ scroll</span>
+  </div>
+
+</section>
+
+<div class="rule"></div>
+
+<!-- ── 02 · POSITION ───────────────────────────────────────────────────── -->
+<section class="positioning" id="position">
+  <div class="section-head reveal">
+    <div class="idx"><span><b>02</b></span><span>Position</span></div>
+    <div class="eyebrow" style="justify-self:end; text-align:right;">A strategic investment &amp; partnerships platform</div>
+  </div>
+
+  <div class="grid">
+    <h2 class="reveal">
+      Long-term value, built through <em>selective partnership</em>.
+    </h2>
+    <div class="body">
+      <p class="reveal" style="--rd:120ms;">
+        Minority Partners is a strategic investment and partnerships platform focused on
+        long-term value creation — through minority investments, infrastructure
+        partnerships, and cross-market connectivity.
+      </p>
+      <p class="reveal" style="--rd:220ms;">
+        We operate across <em style="font-style:italic;color:var(--cobalt)">private capital</em>,
+        public transformation, and emerging markets — deploying capital where strategic
+        alignment, governance, and patient conviction compound into enduring outcomes.
+      </p>
+
+      <dl class="meta-row reveal" style="--rd:320ms;">
+        <div>
+          <dt>Mandate</dt>
+          <dd>Minority investments &amp; partnerships</dd>
+        </div>
+        <div>
+          <dt>Horizon</dt>
+          <dd>Generational — 10 to 25 years</dd>
+        </div>
+        <div>
+          <dt>Geography</dt>
+          <dd>Global, with emerging-market focus</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ── 03 · PLATFORMS ──────────────────────────────────────────────────── -->
+<section class="platforms" id="platforms">
+  <div class="section-head reveal">
+    <div class="idx"><span><b>03</b></span><span>Investment Platforms</span></div>
+    <div class="eyebrow" style="justify-self:end; text-align:right;">Three disciplines · one conviction</div>
+  </div>
+
+  <div class="grid">
+
+    <article class="platform reveal" data-glyph="ring" style="--rd:0ms;">
+      <div class="glyph" aria-hidden="true"></div>
+      <div class="num"><span>I · Value Creation</span><span class="tag">Ecosystem</span></div>
+      <h3>Value Creation <em>Investments</em></h3>
+      <p>
+        Strategic minority investments across aligned value chains — where our capital,
+        network, and operating insight can create lasting value.
+      </p>
+      <div class="foot"><span>Discipline</span><span>Minority equity</span></div>
+    </article>
+
+    <article class="platform reveal" data-glyph="span" style="--rd:120ms;">
+      <div class="glyph" aria-hidden="true"></div>
+      <div class="num"><span>II · Urban &amp; Infrastructure</span><span class="tag">Public · Private</span></div>
+      <h3>Urban &amp; <em>Infrastructure</em></h3>
+      <p>
+        Public–private partnerships and infrastructure transformation initiatives that
+        underwrite the long arc of urban development, mobility, and economic capacity.
+      </p>
+      <div class="foot"><span>Discipline</span><span>PPP · Greenfield</span></div>
+    </article>
+
+    <article class="platform reveal" data-glyph="cross" style="--rd:240ms;">
+      <div class="glyph" aria-hidden="true"></div>
+      <div class="num"><span>III · Bridge</span><span class="tag">Cross-Market</span></div>
+      <h3>Bridge <em>Investments</em></h3>
+      <p>
+        Cross-market investments that connect capital, opportunity, and emerging
+        economies — a deliberate flow of conviction between mature and frontier markets.
+      </p>
+      <div class="foot"><span>Discipline</span><span>Cross-border</span></div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ── 04 · PHILOSOPHY ─────────────────────────────────────────────────── -->
+<section class="philosophy" id="philosophy">
+  <div class="head reveal">
+    <div class="idx"><span><b>04</b></span> &nbsp; Philosophy</div>
+    <div class="label">A creed, in three movements</div>
+  </div>
+
+  <h2 class="creed reveal" style="--rd:200ms;">
+    <span class="l l1">Long-term thinking<span class="period">.</span></span>
+    <span class="l l2">Strategic execution<span class="period">.</span></span>
+    <span class="l l3">Enduring impact<span class="period">.</span></span>
+  </h2>
+
+  <div class="signoff reveal" style="--rd:400ms;">
+    <p>
+      We move at the pace of conviction — not of cycles. Our work is judged across decades,
+      not quarters; measured by the institutions, infrastructure, and partnerships that
+      remain when capital has long since been deployed.
+    </p>
+    <div class="stamp">
+      MP · Office of the Partners<br>
+      Filed under Investment Philosophy<br>
+      Vol. I &nbsp;·&nbsp; § II
+    </div>
+  </div>
+</section>
+
+<!-- ── 05 · ENGAGE ─────────────────────────────────────────────────────── -->
+<section class="closing" id="engage">
+  <div class="section-head reveal">
+    <div class="idx"><span><b>05</b></span><span>Engage</span></div>
+    <div class="eyebrow" style="justify-self:end; text-align:right;">Selective by design</div>
+  </div>
+
+  <div class="grid">
+    <h2 class="statement reveal">
+      We invest where strategic alignment, long-term potential, and <em>enduring impact</em> intersect.
+    </h2>
+    <div></div>
+  </div>
+
+  <div class="contact reveal" style="--rd:160ms;">
+    <div class="cell">
+      <span class="label">Contact</span>
+      <span class="value">
+        <a href="mailto:partners@minoritypartners.sa">partners@minoritypartners.sa</a>
+      </span>
+    </div>
+    <div class="cell">
+      <span class="label">LinkedIn</span>
+      <span class="value">
+        <a href="https://www.linkedin.com/company/minoritypartners/" target="_blank" rel="noopener noreferrer">/company/minoritypartners</a>
+      </span>
+    </div>
+    <div class="cell">
+      <span class="label">Offices</span>
+      <span class="value" style="font-size:clamp(17px,1.35vw,21px); line-height:1.55;">
+        <span style="display:block;">
+          Madinah
+          <span style="font-family:var(--sans); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--mute); margin-left:10px; vertical-align:0.2em;">HQ</span>
+        </span>
+        <span style="display:block;">
+          Abu Dhabi
+          <span style="font-family:var(--sans); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--mute); margin-left:10px; vertical-align:0.2em;">Offshore</span>
+        </span>
+        <span style="display:block;">
+          Horn of Africa
+          <span style="font-family:var(--sans); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--mute); margin-left:10px; vertical-align:0.2em;">Market Dev.</span>
+        </span>
+      </span>
+    </div>
+  </div>
+
+  <div class="coda">
+    <div><b>Minority Partners LLC</b></div>
+    <div class="center">© 2026 — All rights reserved</div>
+    <div class="right">Strategic Capital. Enduring Impact.</div>
+  </div>
+</section>
+
+</main>
+
+<script>
+  // Soft scroll-reveal — fade + 8px rise, fires once per element.
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      }
+    }
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Nav border-shift on scroll.
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    nav.classList.toggle('is-scrolled', window.scrollY > 12);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
+
+</body>
+</html>
