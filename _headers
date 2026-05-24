@@ -1,0 +1,29 @@
+/*
+  # ─── Security Headers for Cloudflare Pages ─────────────────────────────
+  #
+  # Applied to every response from this site.
+  # For GitHub Pages: add equivalent rules via Cloudflare Transform Rules
+  # in the Cloudflare dashboard after pointing DNS.
+
+  # Prevent clickjacking — no one can embed this site in an iframe
+  X-Frame-Options: DENY
+
+  # Prevent MIME-type sniffing attacks
+  X-Content-Type-Options: nosniff
+
+  # Limit referrer information shared with third parties
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Restrict browser APIs not used by this site
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+
+  # Cross-origin isolation
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+  # Content Security Policy
+  # - All fonts, images, and scripts are self-hosted (no CDN dependencies)
+  # - 'unsafe-inline' for styles: required for CSS custom property overrides (--rd timing vars)
+  # - script-src 'self' only: no eval, no inline JS — all JS loaded from script.js
+  # - frame-ancestors 'none': redundant with X-Frame-Options but belt-and-suspenders
+  Content-Security-Policy: default-src 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'mailto:'

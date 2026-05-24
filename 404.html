@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page Not Found — Minority Partners</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .not-found {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: var(--pad);
+      gap: 40px;
+    }
+    .not-found .code {
+      font-family: var(--serif);
+      font-size: clamp(80px, 18vw, 200px);
+      font-weight: 500;
+      line-height: 0.88;
+      letter-spacing: -0.045em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .not-found .code span { color: var(--cobalt); }
+    .not-found .message {
+      font-family: var(--serif);
+      font-size: clamp(18px, 2vw, 26px);
+      color: var(--mute);
+      letter-spacing: -0.01em;
+      max-width: 40ch;
+      margin: 0;
+      line-height: 1.45;
+    }
+    .not-found .back {
+      font-family: var(--sans);
+      font-size: 12.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding: 16px 24px 16px 28px;
+      border: 1px solid var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+      transition: color 360ms ease;
+    }
+    .not-found .back::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: var(--ink);
+      transform: translateY(101%);
+      transition: transform 480ms cubic-bezier(.2,.8,.2,1);
+    }
+    .not-found .back:hover { color: var(--bone); }
+    .not-found .back:hover::before { transform: translateY(0); }
+    .not-found .back span { position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+  <main class="not-found">
+    <p class="code">4<span>0</span>4</p>
+    <p class="message">This page does not exist. The URL may have moved or the link may be incorrect.</p>
+    <a href="/" class="back" aria-label="Return to Minority Partners homepage">
+      <span>← Return home</span>
+    </a>
+  </main>
+</body>
+</html>
