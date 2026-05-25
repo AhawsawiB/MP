@@ -340,7 +340,7 @@ section {
   transform: rotate(45deg);
 }
 
-/* hero plate — logo lockup */
+/* hero plate — full-bleed visual */
 .hero__plate {
   grid-column: 2 / 3;
   grid-row: 2 / 4;
@@ -348,54 +348,21 @@ section {
   position: relative;
   z-index: 1;
   border: 1px solid var(--rule);
-  background: var(--bone-soft);
+  background: var(--ink);
   aspect-ratio: 3 / 4;
   min-height: 360px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
+  padding: 0;
+  margin: 0;
 }
 
-.hero__plate::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to right, var(--rule-soft) 1px, transparent 1px) 0 0 / 20% 100%,
-    linear-gradient(to bottom, var(--rule-soft) 1px, transparent 1px) 0 0 / 100% 25%;
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-.hero__plate .plate__logo {
-  position: relative;
-  z-index: 2;
-  width: 72%;
-  max-width: 280px;
+.hero__plate .plate__visual {
   display: block;
-  opacity: 0.92;
-  filter: contrast(1.04);
-}
-
-.hero__plate .plate__rule {
-  position: absolute;
-  bottom: 28px;
-  left: 28px;
-  right: 28px;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid var(--rule);
-  padding-top: 14px;
-  font-family: var(--sans);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--mute);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero__scroll {
@@ -778,7 +745,6 @@ section {
   .nav ul { gap: clamp(14px, 1.8vw, 30px); font-size: 11.5px; letter-spacing: 0.12em; }
   .hero__title h1 { font-size: clamp(60px, 12vw, 192px); }
   .platform { padding: 44px 28px; min-height: 420px; }
-  .hero__plate .plate__logo { width: 66%; }
 }
 
 @media (max-width: 1080px) {
@@ -805,7 +771,6 @@ section {
     width: 100%;
     padding: 32px;
   }
-  .hero__plate .plate__logo { width: 40%; max-width: 220px; }
   .hero__aside { grid-column: 1; grid-row: 4; max-width: none; }
   .hero__scroll { grid-row: 5; flex-wrap: wrap; gap: 14px; }
   .hero__scroll .ticker { flex-wrap: wrap; gap: 22px; }
@@ -846,8 +811,6 @@ section {
     min-height: 220px;
     padding: 24px;
   }
-  .hero__plate .plate__logo { width: 52%; max-width: 180px; }
-  .hero__plate .plate__rule { bottom: 18px; left: 18px; right: 18px; font-size: 9px; }
   .hero__aside .statement { font-size: 18px; line-height: 1.45; }
   .cta { padding: 16px 20px; font-size: 11.5px; letter-spacing: 0.16em; }
   .hero__scroll { font-size: 10px; }
@@ -901,7 +864,6 @@ section {
   :root { --pad: 16px; }
   .nav .wordmark { font-size: 16px; }
   .hero__title h1 { font-size: clamp(46px, 17vw, 72px); }
-  .hero__plate .plate__logo { width: 58%; }
   .hero__scroll .ticker li:nth-child(n+4) { display: none; }
   .closing .statement { font-size: clamp(26px, 9vw, 36px); }
 }
