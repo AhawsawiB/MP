@@ -664,6 +664,14 @@ footer {
 .coda__copy {
   color: var(--mute);
 }
+.coda__copy a {
+  color: var(--mute);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 240ms ease;
+}
+.coda__copy a:hover { color: var(--ink); }
 .coda__tagline {
   font-family: var(--serif);
   font-size: clamp(13px, 1.1vw, 17px);
