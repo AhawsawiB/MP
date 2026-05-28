@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#0E0E10"/>
+  <text
+    x="16" y="22"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="13.5"
+    font-weight="600"
+    fill="#ECE6DA"
+    text-anchor="middle"
+    letter-spacing="0.5"
+  >MP</text>
+</svg>

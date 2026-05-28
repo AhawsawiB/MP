@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face {
+  font-family: "STIX Two Text";
+  src: url("../fonts/STIXTwoText.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1200px; height: 630px; overflow: hidden; }
+body {
+  background: #ECE6DA;
+  font-family: "STIX Two Text", Georgia, serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 72px 52px;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(14,14,16,0.08) 1px, transparent 1px) 0 0 / 12.5% 100%,
+    linear-gradient(to bottom, rgba(14,14,16,0.08) 1px, transparent 1px) 0 0 / 100% 16.666%;
+  pointer-events: none;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+.wordmark {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6E6961;
+}
+.rule-top {
+  width: 1px;
+  height: 40px;
+  background: rgba(14,14,16,0.2);
+  position: relative;
+  margin-top: 2px;
+}
+.headline {
+  position: relative;
+}
+.line1 {
+  display: block;
+  font-family: "STIX Two Text", Georgia, serif;
+  font-size: 112px;
+  font-weight: 500;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
+  color: #0E0E10;
+}
+.line2 {
+  display: block;
+  font-family: "STIX Two Text", Georgia, serif;
+  font-size: 88px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  color: #0E0E10;
+  margin-top: 12px;
+}
+.line2 .blue { color: #151BB5; }
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  border-top: 1px solid rgba(14,14,16,0.18);
+  padding-top: 18px;
+}
+.domain {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6E6961;
+}
+.tagline {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #B9B2A5;
+}
+</style>
+</head>
+<body>
+  <div class="top">
+    <span class="wordmark">Minority Partners</span>
+  </div>
+  <div class="headline">
+    <span class="line1">Strategic Capital.</span>
+    <span class="line2">Enduring <span class="blue">Impact</span>.</span>
+  </div>
+  <div class="bottom">
+    <span class="domain">minoritypartners.sa</span>
+    <span class="tagline">Strategic Investment &amp; Partnerships</span>
+  </div>
+</body>
+</html>
