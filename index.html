@@ -6,7 +6,7 @@
 
   <!-- ── Primary SEO ─────────────────────────────────────────────────── -->
   <title>Minority Partners — Strategic Capital. Enduring Impact.</title>
-  <meta name="description" content="Minority Partners is a selective strategic investment platform deploying patient capital through minority investments, urban infrastructure partnerships, and cross-market bridge investments. Strategic capital. Enduring impact." />
+  <meta name="description" content="Minority Partners deploys strategic capital through minority investments, public-private urban partnerships, and cross-market bridge investments connecting emerging markets globally." />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://minoritypartners.sa/" />
 
@@ -37,6 +37,9 @@
   <meta name="author"    content="Minority Partners" />
   <meta name="copyright" content="© 2026 Minority Partners" />
 
+  <!-- ── Font preload (improves LCP / eliminates FOUT) ────────────────── -->
+  <link rel="preload" href="fonts/STIXTwoText.ttf" as="font" type="font/truetype" crossorigin />
+
   <!-- ── Stylesheet (self-hosted, no external dependencies) ──────────── -->
   <link rel="stylesheet" href="style.css" />
 
@@ -45,63 +48,93 @@
   <link rel="icon"             type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
   <link rel="apple-touch-icon" sizes="180x180"       href="assets/apple-touch-icon.png" />
 
-  <!-- ── Structured Data — Organization ─────────────────────────────── -->
+  <!-- ── Structured Data ─────────────────────────────────────────────── -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Minority Partners",
-    "legalName": "Minority Partners LLC",
-    "alternateName": "MP",
-    "description": "A selective strategic investment and partnerships platform focused on long-term value creation through minority investments, infrastructure partnerships, and cross-market bridge investments.",
-    "foundingDate": "2026",
-    "url": "https://minoritypartners.sa",
-    "logo": "https://minoritypartners.sa/assets/minority-partners-logo.png",
-    "email": "partners@minoritypartners.sa",
-    "sameAs": [
-      "https://www.linkedin.com/company/minoritypartners/"
-    ],
-    "areaServed": "Worldwide",
-    "knowsAbout": [
-      "Strategic Investment",
-      "Minority Investments",
-      "Value Creation Investments",
-      "Urban Infrastructure Investments",
-      "Public-Private Partnerships",
-      "Bridge Investments",
-      "Cross-Market Investments",
-      "Private Capital",
-      "Emerging Markets"
-    ],
-    "location": [
-      {
-        "@type": "Place",
-        "name": "Madinah — Headquarters",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Madinah",
-          "addressCountry": "SA"
-        }
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://minoritypartners.sa/#website",
+      "url": "https://minoritypartners.sa/",
+      "name": "Minority Partners",
+      "description": "Strategic investment and partnerships platform deploying patient capital through minority investments, public-private partnerships, and cross-market bridge investments.",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://minoritypartners.sa/#organization" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://minoritypartners.sa/#organization",
+      "name": "Minority Partners",
+      "legalName": "Minority Partners LLC",
+      "alternateName": "MP",
+      "description": "Minority Partners is a strategic investment and partnerships platform that deploys patient capital through minority value-chain investments, public-private partnerships and BOT urban development models, and bridge investments connecting emerging markets with institutional capital. Headquartered in Madinah, Saudi Arabia.",
+      "foundingDate": "2026",
+      "url": "https://minoritypartners.sa/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://minoritypartners.sa/assets/minority-partners-logo.png"
       },
-      {
-        "@type": "Place",
-        "name": "Abu Dhabi — Offshore Office",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Abu Dhabi",
-          "addressCountry": "AE"
-        }
+      "image": "https://minoritypartners.sa/assets/og-cover.png",
+      "email": "partners@minoritypartners.sa",
+      "sameAs": [
+        "https://www.linkedin.com/company/minoritypartners/"
+      ],
+      "areaServed": "Worldwide",
+      "knowsAbout": [
+        "Strategic Investment",
+        "Minority Investments",
+        "Value-Chain Investments",
+        "Urban Infrastructure Development",
+        "Public-Private Partnerships",
+        "BOT Models",
+        "Bridge Investments",
+        "Cross-Market Investments",
+        "Patient Capital",
+        "Emerging Markets",
+        "Private Capital"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "partners@minoritypartners.sa",
+        "contactType": "Business Inquiries",
+        "availableLanguage": ["English", "Arabic"]
       },
-      {
-        "@type": "Place",
-        "name": "Horn of Africa — Market Development Office",
-        "address": {
-          "@type": "PostalAddress",
-          "addressRegion": "Horn of Africa"
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Madinah",
+        "addressCountry": "SA"
+      },
+      "location": [
+        {
+          "@type": "Place",
+          "name": "Madinah — Headquarters",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Madinah",
+            "addressCountry": "SA"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Abu Dhabi — Offshore Office",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Abu Dhabi",
+            "addressCountry": "AE"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Horn of Africa — Market Development Office",
+          "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "Horn of Africa"
+          }
         }
-      }
-    ]
-  }
+      ]
+    }
+  ]
   </script>
 </head>
 <body>

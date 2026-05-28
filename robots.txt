@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /assets/og-cover.html
 
-# AI crawlers — welcome to index this site
+# AI crawlers — explicitly welcome to index this site
 User-agent: GPTBot
 Allow: /
 
@@ -12,6 +13,12 @@ User-agent: Google-Extended
 Allow: /
 
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: anthropic-ai
 Allow: /
 
 Sitemap: https://minoritypartners.sa/sitemap.xml
