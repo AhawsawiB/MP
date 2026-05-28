@@ -215,13 +215,9 @@ section {
 .hero {
   min-height: 100svh;
   padding-top: clamp(88px, 12vh, 130px);
-  padding-bottom: clamp(32px, 4vw, 52px);
-  padding-right: 0;
+  padding-bottom: clamp(40px, 5vw, 64px);
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  grid-template-rows: auto auto 1fr auto;
-  column-gap: var(--gutter);
-  row-gap: clamp(16px, 2vw, 28px);
+  grid-template-rows: 1fr auto auto;
   position: relative;
   overflow: hidden;
 }
@@ -238,39 +234,19 @@ section {
   opacity: 0.85;
 }
 
-.hero__topline {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: var(--gutter);
-}
-.hero__topline .coords {
-  text-align: right;
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--mute);
-  line-height: 1.9;
-}
-.hero__topline .coords span { display: inline-block; min-width: 7ch; }
-
 .hero__title {
-  grid-column: 1 / 2;
-  grid-row: 2;
   align-self: end;
+  padding-bottom: clamp(20px, 2.5vw, 36px);
   position: relative;
   z-index: 2;
 }
 .hero__title h1 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(64px, 13.5vw, 240px);
+  font-size: clamp(72px, 14vw, 240px);
   line-height: 0.86;
   letter-spacing: -0.045em;
   margin: 0;
-  text-wrap: balance;
   font-feature-settings: "kern","liga","ss01";
 }
 .hero__title h1 .line { display: block; }
@@ -285,27 +261,28 @@ section {
 .hero__title h1 .line.line-2 .blue { color: var(--cobalt); }
 
 .hero__aside {
-  grid-column: 1 / 2;
-  grid-row: 3;
-  align-self: start;
-  max-width: 46ch;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: clamp(24px, 4vw, 64px);
   padding-top: 20px;
   border-top: 1px solid var(--rule);
-  display: flex; flex-direction: column; gap: 24px;
-  position: relative; z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 .hero__aside .statement {
   font-family: var(--serif);
-  font-size: clamp(18px, 1.5vw, 22px);
-  line-height: 1.4;
-  letter-spacing: -0.008em;
+  font-size: clamp(16px, 1.3vw, 20px);
+  line-height: 1.5;
+  letter-spacing: -0.006em;
+  max-width: 36ch;
 }
 .hero__aside .statement em {
   font-style: italic; color: var(--cobalt);
 }
 
 .cta {
-  align-self: flex-start;
+  flex-shrink: 0;
   display: inline-flex; align-items: center; gap: 14px;
   font-family: var(--sans);
   font-size: 12.5px;
@@ -319,6 +296,7 @@ section {
   position: relative;
   overflow: hidden;
   transition: color 360ms ease;
+  white-space: nowrap;
 }
 .cta::before {
   content: "";
@@ -342,47 +320,6 @@ section {
   border-top: 1px solid currentColor;
   transform: rotate(45deg);
 }
-
-/* hero plate — full-bleed visual, spans full height right column */
-.hero__plate {
-  grid-column: 2 / 3;
-  grid-row: 1 / 5;
-  align-self: stretch;
-  position: relative;
-  z-index: 1;
-  border: 1px solid var(--rule);
-  border-right: none;
-  background: var(--ink);
-  min-height: 520px;
-  overflow: hidden;
-  display: flex;
-  padding: 0;
-  margin: 0;
-}
-
-.hero__plate .plate__visual {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.hero__scroll {
-  grid-column: 1 / 2;
-  grid-row: 4;
-  display: flex; justify-content: space-between; align-items: end;
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--mute);
-  position: relative; z-index: 2;
-}
-.hero__scroll .ticker {
-  display: flex; gap: 36px;
-}
-.hero__scroll .ticker b { color: var(--ink); font-weight: 600; letter-spacing: 0.18em; }
 
 /* ─────────────────────────────────────────────────────────────────────────
    POSITIONING
@@ -758,27 +695,7 @@ section {
   .nav .wordmark .name { display: none; }
   .nav .meta { font-size: 10.5px; }
 
-  .hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto;
-    padding-top: clamp(88px, 12vh, 120px);
-    padding-right: var(--pad);
-    row-gap: clamp(20px, 3.5vw, 36px);
-  }
-  .hero__topline { grid-column: 1; grid-row: 1; grid-template-columns: 1fr; gap: 10px; }
-  .hero__topline .coords { text-align: left; line-height: 1.6; }
-  .hero__title { grid-column: 1; grid-row: 2; }
   .hero__title h1 { font-size: clamp(52px, 11vw, 110px); }
-  .hero__aside { grid-column: 1; grid-row: 3; max-width: none; }
-  .hero__plate {
-    grid-column: 1; grid-row: 4;
-    border-right: 1px solid var(--rule);
-    aspect-ratio: 16 / 9;
-    min-height: 240px;
-    width: 100%;
-  }
-  .hero__scroll { grid-column: 1; grid-row: 5; flex-wrap: wrap; gap: 14px; }
-  .hero__scroll .ticker { flex-wrap: wrap; gap: 22px; }
 
   .positioning .grid { grid-template-columns: 1fr; gap: 32px; }
   .positioning .body .meta-row { grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -807,18 +724,22 @@ section {
   .nav { padding: 14px var(--pad); }
   .nav .meta { display: none; }
 
-  .hero { padding-top: 88px; padding-bottom: 40px; min-height: auto; }
-  .hero::before { background-size: 25% 100%, 100% 22%; opacity: 0.6; }
+  .hero {
+    min-height: 0;
+    padding-top: clamp(96px, 20vh, 160px);
+    padding-bottom: 36px;
+    grid-template-rows: auto auto;
+  }
+  .hero::before { opacity: 0.6; }
   .hero__title h1 { font-size: clamp(52px, 16vw, 88px); letter-spacing: -0.04em; }
   .hero__title h1 .line.line-2 { font-size: 0.62em; }
-  .hero__plate {
-    aspect-ratio: 16 / 9;
-    min-height: 200px;
+  .hero__aside {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    align-items: start;
   }
-  .hero__aside .statement { font-size: 18px; line-height: 1.45; }
+  .hero__aside .statement { font-size: 17px; line-height: 1.5; }
   .cta { padding: 16px 20px; font-size: 11.5px; letter-spacing: 0.16em; }
-  .hero__scroll { font-size: 10px; }
-  .hero__scroll .ticker { gap: 16px; }
 
   .section-head {
     grid-template-columns: 1fr;
@@ -868,7 +789,6 @@ section {
   :root { --pad: 16px; }
   .nav .wordmark { font-size: 16px; }
   .hero__title h1 { font-size: clamp(46px, 17vw, 72px); }
-  .hero__scroll .ticker li:nth-child(n+4) { display: none; }
   .closing .statement { font-size: clamp(26px, 9vw, 36px); }
 }
 
@@ -905,13 +825,6 @@ section {
   vertical-align: 0.2em;
   text-decoration: none;
   font-style: normal;
-}
-
-/* Hero scroll ticker — override list styles */
-.hero__scroll .ticker {
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 /* Footer small text */
