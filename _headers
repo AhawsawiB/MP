@@ -22,8 +22,9 @@
   Cross-Origin-Resource-Policy: same-origin
 
   # Content Security Policy
-  # - All fonts, images, and scripts are self-hosted (no CDN dependencies)
-  # - 'unsafe-inline' for styles: required for CSS custom property overrides (--rd timing vars)
-  # - script-src 'self' only: no eval, no inline JS — all JS loaded from script.js
+  # - Fonts, styles: self-hosted
+  # - Scripts: self + Google Tag Manager (GA4); inline required for gtag init
+  # - Connect: Google Analytics endpoints for event/beacon sending
+  # - Images: self + GA pixel endpoints
   # - frame-ancestors 'none': redundant with X-Frame-Options but belt-and-suspenders
-  Content-Security-Policy: default-src 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'mailto:'
+  Content-Security-Policy: default-src 'none'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; script-src 'self' https://www.googletagmanager.com 'unsafe-inline'; connect-src https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://region1.google-analytics.com; frame-ancestors 'none'; base-uri 'self'; form-action 'mailto:'
