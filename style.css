@@ -205,9 +205,7 @@ section {
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--mute);
-  display: flex; gap: 28px; align-items: baseline;
 }
-.section-head .idx b { color: var(--ink); font-weight: 600; }
 
 /* ─────────────────────────────────────────────────────────────────────────
    HERO
