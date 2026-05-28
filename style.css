@@ -580,7 +580,7 @@ section {
    ───────────────────────────────────────────────────────────────────────── */
 .closing {
   padding-top: clamp(48px, 6vw, 80px);
-  padding-bottom: clamp(36px, 5vw, 60px);
+  padding-bottom: clamp(28px, 3.5vw, 44px);
 }
 .closing .grid {
   display: grid; grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
@@ -638,24 +638,43 @@ section {
 }
 .closing .contact .cell a:hover::after { color: var(--cobalt); transform: translateX(4px); }
 
-/* tiny footer / coda */
+/* footer / coda */
+footer {
+  padding: 0 var(--pad) clamp(32px, 4vw, 48px);
+}
 .coda {
-  margin-top: clamp(36px, 5vw, 56px);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   gap: var(--gutter);
-  align-items: end;
+  border-top: 1px solid var(--rule);
+  padding-top: clamp(18px, 2vw, 26px);
+}
+.coda__left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--mute);
-  border-top: 1px solid var(--rule);
-  padding-top: 22px;
 }
-.coda .center { text-align: center; }
-.coda .right  { text-align: right; }
-.coda b { color: var(--ink); font-weight: 600; }
+.coda__brand {
+  color: var(--ink);
+  font-weight: 600;
+}
+.coda__copy {
+  color: var(--mute);
+}
+.coda__tagline {
+  font-family: var(--serif);
+  font-size: clamp(13px, 1.1vw, 17px);
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: var(--mute);
+  text-align: right;
+  flex-shrink: 0;
+}
 
 /* ── Motion: subtle scroll-reveal ──────────────────────────────────────── */
 .reveal {
@@ -776,13 +795,11 @@ section {
   .closing .contact .cell a { white-space: normal; word-break: break-word; }
 
   .coda {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    margin-top: 64px;
-    font-size: 10.5px;
-    letter-spacing: 0.16em;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
-  .coda .center, .coda .right { text-align: left; }
+  .coda__tagline { text-align: left; }
 }
 
 @media (max-width: 420px) {
@@ -827,7 +844,3 @@ section {
   font-style: normal;
 }
 
-/* Footer small text */
-.coda small {
-  font-size: inherit;
-}
