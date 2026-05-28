@@ -34,79 +34,117 @@
   </script>
 
   <style>
-    .policy-wrap {
-      padding-top: clamp(100px, 14vh, 140px);
-      padding-bottom: clamp(64px, 8vw, 96px);
+    /* ── Page shell ──────────────────────────────────────────────────────── */
+    .policy-hero {
+      padding-top: clamp(110px, 16vh, 160px);
+      padding-bottom: clamp(56px, 7vw, 88px);
       padding-left: var(--pad);
       padding-right: var(--pad);
-    }
-    .policy-header {
-      max-width: 68ch;
       border-bottom: 1px solid var(--rule);
-      padding-bottom: clamp(24px, 3vw, 36px);
-      margin-bottom: clamp(36px, 5vw, 56px);
     }
-    .policy-header h1 {
+    .policy-hero__inner {
+      max-width: 880px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: clamp(24px, 4vw, 64px);
+    }
+    .policy-hero h1 {
       font-family: var(--serif);
-      font-size: clamp(40px, 6vw, 72px);
+      font-size: clamp(52px, 8vw, 108px);
       font-weight: 500;
-      letter-spacing: -0.035em;
-      line-height: 0.92;
+      letter-spacing: -0.04em;
+      line-height: 0.88;
       color: var(--ink);
-      margin: 0 0 20px;
+      margin: 0;
+    }
+    .policy-hero__meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .policy-stamp {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mute);
+      text-align: right;
+      line-height: 1.6;
     }
     .policy-date {
       font-family: var(--sans);
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--mute);
       margin: 0;
     }
-    .policy-body {
-      max-width: 68ch;
+
+    /* ── Body wrapper ────────────────────────────────────────────────────── */
+    .policy-wrap {
+      padding-top: clamp(56px, 7vw, 88px);
+      padding-bottom: clamp(80px, 10vw, 120px);
+      padding-left: var(--pad);
+      padding-right: var(--pad);
     }
+    .policy-body {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ── Typography ──────────────────────────────────────────────────────── */
     .policy-body h2 {
       font-family: var(--serif);
-      font-size: clamp(19px, 1.8vw, 24px);
+      font-size: clamp(18px, 1.6vw, 22px);
       font-weight: 500;
-      letter-spacing: -0.018em;
+      letter-spacing: -0.015em;
       color: var(--ink);
-      margin: clamp(40px, 5vw, 60px) 0 14px;
+      margin: clamp(48px, 6vw, 72px) 0 12px;
+      padding-top: clamp(24px, 3vw, 32px);
+      border-top: 1px solid var(--rule);
     }
+    .policy-body h2:first-child { margin-top: 0; }
     .policy-body p {
       font-family: var(--serif);
-      font-size: clamp(15px, 1.1vw, 17px);
-      line-height: 1.72;
+      font-size: clamp(15px, 1.05vw, 17px);
+      line-height: 1.76;
       color: var(--ink-soft);
-      margin: 0 0 16px;
+      margin: 0 0 18px;
     }
     .policy-body ul {
       list-style: none;
       padding: 0;
-      margin: 0 0 16px;
+      margin: 0 0 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
     .policy-body ul li {
       font-family: var(--serif);
-      font-size: clamp(15px, 1.1vw, 17px);
+      font-size: clamp(15px, 1.05vw, 17px);
       line-height: 1.72;
       color: var(--ink-soft);
-      padding-left: 20px;
+      padding-left: 22px;
       position: relative;
-      margin-bottom: 10px;
     }
     .policy-body ul li::before {
       content: "—";
       position: absolute;
       left: 0;
       color: var(--mute);
-      font-size: 13px;
+      font-size: 12px;
+      top: 2px;
     }
     .policy-body a {
       color: var(--cobalt);
       text-decoration: underline;
       text-underline-offset: 3px;
       text-decoration-thickness: 1px;
+      transition: text-decoration-thickness 160ms ease;
     }
     .policy-body a:hover { text-decoration-thickness: 2px; }
     .policy-body strong {
@@ -115,10 +153,22 @@
     }
     .policy-credit {
       font-family: var(--sans);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      color: var(--mute-soft);
-      margin-top: 4px;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mute);
+      margin-top: 6px;
+    }
+
+    /* ── Mobile ──────────────────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .policy-hero__inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        align-items: start;
+      }
+      .policy-hero__meta { align-items: flex-start; }
+      .policy-stamp { text-align: left; }
     }
   </style>
 </head>
@@ -146,13 +196,23 @@
 </header>
 
 <main id="policy-content" tabindex="-1">
-  <div class="policy-wrap">
 
-    <div class="policy-header">
-      <h1>Privacy Policy</h1>
-      <p class="policy-date">Updated at 2026-05-28</p>
+  <!-- ── Policy hero ──────────────────────────────────────────────────── -->
+  <div class="policy-hero">
+    <div class="policy-hero__inner">
+      <h1>Privacy<br>Policy</h1>
+      <div class="policy-hero__meta">
+        <p class="policy-stamp">
+          Minority Partners LLC<br>
+          Legal · Vol. I
+        </p>
+        <p class="policy-date">Updated · 2026-05-28</p>
+      </div>
     </div>
+  </div>
 
+  <!-- ── Policy body ──────────────────────────────────────────────────── -->
+  <div class="policy-wrap">
     <div class="policy-body">
 
       <p>
