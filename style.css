@@ -196,8 +196,8 @@ section {
   grid-template-columns: 1fr 1fr;
   gap: var(--gutter);
   align-items: end;
-  padding-top: clamp(28px, 4vw, 56px);
-  padding-bottom: clamp(56px, 8vw, 120px);
+  padding-top: clamp(20px, 3vw, 36px);
+  padding-bottom: clamp(28px, 3.5vw, 48px);
 }
 .section-head .idx {
   font-family: var(--sans);
@@ -214,13 +214,14 @@ section {
    ───────────────────────────────────────────────────────────────────────── */
 .hero {
   min-height: 100svh;
-  padding-top: clamp(96px, 14vh, 160px);
-  padding-bottom: clamp(48px, 8vw, 96px);
+  padding-top: clamp(88px, 12vh, 130px);
+  padding-bottom: clamp(32px, 4vw, 52px);
+  padding-right: 0;
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-  grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  grid-template-rows: auto auto 1fr auto;
   column-gap: var(--gutter);
-  row-gap: clamp(40px, 6vw, 80px);
+  row-gap: clamp(16px, 2vw, 28px);
   position: relative;
   overflow: hidden;
 }
@@ -256,8 +257,9 @@ section {
 .hero__topline .coords span { display: inline-block; min-width: 7ch; }
 
 .hero__title {
-  grid-column: 1 / -1;
-  align-self: center;
+  grid-column: 1 / 2;
+  grid-row: 2;
+  align-self: end;
   position: relative;
   z-index: 2;
 }
@@ -284,11 +286,12 @@ section {
 
 .hero__aside {
   grid-column: 1 / 2;
-  align-self: end;
+  grid-row: 3;
+  align-self: start;
   max-width: 46ch;
-  padding-top: 18px;
+  padding-top: 20px;
   border-top: 1px solid var(--rule);
-  display: flex; flex-direction: column; gap: 28px;
+  display: flex; flex-direction: column; gap: 24px;
   position: relative; z-index: 2;
 }
 .hero__aside .statement {
@@ -340,17 +343,17 @@ section {
   transform: rotate(45deg);
 }
 
-/* hero plate — full-bleed visual */
+/* hero plate — full-bleed visual, spans full height right column */
 .hero__plate {
   grid-column: 2 / 3;
-  grid-row: 2 / 4;
+  grid-row: 1 / 5;
   align-self: stretch;
   position: relative;
   z-index: 1;
   border: 1px solid var(--rule);
+  border-right: none;
   background: var(--ink);
-  aspect-ratio: 3 / 4;
-  min-height: 360px;
+  min-height: 520px;
   overflow: hidden;
   display: flex;
   padding: 0;
@@ -366,7 +369,8 @@ section {
 }
 
 .hero__scroll {
-  grid-column: 1 / -1;
+  grid-column: 1 / 2;
+  grid-row: 4;
   display: flex; justify-content: space-between; align-items: end;
   font-family: var(--sans);
   font-size: 11px;
@@ -384,8 +388,8 @@ section {
    POSITIONING
    ───────────────────────────────────────────────────────────────────────── */
 .positioning {
-  padding-top: clamp(64px, 8vw, 120px);
-  padding-bottom: clamp(96px, 12vw, 180px);
+  padding-top: clamp(44px, 5vw, 72px);
+  padding-bottom: clamp(52px, 6vw, 84px);
 }
 .positioning .grid {
   display: grid;
@@ -444,8 +448,8 @@ section {
    PLATFORMS
    ───────────────────────────────────────────────────────────────────────── */
 .platforms {
-  padding-top: clamp(64px, 8vw, 120px);
-  padding-bottom: clamp(96px, 12vw, 180px);
+  padding-top: clamp(44px, 5vw, 72px);
+  padding-bottom: clamp(52px, 6vw, 84px);
 }
 .platforms .grid {
   display: grid;
@@ -455,11 +459,11 @@ section {
   border-bottom: 1px solid var(--rule);
 }
 .platform {
-  padding: 56px 36px;
+  padding: 40px 32px;
   display: flex; flex-direction: column;
-  gap: 28px;
+  gap: 20px;
   position: relative;
-  min-height: 460px;
+  min-height: 380px;
   transition: background 480ms ease;
 }
 .platform + .platform { border-left: 1px solid var(--rule); }
@@ -551,8 +555,8 @@ section {
 .philosophy {
   background: var(--ink);
   color: var(--bone);
-  padding-top: clamp(96px, 14vw, 200px);
-  padding-bottom: clamp(96px, 14vw, 200px);
+  padding-top: clamp(56px, 7vw, 96px);
+  padding-bottom: clamp(56px, 7vw, 96px);
   position: relative;
   overflow: hidden;
 }
@@ -568,7 +572,7 @@ section {
 }
 .philosophy .head {
   display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter);
-  margin-bottom: clamp(64px, 8vw, 120px);
+  margin-bottom: clamp(36px, 4.5vw, 60px);
   position: relative; z-index: 2;
 }
 .philosophy .head .idx { color: var(--mute-soft); }
@@ -608,7 +612,7 @@ section {
 
 .philosophy .signoff {
   position: relative; z-index: 2;
-  margin-top: clamp(64px, 8vw, 120px);
+  margin-top: clamp(36px, 4.5vw, 60px);
   display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter);
   align-items: end;
   border-top: 1px solid var(--rule-inv);
@@ -638,8 +642,8 @@ section {
    CLOSING / ENGAGE
    ───────────────────────────────────────────────────────────────────────── */
 .closing {
-  padding-top: clamp(96px, 12vw, 160px);
-  padding-bottom: clamp(64px, 8vw, 120px);
+  padding-top: clamp(48px, 6vw, 80px);
+  padding-bottom: clamp(36px, 5vw, 60px);
 }
 .closing .grid {
   display: grid; grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
@@ -658,7 +662,7 @@ section {
 .closing .statement em { font-style: italic; color: var(--cobalt); font-weight: 400; }
 .closing .contact {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-  margin-top: clamp(72px, 10vw, 140px);
+  margin-top: clamp(40px, 5vw, 64px);
   border-top: 1px solid var(--rule);
   padding-top: 36px;
 }
@@ -699,7 +703,7 @@ section {
 
 /* tiny footer / coda */
 .coda {
-  margin-top: clamp(72px, 10vw, 120px);
+  margin-top: clamp(36px, 5vw, 56px);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: var(--gutter);
@@ -743,8 +747,8 @@ section {
 @media (max-width: 1280px) {
   :root { --pad: clamp(28px, 4vw, 64px); --gutter: clamp(18px, 2.4vw, 40px); }
   .nav ul { gap: clamp(14px, 1.8vw, 30px); font-size: 11.5px; letter-spacing: 0.12em; }
-  .hero__title h1 { font-size: clamp(60px, 12vw, 192px); }
-  .platform { padding: 44px 28px; min-height: 420px; }
+  .hero__title h1 { font-size: clamp(56px, 10vw, 160px); }
+  .platform { padding: 36px 24px; min-height: 340px; }
 }
 
 @media (max-width: 1080px) {
@@ -757,22 +761,23 @@ section {
   .hero {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto;
-    padding-top: clamp(96px, 12vh, 140px);
-    row-gap: clamp(32px, 5vw, 56px);
+    padding-top: clamp(88px, 12vh, 120px);
+    padding-right: var(--pad);
+    row-gap: clamp(20px, 3.5vw, 36px);
   }
-  .hero__topline { grid-template-columns: 1fr; gap: 14px; }
+  .hero__topline { grid-column: 1; grid-row: 1; grid-template-columns: 1fr; gap: 10px; }
   .hero__topline .coords { text-align: left; line-height: 1.6; }
   .hero__title { grid-column: 1; grid-row: 2; }
-  .hero__title h1 { font-size: clamp(56px, 13vw, 132px); }
+  .hero__title h1 { font-size: clamp(52px, 11vw, 110px); }
+  .hero__aside { grid-column: 1; grid-row: 3; max-width: none; }
   .hero__plate {
-    grid-column: 1; grid-row: 3;
+    grid-column: 1; grid-row: 4;
+    border-right: 1px solid var(--rule);
     aspect-ratio: 16 / 9;
-    min-height: 260px;
+    min-height: 240px;
     width: 100%;
-    padding: 32px;
   }
-  .hero__aside { grid-column: 1; grid-row: 4; max-width: none; }
-  .hero__scroll { grid-row: 5; flex-wrap: wrap; gap: 14px; }
+  .hero__scroll { grid-column: 1; grid-row: 5; flex-wrap: wrap; gap: 14px; }
   .hero__scroll .ticker { flex-wrap: wrap; gap: 22px; }
 
   .positioning .grid { grid-template-columns: 1fr; gap: 32px; }
@@ -802,14 +807,13 @@ section {
   .nav { padding: 14px var(--pad); }
   .nav .meta { display: none; }
 
-  .hero { padding-top: 92px; padding-bottom: 56px; min-height: auto; }
+  .hero { padding-top: 88px; padding-bottom: 40px; min-height: auto; }
   .hero::before { background-size: 25% 100%, 100% 22%; opacity: 0.6; }
   .hero__title h1 { font-size: clamp(52px, 16vw, 88px); letter-spacing: -0.04em; }
   .hero__title h1 .line.line-2 { font-size: 0.62em; }
   .hero__plate {
-    aspect-ratio: 4 / 3;
-    min-height: 220px;
-    padding: 24px;
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
   }
   .hero__aside .statement { font-size: 18px; line-height: 1.45; }
   .cta { padding: 16px 20px; font-size: 11.5px; letter-spacing: 0.16em; }
@@ -820,11 +824,11 @@ section {
     grid-template-columns: 1fr;
     gap: 12px;
     padding-top: 24px;
-    padding-bottom: clamp(36px, 7vw, 72px);
+    padding-bottom: clamp(24px, 5vw, 40px);
   }
   .section-head .eyebrow { justify-self: start !important; text-align: left !important; }
 
-  .positioning, .platforms, .closing { padding-top: 56px; padding-bottom: 72px; }
+  .positioning, .platforms, .closing { padding-top: 44px; padding-bottom: 56px; }
   .positioning .body p { font-size: 19px; }
   .positioning .body .meta-row { grid-template-columns: 1fr; gap: 18px; padding-top: 22px; }
 
@@ -840,7 +844,7 @@ section {
   .platform p { min-height: 0; font-size: 16px; max-width: none; }
   .platform .glyph { height: 48px; }
 
-  .philosophy { padding-top: 80px; padding-bottom: 80px; }
+  .philosophy { padding-top: 56px; padding-bottom: 56px; }
   .philosophy .creed { font-size: clamp(44px, 13vw, 76px); max-width: none; letter-spacing: -0.032em; }
   .philosophy .creed .l2 { margin-left: 0.4em; }
   .philosophy .signoff p { font-size: 17px; }
