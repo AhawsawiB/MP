@@ -1110,13 +1110,17 @@ footer {
 }
 [dir="rtl"] .meta { display: none; }
 
-/* Wordmark in Arabic: no MP monogram */
+/* Wordmark in Arabic: no MP monogram, use IBM Plex Arabic */
 [dir="rtl"] .nav .wordmark .mp { display: none; }
+[dir="rtl"] .nav .wordmark,
+[dir="rtl"] .nav .wordmark .name {
+  font-family: var(--ar-font);
+  letter-spacing: 0;
+}
 [dir="rtl"] .nav .wordmark .name {
   color: var(--ink);
   font-size: 17px;
   font-weight: 500;
-  letter-spacing: 0;
 }
 
 /* ── RTL Hero ────────────────────────────────────────────────────────────── */
@@ -1133,6 +1137,7 @@ footer {
 [dir="rtl"] .platforms .platform { text-align: right; }
 [dir="rtl"] .platform .foot { flex-direction: row-reverse; }
 [dir="rtl"] .platform .num { flex-direction: row-reverse; }
+[dir="rtl"] .platform .glyph::before { background-position: right center; }
 
 [dir="rtl"] .creed { text-align: right; }
 [dir="rtl"] .philosophy .head .label { text-align: left; }
