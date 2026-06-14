@@ -1108,7 +1108,8 @@ footer {
   line-height: 1;
   vertical-align: middle;
 }
-[dir="rtl"] .meta { display: none; }
+/* Established badge: show in Arabic with RTL order (EN btn leftmost, badge to its right) */
+[dir="rtl"] .nav-end { flex-direction: row-reverse; }
 
 /* Wordmark in Arabic: no MP monogram, use IBM Plex Arabic */
 [dir="rtl"] .nav .wordmark .mp { display: none; }
@@ -1140,7 +1141,7 @@ footer {
 [dir="rtl"] .platform .glyph::before { background-position: right center; }
 
 [dir="rtl"] .creed { text-align: right; }
-[dir="rtl"] .philosophy .head .label { text-align: left; }
+[dir="rtl"] .philosophy .head .label { text-align: left; font-family: var(--ar-font); }
 [dir="rtl"] .signoff p { text-align: right; }
 [dir="rtl"] .signoff .stamp { text-align: left; direction: ltr; }
 
@@ -1150,8 +1151,13 @@ footer {
 [dir="rtl"] .closing .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr); }
 [dir="rtl"] .contact { direction: rtl; }
 
+/* Specificity fixes: override rules that are more specific than the generic RTL font block */
+[dir="rtl"] .platform .num .tag { font-family: var(--ar-font); font-style: normal; }
+[dir="rtl"] .closing .contact .cell .label { font-family: var(--ar-font); }
+[dir="rtl"] .closing .contact .cell .value { font-family: var(--ar-font); letter-spacing: 0; }
+
 [dir="rtl"] .coda { flex-direction: row-reverse; }
-[dir="rtl"] .coda__tagline { text-align: left; }
+[dir="rtl"] .coda__tagline { font-family: var(--ar-font); letter-spacing: 0; text-align: left; }
 
 /* ── RTL responsive overrides ────────────────────────────────────────────── */
 @media (max-width: 1080px) {
