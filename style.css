@@ -1108,8 +1108,7 @@ footer {
   line-height: 1;
   vertical-align: middle;
 }
-/* Established badge: show in Arabic with RTL order (EN btn leftmost, badge to its right) */
-[dir="rtl"] .nav-end { flex-direction: row-reverse; }
+/* Established badge: RTL flex naturally places meta on right, button on left (button "after" text) */
 
 /* Wordmark in Arabic: no MP monogram, use IBM Plex Arabic */
 [dir="rtl"] .nav .wordmark .mp { display: none; }
@@ -1144,7 +1143,6 @@ footer {
 [dir="rtl"] .creed { text-align: right; }
 [dir="rtl"] .philosophy .head .label { text-align: left; font-family: var(--ar-font); }
 [dir="rtl"] .signoff p { text-align: right; }
-[dir="rtl"] .signoff .stamp { text-align: left; direction: ltr; }
 
 [dir="rtl"] .team-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr); }
 [dir="rtl"] .team-entry { grid-template-columns: auto 1fr 40px; }
@@ -1156,6 +1154,13 @@ footer {
 [dir="rtl"] .platform .num .tag { font-family: var(--ar-font); font-style: normal; }
 [dir="rtl"] .closing .contact .cell .label { font-family: var(--ar-font); }
 [dir="rtl"] .closing .contact .cell .value { font-family: var(--ar-font); letter-spacing: 0; }
+/* Overview body paragraphs and meta-row — base rules have (0,2,1) specificity */
+[dir="rtl"] .positioning .body p { font-family: var(--ar-font); letter-spacing: 0; }
+[dir="rtl"] .positioning .meta-row dt { font-family: var(--ar-font); letter-spacing: 0; text-transform: none; }
+[dir="rtl"] .positioning .meta-row dd { font-family: var(--ar-font); letter-spacing: 0; }
+/* Philosophy signoff body and stamp */
+[dir="rtl"] .philosophy .signoff p { font-family: var(--ar-font); letter-spacing: 0; }
+[dir="rtl"] .philosophy .signoff .stamp { font-family: var(--ar-font); letter-spacing: 0; text-transform: none; direction: rtl; text-align: right; }
 
 [dir="rtl"] .coda { flex-direction: row-reverse; }
 [dir="rtl"] .coda__tagline { font-family: var(--ar-font); letter-spacing: 0; text-align: left; }
