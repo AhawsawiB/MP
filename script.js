@@ -255,6 +255,32 @@
     }
   };
 
+  const metaSEO = {
+    en: {
+      title:       'Minority Partners — Strategic Capital. Enduring Impact.',
+      description: 'Minority Partners deploys strategic capital through minority investments, public-private urban partnerships, and cross-market bridge investments connecting emerging markets globally.',
+      ogTitle:     'Minority Partners — Strategic Capital. Enduring Impact.',
+      ogDesc:      'A selective strategic investment platform focused on long-term value creation through minority investments, urban infrastructure partnerships, and cross-market bridge investments.',
+      ogLocale:    'en_US',
+    },
+    ar: {
+      title:       'ماينورِتي بارتنرز — رأس مال استراتيجي. أثرٌ يبقى.',
+      description: 'ماينورِتي بارتنرز منصة استثمار وشراكات استراتيجية، تنشر رأس المال عبر الاستثمارات الأقلية، وشراكات التطوير الحضري العام والخاص، واستثمارات عابرة للأسواق تربط الاقتصادات الناشئة برأس المال المؤسسي.',
+      ogTitle:     'ماينورِتي بارتنرز — رأس مال استراتيجي. أثرٌ يبقى.',
+      ogDesc:      'منصة استثمار وشراكات استراتيجية انتقائية، تركّز على خلق قيمة طويلة الأمد عبر الاستثمارات الأقلية، وشراكات البنية التحتية الحضرية، والاستثمارات العابرة للأسواق.',
+      ogLocale:    'ar_SA',
+    },
+  };
+
+  function setMeta(name, content) {
+    const el = document.querySelector(`meta[name="${name}"]`);
+    if (el) el.setAttribute('content', content);
+  }
+  function setOgMeta(property, content) {
+    const el = document.querySelector(`meta[property="${property}"]`);
+    if (el) el.setAttribute('content', content);
+  }
+
   function applyLang(lang) {
     const html = document.documentElement;
     const toggle = document.getElementById('lang-toggle');
@@ -269,20 +295,24 @@
     }
 
     const t = translations[lang];
+    const s = metaSEO[lang];
 
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
-      if (t[key] !== undefined) {
-        el.innerHTML = t[key];
-      }
+      if (t[key] !== undefined) el.innerHTML = t[key];
     });
 
     document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
       const key = el.getAttribute('data-i18n-aria-label');
-      if (t[key] !== undefined) {
-        el.setAttribute('aria-label', t[key]);
-      }
+      if (t[key] !== undefined) el.setAttribute('aria-label', t[key]);
     });
+
+    /* ── Update SEO meta tags dynamically ── */
+    document.title = s.title;
+    setMeta('description', s.description);
+    setOgMeta('og:title', s.ogTitle);
+    setOgMeta('og:description', s.ogDesc);
+    setOgMeta('og:locale', s.ogLocale);
 
     localStorage.setItem('mp-lang', lang);
   }
