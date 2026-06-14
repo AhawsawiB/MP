@@ -269,6 +269,8 @@
       ogTitle:     'ماينورِتي بارتنرز — رأس مال استراتيجي. أثرٌ يبقى.',
       ogDesc:      'منصة استثمار وشراكات استراتيجية انتقائية، تركّز على خلق قيمة طويلة الأمد عبر الاستثمارات الأقلية، وشراكات البنية التحتية الحضرية، والاستثمارات العابرة للأسواق.',
       ogLocale:    'ar_SA',
+      ogImage:     'https://minoritypartners.sa/assets/og-cover-ar.png',
+      ogImageAlt:  'ماينورِتي بارتنرز — رأس مال استراتيجي. أثرٌ يبقى.',
     },
   };
 
@@ -313,6 +315,8 @@
     setOgMeta('og:title', s.ogTitle);
     setOgMeta('og:description', s.ogDesc);
     setOgMeta('og:locale', s.ogLocale);
+    if (s.ogImage)    setOgMeta('og:image', s.ogImage);
+    if (s.ogImageAlt) setOgMeta('og:image:alt', s.ogImageAlt);
 
     localStorage.setItem('mp-lang', lang);
   }
