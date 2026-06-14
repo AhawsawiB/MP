@@ -12,6 +12,20 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "IBM Plex Arabic";
+  src: url("fonts/IBMPlexArabic-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IBM Plex Arabic";
+  src: url("fonts/IBMPlexArabic-Medium.woff2") format("woff2");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --bone:        #ECE6DA;
@@ -29,6 +43,7 @@
 
   --serif: "STIX Two Text", "STIX General", "Times New Roman", Georgia, serif;
   --sans:  "Helvetica Neue", "Helvetica", "Arial", system-ui, sans-serif;
+  --ar-font: "IBM Plex Arabic", "Geeza Pro", "Simplified Arabic", system-ui, sans-serif;
 
   --col:    minmax(0, 1fr);
   --gutter: clamp(20px, 3vw, 56px);
@@ -180,6 +195,31 @@ textarea:focus-visible,
   70%  { box-shadow: 0 0 0 9px rgba(21,27,181,0); }
   100% { box-shadow: 0 0 0 0 rgba(21,27,181,0); }
 }
+
+/* ── Nav end (col 3: meta + lang toggle) ──────────────────────────────── */
+.nav-end {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lang-toggle {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mute);
+  background: none;
+  border: 1px solid var(--rule);
+  padding: 5px 11px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 200ms ease, border-color 200ms ease;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.lang-toggle:hover { color: var(--ink); border-color: var(--mute); }
 
 /* ── Section frame ─────────────────────────────────────────────────────── */
 section {
@@ -1006,5 +1046,116 @@ footer {
 @media (max-width: 560px) {
   .team-entry { grid-template-columns: 32px 1fr auto; column-gap: 14px; }
   .team-idx { font-size: 9px; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   RTL / ARABIC OVERRIDES
+   ══════════════════════════════════════════════════════════════════════════ */
+
+[dir="rtl"] body {
+  font-family: var(--ar-font);
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] p,
+[dir="rtl"] li,
+[dir="rtl"] dd,
+[dir="rtl"] .statement,
+[dir="rtl"] .creed .l,
+[dir="rtl"] .team-statement,
+[dir="rtl"] .team-bio {
+  font-family: var(--ar-font);
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .eyebrow,
+[dir="rtl"] .head-eyebrow,
+[dir="rtl"] .idx span,
+[dir="rtl"] dt,
+[dir="rtl"] .team-idx,
+[dir="rtl"] .team-title,
+[dir="rtl"] .team-count__label,
+[dir="rtl"] .coda__copy,
+[dir="rtl"] .coda__brand,
+[dir="rtl"] .foot span,
+[dir="rtl"] .num span,
+[dir="rtl"] .tag,
+[dir="rtl"] nav a,
+[dir="rtl"] .cta span,
+[dir="rtl"] .label {
+  font-family: var(--ar-font);
+  letter-spacing: 0;
+}
+
+/* ── RTL Nav ─────────────────────────────────────────────────────────────── */
+[dir="rtl"] .nav {
+  grid-template-columns: 1fr auto 1fr;
+}
+[dir="rtl"] .nav .wordmark {
+  justify-self: start;
+}
+[dir="rtl"] .nav ul {
+  justify-self: center;
+  gap: clamp(16px, 2vw, 28px);
+}
+[dir="rtl"] .nav-end {
+  justify-self: end;
+}
+[dir="rtl"] .nav ul li a,
+[dir="rtl"] .nav .wordmark .name {
+  line-height: 1;
+  vertical-align: middle;
+}
+[dir="rtl"] .meta { display: none; }
+
+/* Wordmark in Arabic: no MP monogram */
+[dir="rtl"] .nav .wordmark .mp { display: none; }
+[dir="rtl"] .nav .wordmark .name {
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* ── RTL Hero ────────────────────────────────────────────────────────────── */
+[dir="rtl"] .hero__title h1 { text-align: right; letter-spacing: 0; }
+[dir="rtl"] .hero__aside { grid-template-columns: auto 1fr; }
+[dir="rtl"] .hero__aside .statement { text-align: right; order: 1; }
+[dir="rtl"] .hero__aside .cta { order: 0; align-self: end; }
+[dir="rtl"] .arrow { transform: scaleX(-1); }
+
+/* ── RTL Sections ────────────────────────────────────────────────────────── */
+[dir="rtl"] .positioning .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr); }
+[dir="rtl"] .meta-row { direction: rtl; }
+
+[dir="rtl"] .platforms .platform { text-align: right; }
+[dir="rtl"] .platform .foot { flex-direction: row-reverse; }
+[dir="rtl"] .platform .num { flex-direction: row-reverse; }
+
+[dir="rtl"] .creed { text-align: right; }
+[dir="rtl"] .philosophy .head .label { text-align: left; }
+[dir="rtl"] .signoff p { text-align: right; }
+[dir="rtl"] .signoff .stamp { text-align: left; direction: ltr; }
+
+[dir="rtl"] .team-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr); }
+[dir="rtl"] .team-entry { grid-template-columns: auto 1fr 40px; }
+
+[dir="rtl"] .closing .grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.42fr); }
+[dir="rtl"] .contact { direction: rtl; }
+
+[dir="rtl"] .coda { flex-direction: row-reverse; }
+[dir="rtl"] .coda__tagline { text-align: left; }
+
+/* ── RTL responsive overrides ────────────────────────────────────────────── */
+@media (max-width: 1080px) {
+  [dir="rtl"] .nav { grid-template-columns: 1fr auto; }
+  [dir="rtl"] .nav .wordmark .name { display: inline; }
+}
+@media (max-width: 720px) {
+  [dir="rtl"] .coda { flex-direction: column; align-items: flex-end; }
+  [dir="rtl"] .coda__tagline { text-align: right; }
+  [dir="rtl"] .section-head .eyebrow { justify-self: end !important; text-align: right !important; }
 }
 

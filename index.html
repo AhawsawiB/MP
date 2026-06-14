@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -39,6 +39,7 @@
 
   <!-- ── Font preload (improves LCP / eliminates FOUT) ────────────────── -->
   <link rel="preload" href="fonts/STIXTwoText.ttf" as="font" type="font/truetype" crossorigin />
+  <link rel="preload" href="fonts/IBMPlexArabic-Regular.woff2" as="font" type="font/woff2" crossorigin />
 
   <!-- ── Stylesheet (self-hosted, no external dependencies) ──────────── -->
   <link rel="stylesheet" href="style.css" />
@@ -154,22 +155,25 @@
 <!-- ── Navigation ──────────────────────────────────────────────────────── -->
 <header>
   <nav class="nav" id="nav" aria-label="Primary navigation">
-    <a href="#top" class="wordmark" aria-label="Minority Partners — return to top">
+    <a href="#top" class="wordmark" aria-label="Minority Partners — return to top" data-i18n-aria-label="nav-wordmark">
       <span class="mp" aria-hidden="true">MP</span>
-      <span class="name">Minority&nbsp;Partners</span>
+      <span class="name" data-i18n="nav-brand">Minority&nbsp;Partners</span>
     </a>
 
     <ul role="list">
-      <li><a href="#overview">Overview</a></li>
-      <li><a href="#strategy">Strategy</a></li>
-      <li><a href="#approach">Approach</a></li>
-      <li><a href="#team">The Team</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#overview" data-i18n="nav-overview">Overview</a></li>
+      <li><a href="#strategy" data-i18n="nav-strategy">Strategy</a></li>
+      <li><a href="#approach" data-i18n="nav-approach">Approach</a></li>
+      <li><a href="#team" data-i18n="nav-team">The Team</a></li>
+      <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
     </ul>
 
-    <div class="meta" aria-label="Established 2026">
-      <span class="pulse" aria-hidden="true"></span>
-      <span>Established · 2026</span>
+    <div class="nav-end">
+      <div class="meta" aria-label="Established 2026">
+        <span class="pulse" aria-hidden="true"></span>
+        <span>Established · 2026</span>
+      </div>
+      <button class="lang-toggle" id="lang-toggle" aria-label="Switch to Arabic">AR</button>
     </div>
   </nav>
 </header>
@@ -181,19 +185,19 @@
 
   <div class="hero__title reveal">
     <h1 id="hero-headline">
-      <span class="line">Strategic Capital.</span>
-      <span class="line line-2">Enduring <span class="blue">Impact</span>.</span>
+      <span class="line" data-i18n="hero-line1">Strategic Capital.</span>
+      <span class="line line-2" data-i18n="hero-line2">Enduring <span class="blue">Impact</span>.</span>
     </h1>
   </div>
 
-  <aside class="hero__aside reveal" style="--rd:160ms;" aria-label="Mission statement">
-    <p class="statement">
+  <aside class="hero__aside reveal" style="--rd:160ms;" aria-label="Mission statement" data-i18n-aria-label="hero-aside">
+    <p class="statement" data-i18n="hero-statement">
       We partner selectively.<br>
       We build patiently.<br>
       We create <em>enduring value</em>.
     </p>
-    <a href="#overview" class="cta" aria-label="Explore our vision — scroll to Overview section">
-      <span>Explore our vision</span>
+    <a href="#overview" class="cta" aria-label="Explore our vision — scroll to Overview section" data-i18n-aria-label="hero-cta">
+      <span data-i18n="hero-cta-text">Explore our vision</span>
       <span class="arrow" aria-hidden="true"></span>
     </a>
   </aside>
@@ -207,23 +211,23 @@
 
   <div class="section-head reveal">
     <div class="idx">
-      <span id="overview-heading">Overview</span>
+      <span id="overview-heading" data-i18n="overview-label">Overview</span>
     </div>
-    <p class="eyebrow head-eyebrow">A strategic investment &amp; partnerships platform</p>
+    <p class="eyebrow head-eyebrow" data-i18n="overview-eyebrow">A strategic investment &amp; partnerships platform</p>
   </div>
 
   <div class="grid">
-    <h2 class="reveal">
+    <h2 class="reveal" data-i18n="overview-h2">
       Long-term value, built through <em>selective partnership</em>.
     </h2>
 
     <div class="body">
-      <p class="reveal" style="--rd:120ms;">
+      <p class="reveal" style="--rd:120ms;" data-i18n="overview-p1">
         Minority Partners is a strategic investment and partnerships platform focused on
         long-term value creation — through minority investments, infrastructure
         partnerships, and cross-market connectivity.
       </p>
-      <p class="reveal" style="--rd:220ms;">
+      <p class="reveal" style="--rd:220ms;" data-i18n="overview-p2">
         We operate across <em class="cobalt-italic">private capital</em>,
         public transformation, and emerging markets — deploying capital where strategic
         alignment, governance, and patient conviction compound into enduring outcomes.
@@ -231,16 +235,16 @@
 
       <dl class="meta-row reveal" style="--rd:320ms;">
         <div>
-          <dt>Mandate</dt>
-          <dd>Minority investments &amp; partnerships</dd>
+          <dt data-i18n="overview-dt1">Mandate</dt>
+          <dd data-i18n="overview-dd1">Minority investments &amp; partnerships</dd>
         </div>
         <div>
-          <dt>Horizon</dt>
-          <dd>Generational — 10 to 25 years</dd>
+          <dt data-i18n="overview-dt2">Horizon</dt>
+          <dd data-i18n="overview-dd2">Generational — 10 to 25 years</dd>
         </div>
         <div>
-          <dt>Geography</dt>
-          <dd>Global, with emerging-market focus</dd>
+          <dt data-i18n="overview-dt3">Geography</dt>
+          <dd data-i18n="overview-dd3">Global, with emerging-market focus</dd>
         </div>
       </dl>
     </div>
@@ -255,9 +259,9 @@
 
   <div class="section-head reveal">
     <div class="idx">
-      <span id="strategy-heading">Strategy</span>
+      <span id="strategy-heading" data-i18n="strategy-label">Strategy</span>
     </div>
-    <p class="eyebrow head-eyebrow">Three disciplines · one conviction</p>
+    <p class="eyebrow head-eyebrow" data-i18n="strategy-eyebrow">Three disciplines · one conviction</p>
   </div>
 
   <div class="grid">
@@ -265,51 +269,51 @@
     <article class="platform reveal" data-glyph="ring" style="--rd:0ms;">
       <div class="glyph" aria-hidden="true"></div>
       <div class="num">
-        <span>I · Value Creation</span>
-        <span class="tag">Ecosystem</span>
+        <span data-i18n="p1-num">I · Value Creation</span>
+        <span class="tag" data-i18n="p1-tag">Ecosystem</span>
       </div>
-      <h3>Value Creation <em>Investments</em></h3>
-      <p>
+      <h3 data-i18n="p1-h3">Value Creation <em>Investments</em></h3>
+      <p data-i18n="p1-p">
         Strategic minority investments across aligned value chains — where our capital,
         network, and operating insight can create lasting value.
       </p>
       <div class="foot" aria-hidden="true">
-        <span>Discipline</span>
-        <span>Minority equity</span>
+        <span data-i18n="p1-foot-label">Discipline</span>
+        <span data-i18n="p1-foot-val">Minority equity</span>
       </div>
     </article>
 
     <article class="platform reveal" data-glyph="span" style="--rd:120ms;">
       <div class="glyph" aria-hidden="true"></div>
       <div class="num">
-        <span>II · Urban &amp; Infrastructure</span>
-        <span class="tag">Public · Private</span>
+        <span data-i18n="p2-num">II · Urban &amp; Infrastructure</span>
+        <span class="tag" data-i18n="p2-tag">Public · Private</span>
       </div>
-      <h3>Urban &amp; <em>Infrastructure</em></h3>
-      <p>
+      <h3 data-i18n="p2-h3">Urban &amp; <em>Infrastructure</em></h3>
+      <p data-i18n="p2-p">
         Public–private partnerships and infrastructure transformation initiatives that
         underwrite the long arc of urban development, mobility, and economic capacity.
       </p>
       <div class="foot" aria-hidden="true">
-        <span>Discipline</span>
-        <span>PPP · Greenfield</span>
+        <span data-i18n="p2-foot-label">Discipline</span>
+        <span data-i18n="p2-foot-val">PPP · Greenfield</span>
       </div>
     </article>
 
     <article class="platform reveal" data-glyph="cross" style="--rd:240ms;">
       <div class="glyph" aria-hidden="true"></div>
       <div class="num">
-        <span>III · Bridge</span>
-        <span class="tag">Cross-Market</span>
+        <span data-i18n="p3-num">III · Bridge</span>
+        <span class="tag" data-i18n="p3-tag">Cross-Market</span>
       </div>
-      <h3>Bridge <em>Investments</em></h3>
-      <p>
+      <h3 data-i18n="p3-h3">Bridge <em>Investments</em></h3>
+      <p data-i18n="p3-p">
         Cross-market investments that connect capital, opportunity, and emerging
         economies — a deliberate flow of conviction between mature and frontier markets.
       </p>
       <div class="foot" aria-hidden="true">
-        <span>Discipline</span>
-        <span>Cross-border</span>
+        <span data-i18n="p3-foot-label">Discipline</span>
+        <span data-i18n="p3-foot-val">Cross-border</span>
       </div>
     </article>
 
@@ -321,24 +325,24 @@
 
   <div class="head reveal">
     <div class="idx">
-      <span id="approach-heading">Approach</span>
+      <span id="approach-heading" data-i18n="approach-label">Approach</span>
     </div>
-    <p class="label" aria-hidden="true">A creed, in three movements</p>
+    <p class="label" aria-hidden="true" data-i18n="approach-sublabel">A creed, in three movements</p>
   </div>
 
-  <h2 class="creed reveal" style="--rd:200ms;" aria-label="Long-term thinking. Strategic execution. Enduring impact.">
-    <span class="l l1" aria-hidden="true">Long-term thinking<span class="period">.</span></span>
-    <span class="l l2" aria-hidden="true">Strategic execution<span class="period">.</span></span>
-    <span class="l l3" aria-hidden="true">Enduring impact<span class="period">.</span></span>
+  <h2 class="creed reveal" style="--rd:200ms;" aria-label="Long-term thinking. Strategic execution. Enduring impact." data-i18n-aria-label="approach-creed-aria">
+    <span class="l l1" aria-hidden="true" data-i18n="approach-l1">Long-term thinking<span class="period">.</span></span>
+    <span class="l l2" aria-hidden="true" data-i18n="approach-l2">Strategic execution<span class="period">.</span></span>
+    <span class="l l3" aria-hidden="true" data-i18n="approach-l3">Enduring impact<span class="period">.</span></span>
   </h2>
 
   <div class="signoff reveal" style="--rd:400ms;">
-    <p>
+    <p data-i18n="approach-body">
       We move at the pace of conviction — not of cycles. Our work is judged across decades,
       not quarters; measured by the institutions, infrastructure, and partnerships that
       remain when capital has long since been deployed.
     </p>
-    <div class="stamp" aria-hidden="true">
+    <div class="stamp" aria-hidden="true" data-i18n="approach-stamp">
       MP · Office of the Partners<br>
       Filed under Investment Philosophy<br>
       Vol. I &nbsp;·&nbsp; § II
@@ -352,21 +356,21 @@
 
   <div class="section-head reveal">
     <div class="idx">
-      <span id="team-heading">The Team</span>
+      <span id="team-heading" data-i18n="team-label">The Team</span>
     </div>
-    <p class="eyebrow head-eyebrow">Partners &amp; professionals</p>
+    <p class="eyebrow head-eyebrow" data-i18n="team-eyebrow">Partners &amp; professionals</p>
   </div>
 
   <div class="team-layout">
 
     <!-- Left: statement + count -->
     <div class="team-left reveal">
-      <h2 class="team-statement">
+      <h2 class="team-statement" data-i18n="team-statement">
         Built on <em>complementary</em> expertise and shared conviction.
       </h2>
       <div class="team-count">
         <span class="team-count__num">05</span>
-        <span class="team-count__label">Partners &amp; Professionals</span>
+        <span class="team-count__label" data-i18n="team-count-label">Partners &amp; Professionals</span>
       </div>
     </div>
 
@@ -376,65 +380,65 @@
       <div class="team-entry reveal" style="--rd:0ms;">
         <span class="team-idx">01</span>
         <div>
-          <p class="team-name">Abdulmajeed AlTurki</p>
-          <p class="team-title">Managing Partner</p>
-          <p class="team-bio">Operations, execution &amp; business development</p>
+          <p class="team-name" data-i18n="t1-name">Abdulmajeed AlTurki</p>
+          <p class="team-title" data-i18n="t1-title">Managing Partner</p>
+          <p class="team-bio" data-i18n="t1-bio">Operations, execution &amp; business development</p>
         </div>
         <div class="team-li">
           <a href="https://www.linkedin.com/in/abdulmajeed-alturki-48b740153"
              target="_blank" rel="noopener noreferrer"
-             aria-label="Abdulmajeed AlTurki on LinkedIn">in</a>
+             aria-label="Abdulmajeed AlTurki on LinkedIn" data-i18n-aria-label="t1-li">in</a>
         </div>
       </div>
 
       <div class="team-entry reveal" style="--rd:60ms;">
         <span class="team-idx">02</span>
         <div>
-          <p class="team-name">Abdullah AlHawsawi</p>
-          <p class="team-title">Partner &amp; Strategy</p>
-          <p class="team-bio">Strategic advisory, deal structuring &amp; partnership design</p>
+          <p class="team-name" data-i18n="t2-name">Abdullah AlHawsawi</p>
+          <p class="team-title" data-i18n="t2-title">Partner &amp; Strategy</p>
+          <p class="team-bio" data-i18n="t2-bio">Strategic advisory, deal structuring &amp; partnership design</p>
         </div>
         <div class="team-li">
           <a href="https://www.linkedin.com/in/ahawsawib"
              target="_blank" rel="noopener noreferrer"
-             aria-label="Abdullah AlHawsawi on LinkedIn">in</a>
+             aria-label="Abdullah AlHawsawi on LinkedIn" data-i18n-aria-label="t2-li">in</a>
         </div>
       </div>
 
       <div class="team-entry reveal" style="--rd:120ms;">
         <span class="team-idx">03</span>
         <div>
-          <p class="team-name">Shouq AlSaedi, CFA</p>
-          <p class="team-title">Partner &amp; Investment</p>
-          <p class="team-bio">Investment structuring, valuation &amp; financial modeling</p>
+          <p class="team-name" data-i18n="t3-name">Shouq AlSaedi, CFA</p>
+          <p class="team-title" data-i18n="t3-title">Partner &amp; Investment</p>
+          <p class="team-bio" data-i18n="t3-bio">Investment structuring, valuation &amp; financial modeling</p>
         </div>
         <div class="team-li">
           <a href="https://www.linkedin.com/in/shouq-alsaedi"
              target="_blank" rel="noopener noreferrer"
-             aria-label="Shouq AlSaedi on LinkedIn">in</a>
+             aria-label="Shouq AlSaedi on LinkedIn" data-i18n-aria-label="t3-li">in</a>
         </div>
       </div>
 
       <div class="team-entry reveal" style="--rd:180ms;">
         <span class="team-idx">04</span>
         <div>
-          <p class="team-name">Majed bin Tunbak</p>
-          <p class="team-title">Partner &amp; Development</p>
-          <p class="team-bio">Engineering support, institutional network &amp; project delivery</p>
+          <p class="team-name" data-i18n="t4-name">Majed bin Tunbak</p>
+          <p class="team-title" data-i18n="t4-title">Partner &amp; Development</p>
+          <p class="team-bio" data-i18n="t4-bio">Engineering support, institutional network &amp; project delivery</p>
         </div>
         <div class="team-li">
           <a href="https://www.linkedin.com/in/majedbintenback"
              target="_blank" rel="noopener noreferrer"
-             aria-label="Majed bin Tunbak on LinkedIn">in</a>
+             aria-label="Majed bin Tunbak on LinkedIn" data-i18n-aria-label="t4-li">in</a>
         </div>
       </div>
 
       <div class="team-entry reveal" style="--rd:240ms;">
         <span class="team-idx">05</span>
         <div>
-          <p class="team-name">Jana AlHazmi</p>
-          <p class="team-title">Executive Assistant</p>
-          <p class="team-bio">Coordination &amp; administrative operations</p>
+          <p class="team-name" data-i18n="t5-name">Jana AlHazmi</p>
+          <p class="team-title" data-i18n="t5-title">Executive Assistant</p>
+          <p class="team-bio" data-i18n="t5-bio">Coordination &amp; administrative operations</p>
         </div>
         <div class="team-li team-li--none" aria-hidden="true">
           <span>in</span>
@@ -452,13 +456,13 @@
 
   <div class="section-head reveal">
     <div class="idx">
-      <span id="contact-heading">Contact</span>
+      <span id="contact-heading" data-i18n="contact-label">Contact</span>
     </div>
-    <p class="eyebrow head-eyebrow">Selective by design</p>
+    <p class="eyebrow head-eyebrow" data-i18n="contact-eyebrow">Selective by design</p>
   </div>
 
   <div class="grid">
-    <h2 class="statement reveal">
+    <h2 class="statement reveal" data-i18n="contact-h2">
       We invest where strategic alignment, long-term potential,
       and <em>enduring impact</em> intersect.
     </h2>
@@ -468,7 +472,7 @@
   <div class="contact reveal" style="--rd:160ms;">
 
     <div class="cell">
-      <span class="label">Contact</span>
+      <span class="label" data-i18n="contact-cell1-label">Contact</span>
       <span class="value">
         <a href="mailto:contact@minoritypartners.sa" aria-label="Email Minority Partners">
           contact@minoritypartners.sa
@@ -477,7 +481,7 @@
     </div>
 
     <div class="cell">
-      <span class="label">LinkedIn</span>
+      <span class="label" data-i18n="contact-cell2-label">LinkedIn</span>
       <span class="value">
         <a
           href="https://www.linkedin.com/company/minoritypartners/"
@@ -489,18 +493,18 @@
     </div>
 
     <div class="cell">
-      <span class="label">Offices</span>
+      <span class="label" data-i18n="contact-cell3-label">Offices</span>
       <span class="value offices-value">
         <span class="office-line">
-          Madinah
+          <span data-i18n="office1-city">Madinah</span>
           <abbr class="office-tag" title="Headquarters">HQ</abbr>
         </span>
         <span class="office-line">
-          Abu Dhabi
+          <span data-i18n="office2-city">Abu Dhabi</span>
           <abbr class="office-tag" title="Offshore company">Offshore</abbr>
         </span>
         <span class="office-line">
-          Horn of Africa
+          <span data-i18n="office3-city">Horn of Africa</span>
           <abbr class="office-tag" title="Market development office">Market Dev.</abbr>
         </span>
       </span>
@@ -516,10 +520,10 @@
 <footer role="contentinfo">
   <div class="coda">
     <div class="coda__left">
-      <span class="coda__brand">Minority Partners</span>
-      <span class="coda__copy">© 2026 — All rights reserved &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a></span>
+      <span class="coda__brand" data-i18n="footer-brand">Minority Partners</span>
+      <span class="coda__copy" data-i18n="footer-copy">© 2026 — All rights reserved &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a></span>
     </div>
-    <span class="coda__tagline">Strategic Capital. Enduring Impact.</span>
+    <span class="coda__tagline" data-i18n="footer-tagline">Strategic Capital. Enduring Impact.</span>
   </div>
 </footer>
 
