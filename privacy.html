@@ -18,7 +18,12 @@
   <meta name="theme-color"  content="#ECE6DA" />
   <meta name="color-scheme" content="light" />
 
+  <link rel="alternate" hreflang="en" href="https://minoritypartners.sa/privacy.html" />
+  <link rel="alternate" hreflang="ar" href="https://minoritypartners.sa/privacy-ar.html" />
+  <link rel="alternate" hreflang="x-default" href="https://minoritypartners.sa/privacy.html" />
+
   <link rel="preload" href="fonts/STIXTwoText.ttf" as="font" type="font/truetype" crossorigin />
+  <link rel="preload" href="fonts/IBMPlexArabic-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="style.css" />
 
   <link rel="icon"             type="image/svg+xml"           href="assets/favicon.svg" />
@@ -183,14 +188,18 @@
       <span class="name">Minority&nbsp;Partners</span>
     </a>
     <ul role="list">
-      <li><a href="/#position">Overview</a></li>
-      <li><a href="/#platforms">Strategy</a></li>
-      <li><a href="/#philosophy">Approach</a></li>
-      <li><a href="/#engage">Contact</a></li>
+      <li><a href="/#overview">Overview</a></li>
+      <li><a href="/#strategy">Strategy</a></li>
+      <li><a href="/#approach">Approach</a></li>
+      <li><a href="/#team">The Team</a></li>
+      <li><a href="/#contact">Contact</a></li>
     </ul>
-    <div class="meta" aria-label="Established 2026">
-      <span class="pulse" aria-hidden="true"></span>
-      <span>Established · 2026</span>
+    <div class="nav-end">
+      <div class="meta" aria-label="Established 2026">
+        <span class="pulse" aria-hidden="true"></span>
+        <span>Established · 2026</span>
+      </div>
+      <button class="lang-toggle" onclick="localStorage.setItem('mp-lang','ar'); location.href='/privacy-ar.html'" aria-label="Switch to Arabic">AR</button>
     </div>
   </nav>
 </header>

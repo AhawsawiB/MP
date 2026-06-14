@@ -252,7 +252,7 @@
       'office3-city':       'القرن الأفريقي',
 
       'footer-brand':       'ماينورِتي بارتنرز',
-      'footer-copy':        '© 2026 — جميع الحقوق محفوظة  ·  <a href="/privacy.html">سياسة الخصوصية</a>',
+      'footer-copy':        '© 2026 — جميع الحقوق محفوظة  ·  <a href="/privacy-ar.html">سياسة الخصوصية</a>',
       'footer-tagline':     'رأس مال استراتيجي. أثرٌ مستدام.',
     }
   };
