@@ -1125,9 +1125,9 @@ footer {
 
 /* ── RTL Hero ────────────────────────────────────────────────────────────── */
 [dir="rtl"] .hero__title h1 { text-align: right; letter-spacing: 0; }
-[dir="rtl"] .hero__aside { grid-template-columns: auto 1fr; }
-[dir="rtl"] .hero__aside .statement { text-align: right; order: 1; }
-[dir="rtl"] .hero__aside .cta { order: 0; align-self: end; }
+[dir="rtl"] .hero__aside { grid-template-columns: 1fr auto; }
+[dir="rtl"] .hero__aside .statement { text-align: right; }
+[dir="rtl"] .cta { padding: 18px 28px 18px 24px; }
 [dir="rtl"] .arrow { transform: scaleX(-1); }
 
 /* ── RTL Sections ────────────────────────────────────────────────────────── */
