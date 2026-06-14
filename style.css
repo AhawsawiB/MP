@@ -1136,6 +1136,7 @@ footer {
 [dir="rtl"] .meta-row { direction: rtl; }
 
 [dir="rtl"] .platforms .platform { text-align: right; }
+[dir="rtl"] .platform + .platform { border-left: none; border-right: 1px solid var(--rule); }
 [dir="rtl"] .platform .foot { flex-direction: row-reverse; }
 [dir="rtl"] .platform .num { flex-direction: row-reverse; }
 [dir="rtl"] .platform .glyph::before { background-position: right center; }
@@ -1163,6 +1164,8 @@ footer {
 @media (max-width: 1080px) {
   [dir="rtl"] .nav { grid-template-columns: 1fr auto; }
   [dir="rtl"] .nav .wordmark .name { display: inline; }
+  [dir="rtl"] .platform + .platform { border-left: none; border-right: 1px solid var(--rule); }
+  [dir="rtl"] .platform:nth-child(3) { border-right: 0; border-left: 0; border-top: 1px solid var(--rule); }
 }
 @media (max-width: 720px) {
   [dir="rtl"] .coda { flex-direction: column; align-items: flex-end; }
