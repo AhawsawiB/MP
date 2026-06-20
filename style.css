@@ -1141,6 +1141,7 @@ footer {
 [dir="rtl"] .platform .glyph::before { background-position: right center; }
 
 [dir="rtl"] .creed { text-align: right; }
+[dir="rtl"] .philosophy .creed .l2 { margin-left: 0; margin-right: 0.7em; }
 [dir="rtl"] .philosophy .head .label { text-align: left; font-family: var(--ar-font); }
 [dir="rtl"] .signoff p { text-align: right; }
 
@@ -1171,10 +1172,20 @@ footer {
   [dir="rtl"] .nav .wordmark .name { display: inline; }
   [dir="rtl"] .platform + .platform { border-left: none; border-right: 1px solid var(--rule); }
   [dir="rtl"] .platform:nth-child(3) { border-right: 0; border-left: 0; border-top: 1px solid var(--rule); }
+  /* Collapse RTL grids to match English 1-column mobile layout */
+  [dir="rtl"] .positioning .grid { grid-template-columns: 1fr; }
+  [dir="rtl"] .closing .grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 860px) {
+  [dir="rtl"] .team-layout { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   [dir="rtl"] .coda { flex-direction: column; align-items: flex-end; }
   [dir="rtl"] .coda__tagline { text-align: right; }
   [dir="rtl"] .section-head .eyebrow { justify-self: end !important; text-align: right !important; }
+  /* Mirror creed l2 indent: margin-left → margin-right in RTL */
+  [dir="rtl"] .philosophy .creed .l2 { margin-left: 0; margin-right: 0.4em; }
+  /* Reset CTA padding to match English mobile size */
+  [dir="rtl"] .cta { padding: 16px 20px; }
 }
 
