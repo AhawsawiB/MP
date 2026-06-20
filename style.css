@@ -148,12 +148,13 @@ textarea:focus-visible,
   gap: 0.4em;
 }
 .nav .wordmark .mp {
-  font-weight: 600;
+  display: none;
 }
 .nav .wordmark .name {
-  color: var(--mute);
-  font-size: 14px;
-  letter-spacing: 0.04em;
+  color: var(--ink);
+  font-size: 17px;
+  letter-spacing: -0.005em;
+  font-weight: 600;
 }
 .nav ul {
   list-style: none; margin: 0; padding: 0;
@@ -757,7 +758,6 @@ footer {
   :root { --pad: clamp(24px, 4vw, 48px); }
   .nav ul { display: none; }
   .nav { grid-template-columns: 1fr auto; }
-  .nav .wordmark .name { display: none; }
   .nav .meta { font-size: 10.5px; }
 
   .hero__title h1 { font-size: clamp(52px, 11vw, 110px); }
@@ -1110,8 +1110,7 @@ footer {
 }
 /* Established badge: RTL flex naturally places meta on right, button on left (button "after" text) */
 
-/* Wordmark in Arabic: no MP monogram, use IBM Plex Arabic */
-[dir="rtl"] .nav .wordmark .mp { display: none; }
+/* Wordmark in Arabic: use IBM Plex Arabic */
 [dir="rtl"] .nav .wordmark,
 [dir="rtl"] .nav .wordmark .name {
   font-family: var(--ar-font);
@@ -1169,7 +1168,6 @@ footer {
 /* ── RTL responsive overrides ────────────────────────────────────────────── */
 @media (max-width: 1080px) {
   [dir="rtl"] .nav { grid-template-columns: 1fr auto; }
-  [dir="rtl"] .nav .wordmark .name { display: inline; }
   [dir="rtl"] .platform + .platform { border-left: none; border-right: 1px solid var(--rule); }
   [dir="rtl"] .platform:nth-child(3) { border-right: 0; border-left: 0; border-top: 1px solid var(--rule); }
   /* Collapse RTL grids to match English 1-column mobile layout */
