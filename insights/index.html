@@ -190,14 +190,14 @@
     });
   }
 
-  function filterAndRender(articles, cat) {
+  function filterAndRender(articles, cat, hasFeatured) {
     const grid = document.getElementById('ins-grid');
     const empty = document.getElementById('ins-empty');
     const filtered = cat === 'all' ? articles : articles.filter(function(a) { return a.category === cat; });
     grid.innerHTML = filtered.map(cardHtml).join('');
     const hasItems = filtered.length > 0;
     grid.style.display = hasItems ? '' : 'none';
-    empty.style.display = hasItems ? 'none' : '';
+    empty.style.display = (hasItems || hasFeatured) ? 'none' : '';
     setActiveTab(cat);
     const url = cat === 'all' ? '/insights' : '/insights/category/' + cat;
     history.replaceState(null, '', url);
@@ -225,26 +225,19 @@
 
     // Filter tabs
     const gridArticles = featured ? articles.filter(function(a) { return a.id !== featured.id; }) : articles;
+    const hasFeatured = !!featured;
     document.querySelectorAll('.ins-filter-tab').forEach(function(tab) {
       tab.addEventListener('click', function() {
-        filterAndRender(gridArticles, tab.dataset.cat);
+        filterAndRender(gridArticles, tab.dataset.cat, hasFeatured);
       });
     });
 
     // Initial render (exclude featured from grid)
-    filterAndRender(gridArticles, initCat);
+    filterAndRender(gridArticles, initCat, hasFeatured);
 
     // Disable tabs if no articles at all
     if (articles.length === 0) {
       document.querySelectorAll('.ins-filter-tab').forEach(function(t) { t.disabled = true; });
-    }
-
-    // Hide filters + empty state when featured exists but grid is empty
-    if (featured && gridArticles.length === 0) {
-      document.getElementById('ins-empty').style.display = 'none';
-      document.getElementById('ins-grid').style.display = 'none';
-      var filtersEl = document.querySelector('.ins-filters');
-      if (filtersEl) filtersEl.style.display = 'none';
     }
   }
 
