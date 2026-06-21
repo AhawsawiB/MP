@@ -1119,8 +1119,6 @@ footer {
 }
 /* RTL FAQ */
 [dir="rtl"] .faq-item summary {
-  flex-direction: row-reverse;
-  text-align: right;
   font-family: var(--ar-font);
   letter-spacing: 0;
 }
