@@ -1276,9 +1276,8 @@ footer {
   padding-right: var(--pad);
   border-bottom: 1px solid var(--rule);
   display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: var(--gutter);
+  grid-template-columns: 1fr;
+  gap: clamp(12px, 1.5vw, 20px);
 }
 .ins-hub-header h1 {
   font-family: var(--serif);
@@ -1295,8 +1294,6 @@ footer {
   line-height: 1.5;
   letter-spacing: -0.006em;
   color: var(--mute);
-  max-width: 32ch;
-  text-align: right;
   margin: 0;
 }
 
@@ -1355,12 +1352,11 @@ footer {
 .ins-featured a:hover .ins-featured__title { color: var(--cobalt); transition: color 200ms ease; }
 .ins-featured__desc {
   font-family: var(--serif);
-  font-size: clamp(16px, 1.2vw, 19px);
+  font-size: clamp(15px, 1.1vw, 18px);
   line-height: 1.55;
   letter-spacing: -0.006em;
   color: var(--ink-soft);
   margin: 0 0 20px;
-  max-width: 60ch;
 }
 .ins-featured__byline {
   font-family: var(--sans);
@@ -1863,11 +1859,8 @@ footer {
 
 /* ── RTL: Insights hub ────────────────────────────────────────────────────── */
 
-/* Hub header — centered layout, distinct from the EN 2-column asymmetric style */
-[dir="rtl"] .ins-hub-header {
-  grid-template-columns: 1fr;
-  text-align: center;
-}
+/* Hub header — Arabic centers text; EN stays left-aligned by default */
+[dir="rtl"] .ins-hub-header { text-align: center; }
 [dir="rtl"] .ins-hub-header h1 {
   font-family: var(--ar-font);
   letter-spacing: 0;
@@ -1878,7 +1871,6 @@ footer {
   font-family: var(--ar-font);
   letter-spacing: 0;
   text-align: center;
-  max-width: none;
 }
 
 /* Featured strip */
@@ -1887,7 +1879,6 @@ footer {
   font-family: var(--ar-font);
   letter-spacing: 0;
   text-align: right;
-  max-width: none;
 }
 [dir="rtl"] .ins-featured__title { line-height: 1.2; }
 [dir="rtl"] .ins-featured__meta,
@@ -1946,9 +1937,7 @@ footer {
 
 /* ── Responsive: Insights ─────────────────────────────────────────────────── */
 @media (max-width: 1080px) {
-  .ins-hub-header { grid-template-columns: 1fr; gap: 16px; }
-  .ins-hub-header__sub { text-align: left; }
-  [dir="rtl"] .ins-hub-header__sub { text-align: center; }
+  .ins-hub-header { gap: 12px; }
 }
 @media (max-width: 860px) {
   .ins-grid { grid-template-columns: repeat(2, 1fr); }
