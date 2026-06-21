@@ -22,16 +22,38 @@
 
   <url>
     <loc>https://minoritypartners.sa/strategy.html</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoritypartners.sa/strategy.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://minoritypartners.sa/ar/strategy.html"/>
   </url>
 
   <url>
     <loc>https://minoritypartners.sa/team.html</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoritypartners.sa/team.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://minoritypartners.sa/ar/team.html"/>
+  </url>
+
+  <url>
+    <loc>https://minoritypartners.sa/ar/strategy.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://minoritypartners.sa/ar/strategy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoritypartners.sa/strategy.html"/>
+  </url>
+
+  <url>
+    <loc>https://minoritypartners.sa/ar/team.html</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://minoritypartners.sa/ar/team.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoritypartners.sa/team.html"/>
   </url>
 
   <url>
