@@ -202,12 +202,15 @@
     const featSlot    = document.getElementById('ins-featured-slot');
 
     if (cat === 'all') {
-      // Show featured strip; grid shows non-featured articles
-      if (featSlot) featSlot.style.display = '';
-      grid.innerHTML = gridArticles.map(cardHtml).join('');
-      const hasGrid = gridArticles.length > 0;
+      // Show featured strip only when there are other articles alongside it;
+      // if featured is the only article, show it as a card in the grid instead
+      const showFeatured = featured && gridArticles.length > 0;
+      if (featSlot) featSlot.style.display = showFeatured ? '' : 'none';
+      const gridToShow = showFeatured ? gridArticles : allArticles;
+      grid.innerHTML = gridToShow.map(cardHtml).join('');
+      const hasGrid = gridToShow.length > 0;
       grid.style.display  = hasGrid ? '' : 'none';
-      empty.style.display = (hasGrid || !!featured) ? 'none' : '';
+      empty.style.display = hasGrid ? 'none' : '';
     } else {
       // Hide featured strip; grid shows ALL articles matching this category
       if (featSlot) featSlot.style.display = 'none';

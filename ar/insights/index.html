@@ -217,12 +217,15 @@
     const featSlot = document.getElementById('ins-featured-slot');
 
     if (cat === 'all') {
-      // أظهر المقال المميز؛ الشبكة تعرض باقي المقالات
-      if (featSlot) featSlot.style.display = '';
-      grid.innerHTML = gridArticles.map(cardHtml).join('');
-      const hasGrid = gridArticles.length > 0;
+      // أظهر الشريط المميز فقط إذا كانت هناك مقالات أخرى غيره؛
+      // إذا كان المقال المميز هو الوحيد فيظهر كبطاقة في الشبكة
+      const showFeatured = featured && gridArticles.length > 0;
+      if (featSlot) featSlot.style.display = showFeatured ? '' : 'none';
+      const gridToShow = showFeatured ? gridArticles : allArticles;
+      grid.innerHTML = gridToShow.map(cardHtml).join('');
+      const hasGrid = gridToShow.length > 0;
       grid.style.display  = hasGrid ? '' : 'none';
-      empty.style.display = (hasGrid || !!featured) ? 'none' : '';
+      empty.style.display = hasGrid ? 'none' : '';
     } else {
       // أخفِ المقال المميز؛ الشبكة تعرض جميع مقالات هذا التصنيف
       if (featSlot) featSlot.style.display = 'none';
