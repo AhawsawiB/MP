@@ -173,7 +173,7 @@
     const img = article.cover_image
       ? '<div class="ins-featured__img-wrap"><img src="' + article.cover_image + '" alt="' + (article.cover_alt_ar || '') + '" loading="eager" /></div>'
       : '';
-    return '<div class="ins-featured reveal"><div class="ins-featured__inner">' +
+    return '<div class="ins-featured"><div class="ins-featured__inner">' +
       '<a href="' + href + '">' +
         img +
         '<div class="ins-featured__meta">' +
@@ -237,6 +237,14 @@
 
     if (articles.length === 0) {
       document.querySelectorAll('.ins-filter-tab').forEach(function(t) { t.disabled = true; });
+    }
+
+    // Hide filters + empty state when featured exists but grid is empty
+    if (featured && gridArticles.length === 0) {
+      document.getElementById('ins-empty').style.display = 'none';
+      document.getElementById('ins-grid').style.display = 'none';
+      var filtersEl = document.querySelector('.ins-filters');
+      if (filtersEl) filtersEl.style.display = 'none';
     }
   }
 
