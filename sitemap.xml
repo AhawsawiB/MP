@@ -93,6 +93,24 @@
   </url>
 
   <url>
+    <loc>https://minoritypartners.sa/insights/six-months-of-building</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoritypartners.sa/insights/six-months-of-building"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://minoritypartners.sa/ar/insights/six-months-of-building"/>
+  </url>
+
+  <url>
+    <loc>https://minoritypartners.sa/ar/insights/six-months-of-building</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://minoritypartners.sa/ar/insights/six-months-of-building"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoritypartners.sa/insights/six-months-of-building"/>
+  </url>
+
+  <url>
     <loc>https://minoritypartners.sa/privacy.html</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>yearly</changefreq>

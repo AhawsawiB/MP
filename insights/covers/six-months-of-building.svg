@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#151BB5"/>
+      <stop offset="100%" style="stop-color:#0C1080"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1200" height="630" fill="#151BB5" opacity="0.15"/>
+  <rect x="80" y="500" width="1040" height="1" fill="#ECE6DA" opacity="0.12"/>
+  <text x="80" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="500" fill="#ECE6DA" opacity="0.95" letter-spacing="-1">MP</text>
+  <rect x="80" y="130" width="40" height="1.5" fill="#ECE6DA" opacity="0.35"/>
+  <text x="80" y="310" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="400" fill="#ECE6DA" letter-spacing="-2">Six Months of</text>
+  <text x="80" y="385" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="400" fill="#ECE6DA" letter-spacing="-2">Building Before</text>
+  <text x="80" y="460" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="400" fill="#ECE6DA" letter-spacing="-2">Launching</text>
+  <text x="80" y="568" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#ECE6DA" opacity="0.45" letter-spacing="3.5">MINORITY PARTNERS · JULY 2026</text>
+</svg>
