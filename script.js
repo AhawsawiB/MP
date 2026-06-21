@@ -69,6 +69,9 @@
       'nav-about':          'About',
       'nav-team':           'The Team',
       'nav-contact':        'Contact',
+      'nav-insights':       'Insights',
+      'insights-label':     'Latest Insights',
+      'insights-viewall':   'View all →',
 
       'hero-line1':         'Strategic Capital.',
       'hero-line2':         'Enduring <span class="blue">Impact</span>.',
@@ -180,6 +183,9 @@
       'nav-about':          'عن الشركة',
       'nav-team':           'الفريق',
       'nav-contact':        'تواصل',
+      'nav-insights':       'رؤى وتحليلات',
+      'insights-label':     'آخر الرؤى',
+      'insights-viewall':   '← عرض الكل',
 
       'hero-line1':         'رأس مال استراتيجي.',
       'hero-line2':         'أثرٌ <span class="blue">مستدام</span>.',

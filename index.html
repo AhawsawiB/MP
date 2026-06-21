@@ -201,6 +201,7 @@
       <li><a href="#overview" data-i18n="nav-overview">Overview</a></li>
       <li><a href="#strategy" data-i18n="nav-strategy">Strategy</a></li>
       <li><a href="/about.html" data-i18n="nav-about">About</a></li>
+      <li><a href="/insights" data-i18n="nav-insights">Insights</a></li>
       <li><a href="#team" data-i18n="nav-team">The Team</a></li>
       <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
     </ul>
@@ -488,6 +489,16 @@
   </div>
 </section>
 
+<!-- ── LATEST INSIGHTS (shown only if articles exist) ─────────────────── -->
+<div class="rule" role="separator" aria-hidden="true"></div>
+<section class="latest-insights" id="latest-insights" style="display:none;" aria-label="Latest Insights">
+  <div class="latest-insights__head">
+    <span class="latest-insights__label" data-i18n="insights-label">Latest Insights</span>
+    <a href="/insights" class="latest-insights__viewall" data-i18n="insights-viewall">View all →</a>
+  </div>
+  <div class="latest-insights__grid" id="latest-insights-grid"></div>
+</section>
+
 <!-- ── FAQ ─────────────────────────────────────────────────────────────── -->
 <section class="faq" id="faq" aria-labelledby="faq-heading">
 
@@ -609,6 +620,65 @@
 
 <!-- ── Scripts (defer, same-origin, no inline JS) ──────────────────────── -->
 <script src="script.js" defer></script>
+<script defer>
+(function(){
+  'use strict';
+  var MONTHS_EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function formatDate(dateStr) {
+    var d = new Date(dateStr + 'T00:00:00');
+    return d.getDate() + ' ' + MONTHS_EN[d.getMonth()] + ' ' + d.getFullYear();
+  }
+  var CAT_LABELS = { news:'News', analysis:'Analysis', commentary:'Commentary' };
+  var CAT_LABELS_AR = { news:'أخبار', analysis:'تحليل', commentary:'رأي' };
+  function cardHtml(article, lang) {
+    var isAr = lang === 'ar';
+    var href = isAr ? '/ar/insights/' + article.id : '/insights/' + article.id;
+    var title = isAr ? article.title_ar : article.title_en;
+    var desc = isAr ? article.description_ar : article.description_en;
+    var author = isAr ? ((article.author && article.author.name_ar) || '') : ((article.author && article.author.name_en) || '');
+    var altText = isAr ? (article.cover_alt_ar || '') : (article.cover_alt_en || '');
+    var img = article.cover_image
+      ? '<div class="ins-card__img-wrap"><img src="' + article.cover_image + '" alt="' + altText + '" loading="lazy" width="400" height="225"/></div>'
+      : '<div class="ins-card__no-img"><span class="ins-card__no-img-mark">MP</span></div>';
+    var catLabel = (isAr ? CAT_LABELS_AR : CAT_LABELS)[article.category] || article.category;
+    var date = isAr
+      ? new Date(article.date + 'T00:00:00').toLocaleDateString('ar-SA', {day:'numeric', month:'long', year:'numeric'})
+      : formatDate(article.date);
+    var time = article.reading_time_min
+      ? (isAr ? article.reading_time_min + 'د' : article.reading_time_min + ' min')
+      : '';
+    return '<a class="ins-card" href="' + href + '">' +
+      img +
+      '<div class="ins-card__body">' +
+        '<div class="ins-card__meta">' +
+          '<span class="ins-card__cat">' + catLabel + '</span>' +
+          '<span class="ins-card__sep">·</span>' +
+          '<span class="ins-card__date">' + date + '</span>' +
+        '</div>' +
+        '<h3 class="ins-card__title">' + title + '</h3>' +
+        '<p class="ins-card__desc">' + (desc || '') + '</p>' +
+        '<div class="ins-card__footer"><span>' + author + '</span><span>' + time + '</span></div>' +
+      '</div>' +
+    '</a>';
+  }
+  async function init() {
+    try {
+      var res = await fetch('/insights/articles.json');
+      if (!res.ok) return;
+      var data = await res.json();
+      var articles = (data.articles || []).sort(function(a,b){ return new Date(b.date) - new Date(a.date); }).slice(0,3);
+      if (!articles.length) return;
+      var lang = document.documentElement.getAttribute('lang') || 'en';
+      var section = document.getElementById('latest-insights');
+      var grid = document.getElementById('latest-insights-grid');
+      if (!section || !grid) return;
+      grid.innerHTML = articles.map(function(a){ return cardHtml(a, lang); }).join('');
+      section.style.display = '';
+    } catch(e) {}
+  }
+  document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
 
 </body>
 </html>

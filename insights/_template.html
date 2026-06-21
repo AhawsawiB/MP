@@ -1,0 +1,386 @@
+<!doctype html>
+<!--
+  ════════════════════════════════════════════════════════════════════════════
+  MINORITY PARTNERS — ARTICLE TEMPLATE (ENGLISH)
+  ════════════════════════════════════════════════════════════════════════════
+
+  PUBLISHING CHECKLIST — complete every item marked FILL before publishing:
+  □  Replace FILL_SLUG with the article's unique slug (e.g. "saudi-vision-infrastructure")
+  □  Replace FILL_TITLE_EN with the English article title
+  □  Replace FILL_DESCRIPTION_EN with a 140–160 character summary for SEO / OG
+  □  Replace FILL_CATEGORY with one of: news | analysis | commentary
+  □  Replace FILL_DATE with ISO date (YYYY-MM-DD, e.g. 2026-07-01)
+  □  Replace FILL_AUTHOR_NAME with author's full name
+  □  Replace FILL_AUTHOR_ROLE with role label (e.g. "Partner & Strategy")
+  □  Replace FILL_AUTHOR_LI_HREF with LinkedIn URL or remove .art-author-li block
+  □  Replace FILL_COVER_IMG_SRC with cover image URL (e.g. /insights/covers/slug.jpg)
+  □  Replace FILL_COVER_ALT with descriptive alt text for the cover image
+  □  Replace FILL_COVER_CAPTION with caption, or remove the caption element
+  □  Replace FILL_READ_MINUTES with estimated reading time in minutes
+  □  Write article body content between <!-- BODY START --> and <!-- BODY END -->
+  □  Add tags inside .art-tags section (remove examples, add real ones)
+  □  Add this article to /insights/articles.json before going live
+  □  Duplicate to /ar/insights/SLUG.html for Arabic version
+
+  JSON entry to add to articles.json:
+  {
+    "id": "FILL_SLUG",
+    "title_en": "FILL_TITLE_EN",
+    "title_ar": "FILL_TITLE_AR",
+    "description_en": "FILL_DESCRIPTION_EN",
+    "description_ar": "FILL_DESCRIPTION_AR",
+    "category": "FILL_CATEGORY",
+    "date": "FILL_DATE",
+    "reading_time_min": FILL_READ_MINUTES,
+    "featured": false,
+    "has_en": true,
+    "has_ar": true,
+    "cover_image": "FILL_COVER_IMG_SRC",
+    "cover_alt_en": "FILL_COVER_ALT",
+    "cover_alt_ar": "FILL_COVER_ALT_AR",
+    "tags": ["FILL_TAG_1", "FILL_TAG_2"],
+    "author": {
+      "name_en": "FILL_AUTHOR_NAME",
+      "name_ar": "FILL_AUTHOR_NAME_AR",
+      "role_en": "FILL_AUTHOR_ROLE",
+      "linkedin": "FILL_AUTHOR_LI_HREF"
+    }
+  }
+  ════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <script>if(localStorage.getItem('mp-lang')==='ar')location.replace('/ar/insights/FILL_SLUG');</script>
+
+  <!-- FILL: Update title, description, canonical, and OG tags -->
+  <title>FILL_TITLE_EN — Minority Partners</title>
+  <meta name="description" content="FILL_DESCRIPTION_EN" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="FILL_AUTHOR_NAME" />
+  <meta name="copyright" content="© 2026 Minority Partners" />
+  <link rel="canonical" href="https://minoritypartners.sa/insights/FILL_SLUG" />
+  <link rel="alternate" hreflang="en" href="https://minoritypartners.sa/insights/FILL_SLUG" />
+  <link rel="alternate" hreflang="ar" href="https://minoritypartners.sa/ar/insights/FILL_SLUG" />
+  <link rel="alternate" hreflang="x-default" href="https://minoritypartners.sa/insights/FILL_SLUG" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://minoritypartners.sa/insights/FILL_SLUG" />
+  <meta property="og:site_name" content="Minority Partners" />
+  <meta property="og:title" content="FILL_TITLE_EN — Minority Partners" />
+  <meta property="og:description" content="FILL_DESCRIPTION_EN" />
+  <meta property="og:image" content="FILL_COVER_IMG_SRC" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="article:published_time" content="FILL_DATE" />
+  <meta property="article:author" content="FILL_AUTHOR_NAME" />
+  <meta property="article:section" content="FILL_CATEGORY" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FILL_TITLE_EN — Minority Partners" />
+  <meta name="twitter:description" content="FILL_DESCRIPTION_EN" />
+  <meta name="twitter:image" content="FILL_COVER_IMG_SRC" />
+
+  <meta name="theme-color" content="#ECE6DA" />
+  <meta name="color-scheme" content="light" />
+
+  <link rel="preload" href="/fonts/STIXTwoText.ttf" as="font" type="font/truetype" crossorigin />
+  <link rel="preload" href="/fonts/IBMPlexArabic-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVJXVLFQRE"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PVJXVLFQRE');</script>
+
+  <!-- FILL: Update Article schema — slug, title, description, date, author -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://minoritypartners.sa/insights/FILL_SLUG",
+    "url": "https://minoritypartners.sa/insights/FILL_SLUG",
+    "headline": "FILL_TITLE_EN",
+    "description": "FILL_DESCRIPTION_EN",
+    "datePublished": "FILL_DATE",
+    "dateModified": "FILL_DATE",
+    "inLanguage": "en",
+    "image": "FILL_COVER_IMG_SRC",
+    "author": {
+      "@type": "Person",
+      "name": "FILL_AUTHOR_NAME",
+      "url": "FILL_AUTHOR_LI_HREF"
+    },
+    "publisher": { "@id": "https://minoritypartners.sa/#organization" },
+    "isPartOf": { "@id": "https://minoritypartners.sa/#website" },
+    "about": { "@id": "https://minoritypartners.sa/#organization" },
+    "articleSection": "FILL_CATEGORY",
+    "keywords": ["FILL_TAG_1", "FILL_TAG_2"]
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#art-content">Skip to main content</a>
+
+<header>
+  <nav class="nav" id="nav" aria-label="Primary navigation">
+    <a href="/" class="wordmark" aria-label="Minority Partners — return to homepage" data-i18n-aria-label="nav-wordmark">
+      <span class="mp" aria-hidden="true">MP</span>
+      <span class="name" data-i18n="nav-brand">Minority&nbsp;Partners</span>
+    </a>
+    <ul role="list">
+      <li><a href="/#overview" data-i18n="nav-overview">Overview</a></li>
+      <li><a href="/strategy.html" data-i18n="nav-strategy">Strategy</a></li>
+      <li><a href="/about.html" data-i18n="nav-about">About</a></li>
+      <li><a href="/insights" class="nav-active" data-i18n="nav-insights">Insights</a></li>
+      <li><a href="/team.html" data-i18n="nav-team">The Team</a></li>
+      <li><a href="/#contact" data-i18n="nav-contact">Contact</a></li>
+    </ul>
+    <div class="nav-end">
+      <div class="meta" aria-label="Established 2026">
+        <span class="pulse" aria-hidden="true"></span>
+        <span data-i18n="nav-established">Established · 2026</span>
+      </div>
+      <!-- FILL: Update onclick href to /ar/insights/FILL_SLUG -->
+      <button class="lang-toggle" onclick="localStorage.setItem('mp-lang','ar'); location.href='/ar/insights/FILL_SLUG'" aria-label="Switch to Arabic">AR</button>
+    </div>
+  </nav>
+</header>
+
+<main id="art-content" tabindex="-1">
+
+  <div class="art-wrap">
+
+    <a href="/insights" class="art-back">
+      <span class="art-back__arrow" aria-hidden="true">←</span>
+      Back to Insights
+    </a>
+
+    <!-- FILL: Update category, date, read time -->
+    <div class="art-top-meta">
+      <span class="art-cat">FILL_CATEGORY</span>
+      <span class="art-sep">·</span>
+      <time datetime="FILL_DATE">FILL_DATE_DISPLAY</time>
+      <span class="art-sep">·</span>
+      <span>FILL_READ_MINUTES min read</span>
+    </div>
+
+    <!-- FILL: Replace with article title and subtitle -->
+    <h1 class="art-title">FILL_TITLE_EN</h1>
+    <p class="art-subtitle">FILL_DESCRIPTION_EN</p>
+
+    <div class="art-author-row">
+      <div class="art-author-info">
+        <!-- FILL: Replace with author name and role -->
+        <span class="art-author-name">FILL_AUTHOR_NAME</span>
+        <span class="art-author-role">FILL_AUTHOR_ROLE</span>
+      </div>
+      <!-- FILL: Replace href with LinkedIn URL, or remove this block -->
+      <div class="art-author-li">
+        <a href="FILL_AUTHOR_LI_HREF" target="_blank" rel="noopener noreferrer" aria-label="FILL_AUTHOR_NAME on LinkedIn">LinkedIn</a>
+      </div>
+    </div>
+
+  </div><!-- /art-wrap -->
+
+  <!-- FILL: Replace cover image src, alt, and caption. Remove section if no image. -->
+  <div class="art-cover-wrap">
+    <img src="FILL_COVER_IMG_SRC" alt="FILL_COVER_ALT" width="900" height="506" />
+    <p class="art-cover-caption">FILL_COVER_CAPTION</p>
+  </div>
+
+  <!-- BODY START ─────────────────────────────────────────────────────────── -->
+  <article class="art-body">
+
+    <!-- FILL: Replace all body content below with the actual article prose -->
+
+    <p>FILL: Opening paragraph — introduce the topic and establish the frame for what follows. This should hook the reader and signal the piece's central argument or finding.</p>
+
+    <h2>FILL: First section heading</h2>
+
+    <p>FILL: Body paragraph. Develop the first major idea here. Aim for 3–5 sentences per paragraph, with clear topic sentences and substantive detail. Write at a level appropriate for a sophisticated investment audience.</p>
+
+    <p>FILL: Second paragraph in this section. Continue developing the idea, introduce evidence or context, and transition toward the next section.</p>
+
+    <blockquote>
+      <p>FILL: Pull quote — a compelling sentence or phrase from the article that deserves emphasis. Use sparingly, maximum one per article.</p>
+    </blockquote>
+
+    <h2>FILL: Second section heading</h2>
+
+    <p>FILL: Open the second major section. Each section should advance the piece's argument and feel distinct from the previous one.</p>
+
+    <ul>
+      <li>FILL: List item — use for enumeration of key points, not as a substitute for prose</li>
+      <li>FILL: List item</li>
+      <li>FILL: List item</li>
+    </ul>
+
+    <h3>FILL: Optional subsection heading</h3>
+
+    <p>FILL: Subsection content. Use h3 sparingly — only when a section genuinely needs a sub-division.</p>
+
+    <figure>
+      <!-- FILL: Replace with inline image if needed, or remove this figure block -->
+      <img src="FILL_INLINE_IMG_SRC" alt="FILL_INLINE_IMG_ALT" width="720" height="405" />
+      <figcaption>FILL: Caption for inline image.</figcaption>
+    </figure>
+
+    <h2>FILL: Concluding section heading</h2>
+
+    <p>FILL: Concluding paragraphs. Synthesize the key insights, connect them back to the opening frame, and leave the reader with a clear takeaway. Avoid restating the entire piece — compress to the essential insight.</p>
+
+    <hr />
+
+    <p><strong>FILL: Optional closing note</strong> — e.g. a disclosure, a note on methodology, or a call to action such as linking to a related piece or inviting contact.</p>
+
+  </article>
+  <!-- BODY END ─────────────────────────────────────────────────────────── -->
+
+  <!-- FILL: Replace tags with real article tags (lowercase, no spaces — use hyphens) -->
+  <div class="art-tags" aria-label="Article tags">
+    <span class="art-tag">FILL_TAG_1</span>
+    <span class="art-tag">FILL_TAG_2</span>
+    <span class="art-tag">FILL_TAG_3</span>
+  </div>
+
+  <!-- Share section -->
+  <div class="art-share" aria-label="Share this article">
+    <span class="art-share__label">Share</span>
+    <button class="art-share-btn art-share-btn--copy" aria-label="Copy link to this article">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.7 11.3a1 1 0 010-1.4L9.6 5H7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V6.4l-4.9 4.9a1 1 0 01-1.4 0z"/></svg>
+      Copy Link
+    </button>
+    <!-- FILL: Update the href with the encoded article URL and title for LinkedIn and X -->
+    <a class="art-share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fminoritypartners.sa%2Finsights%2FFILL_SLUG" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 1a1 1 0 100 2 1 1 0 000-2zM1 4h2v8H1V4zm4 0h2v1.1c.4-.7 1.3-1.3 2.5-1.3C11.5 3.8 13 5.1 13 7.5V12h-2V8c0-1.3-.5-2-1.5-2S8 6.7 8 8v4H5V4z"/></svg>
+      LinkedIn
+    </a>
+    <a class="art-share-btn" href="https://x.com/intent/tweet?url=https%3A%2F%2Fminoritypartners.sa%2Finsights%2FFILL_SLUG&text=FILL_TITLE_ENCODED" target="_blank" rel="noopener noreferrer" aria-label="Share on X (Twitter)">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9.3 7.1L14 2h-1.2L8.8 6.3 5.5 2H2l5 7.1L2 14h1.2l4.2-4.6L10.5 14H14L9.3 7.1zm-1.4 1.6l-.5-.7L3.6 2.8h1.7l3.1 4.4.5.7 4.1 5.8h-1.7L7.9 8.7z"/></svg>
+      X
+    </a>
+  </div>
+
+  <!-- Related articles — rendered by JS -->
+  <aside class="art-related" aria-label="Related articles">
+    <p class="art-related__label">Related</p>
+    <div class="art-related__grid" id="art-related-grid"></div>
+  </aside>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="coda">
+    <div class="coda__left">
+      <span class="coda__brand" data-i18n="footer-brand">Minority Partners</span>
+      <span class="coda__copy" data-i18n="footer-copy">© 2026 — All rights reserved &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a></span>
+    </div>
+    <span class="coda__tagline" data-i18n="footer-tagline">Strategic Capital. Enduring Impact.</span>
+  </div>
+</footer>
+
+<script src="/script.js" defer></script>
+<script>
+(function () {
+  'use strict';
+
+  // ── FILL: Set current article slug and category for related articles ────
+  const CURRENT_SLUG = 'FILL_SLUG';
+  const CURRENT_CATEGORY = 'FILL_CATEGORY';
+  const CURRENT_TAGS = ['FILL_TAG_1', 'FILL_TAG_2'];
+  // ───────────────────────────────────────────────────────────────────────
+
+  // Copy link share
+  document.querySelectorAll('.art-share-btn--copy').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        btn.textContent = 'Copied!';
+        btn.classList.add('art-share-btn--copied');
+        setTimeout(function() {
+          btn.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.7 11.3a1 1 0 010-1.4L9.6 5H7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V6.4l-4.9 4.9a1 1 0 01-1.4 0z"/></svg> Copy Link';
+          btn.classList.remove('art-share-btn--copied');
+        }, 2000);
+      }).catch(function() {
+        // Clipboard API not available — silently fail
+      });
+    });
+  });
+
+  // Related articles
+  const MONTHS_EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function formatDate(dateStr) {
+    const d = new Date(dateStr + 'T00:00:00');
+    return d.getDate() + ' ' + MONTHS_EN[d.getMonth()] + ' ' + d.getFullYear();
+  }
+  const CAT_LABELS = { news:'News', analysis:'Analysis', commentary:'Commentary' };
+
+  function cardHtml(article) {
+    const href = '/insights/' + article.id;
+    const authorName = (article.author && article.author.name_en) ? article.author.name_en : '';
+    const time = article.reading_time_min ? article.reading_time_min + ' min read' : '';
+    const img = article.cover_image
+      ? '<div class="ins-card__img-wrap"><img src="' + article.cover_image + '" alt="' + (article.cover_alt_en || '') + '" loading="lazy" width="400" height="225" /></div>'
+      : '<div class="ins-card__no-img"><span class="ins-card__no-img-mark">MP</span></div>';
+    return '<a class="ins-card" href="' + href + '">' +
+      img +
+      '<div class="ins-card__body">' +
+        '<div class="ins-card__meta">' +
+          '<span class="ins-card__cat">' + (CAT_LABELS[article.category] || article.category) + '</span>' +
+          '<span class="ins-card__sep">·</span>' +
+          '<span class="ins-card__date">' + formatDate(article.date) + '</span>' +
+        '</div>' +
+        '<h3 class="ins-card__title">' + article.title_en + '</h3>' +
+        '<p class="ins-card__desc">' + (article.description_en || '') + '</p>' +
+        '<div class="ins-card__footer"><span>' + authorName + '</span><span>' + time + '</span></div>' +
+      '</div>' +
+    '</a>';
+  }
+
+  async function loadRelated() {
+    const grid = document.getElementById('art-related-grid');
+    if (!grid) return;
+    try {
+      const res = await fetch('/insights/articles.json');
+      if (!res.ok) return;
+      const data = await res.json();
+      let articles = (data.articles || []).filter(function(a) {
+        return a.id !== CURRENT_SLUG && a.has_en !== false;
+      });
+      // Score by category match and shared tags
+      articles = articles.map(function(a) {
+        let score = 0;
+        if (a.category === CURRENT_CATEGORY) score += 2;
+        if (a.tags && CURRENT_TAGS.length > 0) {
+          CURRENT_TAGS.forEach(function(tag) {
+            if (a.tags.indexOf(tag) !== -1) score += 1;
+          });
+        }
+        return { article: a, score: score };
+      });
+      articles.sort(function(a, b) {
+        if (b.score !== a.score) return b.score - a.score;
+        return new Date(b.article.date) - new Date(a.article.date);
+      });
+      const related = articles.slice(0, 3).map(function(x) { return x.article; });
+      if (related.length === 0) {
+        grid.closest('.art-related').style.display = 'none';
+        return;
+      }
+      grid.innerHTML = related.map(cardHtml).join('');
+    } catch(e) {
+      const section = grid.closest('.art-related');
+      if (section) section.style.display = 'none';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadRelated);
+})();
+</script>
+
+</body>
+</html>

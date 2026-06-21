@@ -75,6 +75,24 @@
   </url>
 
   <url>
+    <loc>https://minoritypartners.sa/insights</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoritypartners.sa/insights"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://minoritypartners.sa/ar/insights"/>
+  </url>
+
+  <url>
+    <loc>https://minoritypartners.sa/ar/insights</loc>
+    <lastmod>2026-06-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://minoritypartners.sa/ar/insights"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://minoritypartners.sa/insights"/>
+  </url>
+
+  <url>
     <loc>https://minoritypartners.sa/privacy.html</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>yearly</changefreq>

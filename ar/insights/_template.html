@@ -1,0 +1,370 @@
+<!doctype html>
+<!--
+  ════════════════════════════════════════════════════════════════════════════
+  ماينورِتي بارتنرز — قالب المقالات (عربي)
+  ════════════════════════════════════════════════════════════════════════════
+
+  قائمة مراجعة النشر — أكمل كل بند مُعلَّم بـ FILL قبل النشر:
+  □  استبدل FILL_SLUG بمعرّف المقال الفريد (مثال: "saudi-vision-infrastructure")
+  □  استبدل FILL_TITLE_AR بعنوان المقال بالعربية
+  □  استبدل FILL_DESCRIPTION_AR بملخص 140–160 حرفاً للـ SEO والـ OG
+  □  استبدل FILL_CATEGORY بواحد من: news | analysis | commentary
+  □  استبدل FILL_DATE بتاريخ ISO (YYYY-MM-DD مثال: 2026-07-01)
+  □  استبدل FILL_DATE_DISPLAY بالتاريخ بالعربية (مثال: ١ يوليو ٢٠٢٦)
+  □  استبدل FILL_AUTHOR_NAME_AR باسم الكاتب بالعربية
+  □  استبدل FILL_AUTHOR_ROLE_AR بالمسمى الوظيفي بالعربية
+  □  استبدل FILL_AUTHOR_LI_HREF برابط لينكدإن، أو احذف كتلة .art-author-li
+  □  استبدل FILL_COVER_IMG_SRC برابط صورة الغلاف
+  □  استبدل FILL_COVER_ALT_AR بوصف بديل للصورة بالعربية
+  □  استبدل FILL_COVER_CAPTION_AR بتعليق الصورة أو احذف العنصر
+  □  استبدل FILL_READ_MINUTES بوقت القراءة المُقدَّر بالدقائق
+  □  اكتب محتوى المقال بين تعليقَي BODY START و BODY END
+  □  أضف وسوم حقيقية داخل قسم .art-tags
+  □  أضف هذا المقال إلى /insights/articles.json قبل النشر
+  ════════════════════════════════════════════════════════════════════════════
+-->
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <!-- FILL: حدّث العنوان والوصف والرابط الأصلي -->
+  <title>FILL_TITLE_AR — ماينورِتي بارتنرز</title>
+  <meta name="description" content="FILL_DESCRIPTION_AR" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="FILL_AUTHOR_NAME_AR" />
+  <meta name="copyright" content="© 2026 Minority Partners" />
+  <link rel="canonical" href="https://minoritypartners.sa/ar/insights/FILL_SLUG" />
+  <link rel="alternate" hreflang="ar" href="https://minoritypartners.sa/ar/insights/FILL_SLUG" />
+  <link rel="alternate" hreflang="en" href="https://minoritypartners.sa/insights/FILL_SLUG" />
+  <link rel="alternate" hreflang="x-default" href="https://minoritypartners.sa/insights/FILL_SLUG" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://minoritypartners.sa/ar/insights/FILL_SLUG" />
+  <meta property="og:site_name" content="ماينورِتي بارتنرز" />
+  <meta property="og:title" content="FILL_TITLE_AR — ماينورِتي بارتنرز" />
+  <meta property="og:description" content="FILL_DESCRIPTION_AR" />
+  <meta property="og:image" content="FILL_COVER_IMG_SRC" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="ar_SA" />
+  <meta property="article:published_time" content="FILL_DATE" />
+  <meta property="article:author" content="FILL_AUTHOR_NAME_AR" />
+  <meta property="article:section" content="FILL_CATEGORY" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FILL_TITLE_AR — ماينورِتي بارتنرز" />
+  <meta name="twitter:description" content="FILL_DESCRIPTION_AR" />
+  <meta name="twitter:image" content="FILL_COVER_IMG_SRC" />
+
+  <meta name="theme-color" content="#ECE6DA" />
+  <meta name="color-scheme" content="light" />
+
+  <link rel="preload" href="/fonts/IBMPlexArabic-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/STIXTwoText.ttf" as="font" type="font/truetype" crossorigin />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PVJXVLFQRE"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PVJXVLFQRE');</script>
+
+  <!-- FILL: حدّث بيانات المقال في schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://minoritypartners.sa/ar/insights/FILL_SLUG",
+    "url": "https://minoritypartners.sa/ar/insights/FILL_SLUG",
+    "headline": "FILL_TITLE_AR",
+    "description": "FILL_DESCRIPTION_AR",
+    "datePublished": "FILL_DATE",
+    "dateModified": "FILL_DATE",
+    "inLanguage": "ar",
+    "image": "FILL_COVER_IMG_SRC",
+    "author": {
+      "@type": "Person",
+      "name": "FILL_AUTHOR_NAME_AR",
+      "url": "FILL_AUTHOR_LI_HREF"
+    },
+    "publisher": { "@id": "https://minoritypartners.sa/#organization" },
+    "isPartOf": { "@id": "https://minoritypartners.sa/#website" },
+    "about": { "@id": "https://minoritypartners.sa/#organization" },
+    "articleSection": "FILL_CATEGORY",
+    "keywords": ["FILL_TAG_1", "FILL_TAG_2"]
+  }
+  </script>
+</head>
+<body>
+
+<a class="skip-link" href="#art-content">تخطى للمحتوى الرئيسي</a>
+
+<header>
+  <nav class="nav" id="nav" aria-label="التنقل الرئيسي">
+    <a href="/ar/" class="wordmark" aria-label="ماينورِتي بارتنرز — العودة للرئيسية">
+      <span class="mp" aria-hidden="true">MP</span>
+      <span class="name">ماينورِتي بارتنرز</span>
+    </a>
+    <ul role="list">
+      <li><a href="/ar/#overview">نظرة عامة</a></li>
+      <li><a href="/ar/strategy.html">الاستراتيجية</a></li>
+      <li><a href="/ar/about.html">عن الشركة</a></li>
+      <li><a href="/ar/insights" class="nav-active">رؤى وتحليلات</a></li>
+      <li><a href="/ar/team.html">الفريق</a></li>
+      <li><a href="/ar/#contact">تواصل</a></li>
+    </ul>
+    <div class="nav-end">
+      <div class="meta" aria-label="تأسست 2026">
+        <span class="pulse" aria-hidden="true"></span>
+        <span>تأسست · 2026</span>
+      </div>
+      <!-- FILL: حدّث الرابط إلى /insights/FILL_SLUG -->
+      <button class="lang-toggle" onclick="localStorage.setItem('mp-lang','en'); location.href='/insights/FILL_SLUG'" aria-label="Switch to English">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main id="art-content" tabindex="-1">
+
+  <div class="art-wrap">
+
+    <a href="/ar/insights" class="art-back">
+      <span class="art-back__arrow" aria-hidden="true">→</span>
+      العودة إلى الرؤى
+    </a>
+
+    <!-- FILL: حدّث الفئة والتاريخ ووقت القراءة -->
+    <div class="art-top-meta">
+      <span class="art-cat">FILL_CATEGORY_AR</span>
+      <span class="art-sep">·</span>
+      <time datetime="FILL_DATE">FILL_DATE_DISPLAY</time>
+      <span class="art-sep">·</span>
+      <span>FILL_READ_MINUTES دقائق قراءة</span>
+    </div>
+
+    <!-- FILL: استبدل بعنوان المقال والملخص -->
+    <h1 class="art-title">FILL_TITLE_AR</h1>
+    <p class="art-subtitle">FILL_DESCRIPTION_AR</p>
+
+    <div class="art-author-row">
+      <div class="art-author-info">
+        <!-- FILL: استبدل باسم الكاتب والمسمى الوظيفي -->
+        <span class="art-author-name">FILL_AUTHOR_NAME_AR</span>
+        <span class="art-author-role">FILL_AUTHOR_ROLE_AR</span>
+      </div>
+      <!-- FILL: استبدل الرابط برابط لينكدإن أو احذف هذه الكتلة -->
+      <div class="art-author-li">
+        <a href="FILL_AUTHOR_LI_HREF" target="_blank" rel="noopener noreferrer" aria-label="FILL_AUTHOR_NAME_AR على لينكدإن">لينكدإن</a>
+      </div>
+    </div>
+
+  </div><!-- /art-wrap -->
+
+  <!-- FILL: استبدل صورة الغلاف، أو احذف هذا القسم إن لم تكن هناك صورة -->
+  <div class="art-cover-wrap">
+    <img src="FILL_COVER_IMG_SRC" alt="FILL_COVER_ALT_AR" width="900" height="506" />
+    <p class="art-cover-caption">FILL_COVER_CAPTION_AR</p>
+  </div>
+
+  <!-- BODY START ─────────────────────────────────────────────────────────── -->
+  <article class="art-body">
+
+    <!-- FILL: استبدل محتوى النص أدناه بمحتوى المقال الفعلي -->
+
+    <p>FILL: الفقرة الافتتاحية — قدّم الموضوع وأرسِ الإطار العام لما سيأتي. ينبغي أن تستقطب القارئ وتُشير إلى المحور الرئيسي للمقال أو استنتاجه الأساسي.</p>
+
+    <h2>FILL: عنوان القسم الأول</h2>
+
+    <p>FILL: فقرة متن. طوّر الفكرة الرئيسية الأولى هنا. استهدف ثلاث إلى خمس جمل لكل فقرة، مع جملة موضوعية واضحة وتفاصيل جوهرية.</p>
+
+    <p>FILL: الفقرة الثانية في هذا القسم. تابع تطوير الفكرة، وأدخل أدلة أو سياق، وانتقل تدريجياً نحو القسم التالي.</p>
+
+    <blockquote>
+      <p>FILL: اقتباس بارز — جملة أو عبارة مؤثرة من المقال تستحق التأكيد. استخدمه باعتدال، بحد أقصى اقتباس واحد لكل مقال.</p>
+    </blockquote>
+
+    <h2>FILL: عنوان القسم الثاني</h2>
+
+    <p>FILL: افتح القسم الرئيسي الثاني. ينبغي لكل قسم أن يُقدّم حجة المقال خطوةً للأمام وأن يبدو متمايزاً عن سابقه.</p>
+
+    <ul>
+      <li>FILL: عنصر القائمة — استخدمها لتعداد النقاط الرئيسية لا بديلاً عن النثر</li>
+      <li>FILL: عنصر القائمة</li>
+      <li>FILL: عنصر القائمة</li>
+    </ul>
+
+    <h3>FILL: عنوان قسم فرعي اختياري</h3>
+
+    <p>FILL: محتوى القسم الفرعي. استخدم h3 بتحفظ — فقط حين يحتاج قسم ما إلى تقسيم فرعي فعلي.</p>
+
+    <figure>
+      <!-- FILL: استبدل بصورة مضمّنة إذا لزم، أو احذف كتلة figure هذه -->
+      <img src="FILL_INLINE_IMG_SRC" alt="FILL_INLINE_IMG_ALT_AR" width="720" height="405" />
+      <figcaption>FILL: تعليق الصورة المضمّنة.</figcaption>
+    </figure>
+
+    <h2>FILL: عنوان القسم الختامي</h2>
+
+    <p>FILL: الفقرات الختامية. اجمع الرؤى الرئيسية، واربطها بالإطار الافتتاحي، واترك القارئ بخلاصة واضحة. تجنّب إعادة سرد المقال بالكامل — اضغط على الاستنتاج الجوهري.</p>
+
+    <hr />
+
+    <p><strong>FILL: ملاحظة ختامية اختيارية</strong> — مثل: إفصاح، ملاحظة منهجية، أو دعوة للتواصل مرتبطة بمقال ذي صلة.</p>
+
+  </article>
+  <!-- BODY END ─────────────────────────────────────────────────────────── -->
+
+  <!-- FILL: استبدل الوسوم بوسوم حقيقية للمقال -->
+  <div class="art-tags" aria-label="وسوم المقال">
+    <span class="art-tag">FILL_TAG_1</span>
+    <span class="art-tag">FILL_TAG_2</span>
+    <span class="art-tag">FILL_TAG_3</span>
+  </div>
+
+  <!-- قسم المشاركة -->
+  <div class="art-share" aria-label="مشاركة هذا المقال">
+    <span class="art-share__label">مشاركة</span>
+    <button class="art-share-btn art-share-btn--copy" aria-label="نسخ رابط المقال">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.7 11.3a1 1 0 010-1.4L9.6 5H7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V6.4l-4.9 4.9a1 1 0 01-1.4 0z"/></svg>
+      نسخ الرابط
+    </button>
+    <!-- FILL: حدّث الروابط بعنوان URL وعنوان المقال المشفّرَين -->
+    <a class="art-share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fminoritypartners.sa%2Far%2Finsights%2FFILL_SLUG" target="_blank" rel="noopener noreferrer" aria-label="مشاركة على لينكدإن">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 1a1 1 0 100 2 1 1 0 000-2zM1 4h2v8H1V4zm4 0h2v1.1c.4-.7 1.3-1.3 2.5-1.3C11.5 3.8 13 5.1 13 7.5V12h-2V8c0-1.3-.5-2-1.5-2S8 6.7 8 8v4H5V4z"/></svg>
+      لينكدإن
+    </a>
+    <a class="art-share-btn" href="https://x.com/intent/tweet?url=https%3A%2F%2Fminoritypartners.sa%2Far%2Finsights%2FFILL_SLUG&text=FILL_TITLE_ENCODED_AR" target="_blank" rel="noopener noreferrer" aria-label="مشاركة على X (تويتر)">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M9.3 7.1L14 2h-1.2L8.8 6.3 5.5 2H2l5 7.1L2 14h1.2l4.2-4.6L10.5 14H14L9.3 7.1zm-1.4 1.6l-.5-.7L3.6 2.8h1.7l3.1 4.4.5.7 4.1 5.8h-1.7L7.9 8.7z"/></svg>
+      X
+    </a>
+  </div>
+
+  <!-- المقالات ذات الصلة — تُعرض بواسطة JS -->
+  <aside class="art-related" aria-label="مقالات ذات صلة">
+    <p class="art-related__label">ذات صلة</p>
+    <div class="art-related__grid" id="art-related-grid"></div>
+  </aside>
+
+</main>
+
+<footer role="contentinfo">
+  <div class="coda">
+    <div class="coda__left">
+      <span class="coda__brand">ماينورِتي بارتنرز</span>
+      <span class="coda__copy">© 2026 — جميع الحقوق محفوظة &nbsp;·&nbsp; <a href="/privacy-ar.html">سياسة الخصوصية</a></span>
+    </div>
+    <span class="coda__tagline">رأس مال استراتيجي. أثرٌ مستدام.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if(e.isIntersecting){ e.target.classList.add('is-in'); obs.unobserve(e.target); } });
+  }, { rootMargin:'0px 0px -8% 0px', threshold:0.05 });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+
+  const nav = document.getElementById('nav');
+  if (nav) window.addEventListener('scroll', function() { nav.classList.toggle('is-scrolled', scrollY > 12); }, {passive:true});
+
+  // ── FILL: حدّث slug المقال الحالي وفئته ─────────────────────────────────
+  const CURRENT_SLUG = 'FILL_SLUG';
+  const CURRENT_CATEGORY = 'FILL_CATEGORY';
+  const CURRENT_TAGS = ['FILL_TAG_1', 'FILL_TAG_2'];
+  // ─────────────────────────────────────────────────────────────────────────
+
+  // نسخ الرابط
+  document.querySelectorAll('.art-share-btn--copy').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        btn.textContent = 'تم النسخ!';
+        btn.classList.add('art-share-btn--copied');
+        setTimeout(function() {
+          btn.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.7 11.3a1 1 0 010-1.4L9.6 5H7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V6.4l-4.9 4.9a1 1 0 01-1.4 0z"/></svg> نسخ الرابط';
+          btn.classList.remove('art-share-btn--copied');
+        }, 2000);
+      }).catch(function() {});
+    });
+  });
+
+  // المقالات ذات الصلة
+  const MONTHS_AR = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  function toArabicNumerals(n) {
+    return String(n).replace(/[0-9]/g, function(d) { return '٠١٢٣٤٥٦٧٨٩'[d]; });
+  }
+  function formatDateAr(dateStr) {
+    const d = new Date(dateStr + 'T00:00:00');
+    return toArabicNumerals(d.getDate()) + ' ' + MONTHS_AR[d.getMonth()] + ' ' + toArabicNumerals(d.getFullYear());
+  }
+  const CAT_LABELS_AR = { news:'أخبار', analysis:'تحليل', commentary:'رأي' };
+
+  function cardHtml(article) {
+    const href = '/ar/insights/' + article.id;
+    const authorName = (article.author && article.author.name_ar) ? article.author.name_ar : '';
+    const timeNum = article.reading_time_min;
+    const time = timeNum ? toArabicNumerals(timeNum) + ' دقائق قراءة' : '';
+    const img = article.cover_image
+      ? '<div class="ins-card__img-wrap"><img src="' + article.cover_image + '" alt="' + (article.cover_alt_ar || '') + '" loading="lazy" width="400" height="225" /></div>'
+      : '<div class="ins-card__no-img"><span class="ins-card__no-img-mark">MP</span></div>';
+    return '<a class="ins-card" href="' + href + '">' +
+      img +
+      '<div class="ins-card__body">' +
+        '<div class="ins-card__meta">' +
+          '<span class="ins-card__cat">' + (CAT_LABELS_AR[article.category] || article.category) + '</span>' +
+          '<span class="ins-card__sep">·</span>' +
+          '<span class="ins-card__date">' + formatDateAr(article.date) + '</span>' +
+        '</div>' +
+        '<h3 class="ins-card__title">' + article.title_ar + '</h3>' +
+        '<p class="ins-card__desc">' + (article.description_ar || '') + '</p>' +
+        '<div class="ins-card__footer"><span>' + authorName + '</span><span>' + time + '</span></div>' +
+      '</div>' +
+    '</a>';
+  }
+
+  async function loadRelated() {
+    const grid = document.getElementById('art-related-grid');
+    if (!grid) return;
+    try {
+      const res = await fetch('/insights/articles.json');
+      if (!res.ok) return;
+      const data = await res.json();
+      let articles = (data.articles || []).filter(function(a) {
+        return a.id !== CURRENT_SLUG && a.has_ar !== false;
+      });
+      articles = articles.map(function(a) {
+        let score = 0;
+        if (a.category === CURRENT_CATEGORY) score += 2;
+        if (a.tags && CURRENT_TAGS.length > 0) {
+          CURRENT_TAGS.forEach(function(tag) {
+            if (a.tags.indexOf(tag) !== -1) score += 1;
+          });
+        }
+        return { article: a, score: score };
+      });
+      articles.sort(function(a, b) {
+        if (b.score !== a.score) return b.score - a.score;
+        return new Date(b.article.date) - new Date(a.article.date);
+      });
+      const related = articles.slice(0, 3).map(function(x) { return x.article; });
+      if (related.length === 0) {
+        const section = grid.closest('.art-related');
+        if (section) section.style.display = 'none';
+        return;
+      }
+      grid.innerHTML = related.map(cardHtml).join('');
+    } catch(e) {
+      const section = grid.closest('.art-related');
+      if (section) section.style.display = 'none';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadRelated);
+})();
+</script>
+
+</body>
+</html>
