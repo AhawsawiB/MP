@@ -80,7 +80,7 @@
 
   <div class="ins-hub-header reveal">
     <h1>رؤى وتحليلات</h1>
-    <p class="ins-hub-header__sub">تفكير استراتيجي.<br>أخبار الشركة.<br>منظور السوق.</p>
+    <p class="ins-hub-header__sub">تفكير استراتيجي.<br>رؤى الشركاء.<br>تحليل السوق.</p>
   </div>
 
   <div id="ins-featured-slot"></div>
@@ -139,8 +139,9 @@
   function catLabelAr(cat) { return CAT_LABELS_AR[cat] || cat; }
 
   function imgHtml(article) {
-    if (article.cover_image) {
-      return '<div class="ins-card__img-wrap"><img src="' + article.cover_image + '" alt="' + (article.cover_alt_ar || '') + '" loading="lazy" width="400" height="225" /></div>';
+    var src = article.cover_image_ar || article.cover_image;
+    if (src) {
+      return '<div class="ins-card__img-wrap"><img src="' + src + '" alt="' + (article.cover_alt_ar || '') + '" loading="lazy" width="400" height="225" /></div>';
     }
     return '<div class="ins-card__no-img"><span class="ins-card__no-img-mark">MP</span></div>';
   }
@@ -170,8 +171,9 @@
     const authorName = (article.author && article.author.name_ar) ? article.author.name_ar : '';
     const timeNum = article.reading_time_min;
     const time = timeNum ? toArabicNumerals(timeNum) + ' دقائق قراءة' : '';
-    const img = article.cover_image
-      ? '<div class="ins-featured__img-wrap"><img src="' + article.cover_image + '" alt="' + (article.cover_alt_ar || '') + '" loading="eager" /></div>'
+    const src = article.cover_image_ar || article.cover_image;
+    const img = src
+      ? '<div class="ins-featured__img-wrap"><img src="' + src + '" alt="' + (article.cover_alt_ar || '') + '" loading="eager" /></div>'
       : '';
     return '<div class="ins-featured"><div class="ins-featured__inner">' +
       '<a href="' + href + '">' +

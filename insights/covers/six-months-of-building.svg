@@ -1,17 +1,73 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#151BB5"/>
-      <stop offset="100%" style="stop-color:#0C1080"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect x="0" y="0" width="1200" height="630" fill="#151BB5" opacity="0.15"/>
-  <rect x="80" y="500" width="1040" height="1" fill="#ECE6DA" opacity="0.12"/>
-  <text x="80" y="104" font-family="Georgia, 'Times New Roman', serif" font-size="60" font-weight="500" fill="#ECE6DA" opacity="0.95" letter-spacing="-1">MP</text>
-  <rect x="80" y="130" width="40" height="1.5" fill="#ECE6DA" opacity="0.35"/>
-  <text x="80" y="310" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="400" fill="#ECE6DA" letter-spacing="-2">Six Months of</text>
-  <text x="80" y="385" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="400" fill="#ECE6DA" letter-spacing="-2">Building Before</text>
-  <text x="80" y="460" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="400" fill="#ECE6DA" letter-spacing="-2">Launching</text>
-  <text x="80" y="568" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#ECE6DA" opacity="0.45" letter-spacing="3.5">MINORITY PARTNERS · JULY 2026</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Minority Partners — Six Months of Building Before Launching">
+
+  <!-- Background: bone -->
+  <rect width="1200" height="630" fill="#ECE6DA"/>
+
+  <!-- Grid lines at 12.5% intervals (mirrors hero section pattern) -->
+  <line x1="150"  y1="0" x2="150"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.055"/>
+  <line x1="300"  y1="0" x2="300"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.055"/>
+  <line x1="450"  y1="0" x2="450"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.055"/>
+  <line x1="600"  y1="0" x2="600"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.055"/>
+  <line x1="750"  y1="0" x2="750"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.055"/>
+  <line x1="900"  y1="0" x2="900"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.055"/>
+  <line x1="1050" y1="0" x2="1050" y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.055"/>
+
+  <!-- Outer rules top and bottom -->
+  <line x1="0" y1="0"   x2="1200" y2="0"   stroke="#0E0E10" stroke-width="1" opacity="0.14"/>
+  <line x1="0" y1="629" x2="1200" y2="629" stroke="#0E0E10" stroke-width="1" opacity="0.14"/>
+
+  <!-- Cobalt left accent bar -->
+  <rect x="64" y="52" width="2" height="76" fill="#151BB5"/>
+
+  <!-- MP monogram -->
+  <text x="80" y="78"
+        font-family="Georgia, 'Times New Roman', Times, serif"
+        font-size="24" fill="#151BB5" letter-spacing="5">MP</text>
+
+  <!-- Brand name -->
+  <text x="80" y="108"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="9" fill="#6E6961" letter-spacing="3">MINORITY PARTNERS</text>
+
+  <!-- Category · date · read time -->
+  <text x="64" y="176"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="10" fill="#6E6961" letter-spacing="2.5">COMMENTARY  ·  1 JULY 2026  ·  3 MIN READ</text>
+
+  <!-- Short accent rule below category -->
+  <line x1="64" y1="192" x2="256" y2="192" stroke="#0E0E10" stroke-width="1" opacity="0.18"/>
+
+  <!-- Article title line 1 -->
+  <text x="64" y="278"
+        font-family="Georgia, 'Times New Roman', Times, serif"
+        font-size="58" font-weight="400" fill="#0E0E10" letter-spacing="-1.5">Six Months of Building</text>
+
+  <!-- Article title line 2 — italic -->
+  <text x="64" y="348"
+        font-family="Georgia, 'Times New Roman', Times, serif"
+        font-size="58" font-style="italic" font-weight="400" fill="#0E0E10" letter-spacing="-1.5">Before Launching</text>
+
+  <!-- Description line 1 -->
+  <text x="64" y="414"
+        font-family="Georgia, 'Times New Roman', Times, serif"
+        font-size="17" fill="#1A1A1D" opacity="0.68">Minority Partners was founded in Madinah in January 2026.</text>
+
+  <!-- Description line 2 -->
+  <text x="64" y="440"
+        font-family="Georgia, 'Times New Roman', Times, serif"
+        font-size="17" fill="#1A1A1D" opacity="0.68">The first half — building the thesis before deploying a single riyal.</text>
+
+  <!-- Footer rule -->
+  <line x1="0" y1="548" x2="1200" y2="548" stroke="#0E0E10" stroke-width="1" opacity="0.1"/>
+
+  <!-- Author — left -->
+  <text x="64" y="586"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="9" fill="#6E6961" letter-spacing="2.5">ABDULMAJEED ALTURKI  ·  MANAGING PARTNER</text>
+
+  <!-- Brand — right -->
+  <text x="1136" y="586"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-size="9" fill="#6E6961" letter-spacing="2.5" text-anchor="end">MINORITY PARTNERS  ·  2026</text>
+
 </svg>

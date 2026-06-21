@@ -13,8 +13,9 @@
       "has_en": true,
       "has_ar": true,
       "cover_image": "/insights/covers/six-months-of-building.svg",
-      "cover_alt_en": "Deep blue gradient with Minority Partners brand color",
-      "cover_alt_ar": "تدرج أزرق داكن بألوان ماينورتي بارتنرز",
+      "cover_image_ar": "/insights/covers/six-months-of-building-ar.svg",
+      "cover_alt_en": "Minority Partners article cover — Six Months of Building Before Launching",
+      "cover_alt_ar": "غلاف مقال ماينورتي بارتنرز — ستة أشهر من البناء الهادئ",
       "tags": ["founding", "strategy", "investment-platform", "saudi-arabia", "madinah"],
       "author": {
         "name_en": "Abdulmajeed AlTurki",
