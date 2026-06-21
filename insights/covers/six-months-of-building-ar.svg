@@ -1,73 +1,79 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="ماينورتي بارتنرز — ستة أشهر من البناء الهادئ">
 
-  <!-- Background: ink — different from EN cobalt, mirrors philosophy section -->
-  <rect width="1200" height="630" fill="#0E0E10"/>
+  <!-- Background: identical to EN cover — same brand shade, different from site bone -->
+  <rect width="1200" height="630" fill="#E2DAC9"/>
 
-  <!-- Vertical grid lines -->
-  <line x1="150"  y1="0" x2="150"  y2="630" stroke="#ECE6DA" stroke-width="1" opacity="0.05"/>
-  <line x1="300"  y1="0" x2="300"  y2="630" stroke="#ECE6DA" stroke-width="1" opacity="0.05"/>
-  <line x1="450"  y1="0" x2="450"  y2="630" stroke="#ECE6DA" stroke-width="1" opacity="0.05"/>
-  <line x1="600"  y1="0" x2="600"  y2="630" stroke="#ECE6DA" stroke-width="1" opacity="0.05"/>
-  <line x1="750"  y1="0" x2="750"  y2="630" stroke="#ECE6DA" stroke-width="1" opacity="0.05"/>
-  <line x1="900"  y1="0" x2="900"  y2="630" stroke="#ECE6DA" stroke-width="1" opacity="0.05"/>
-  <line x1="1050" y1="0" x2="1050" y2="630" stroke="#ECE6DA" stroke-width="1" opacity="0.05"/>
+  <!-- Grid — vertical lines (identical to EN) -->
+  <line x1="150"  y1="0" x2="150"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
+  <line x1="300"  y1="0" x2="300"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
+  <line x1="450"  y1="0" x2="450"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
+  <line x1="600"  y1="0" x2="600"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
+  <line x1="750"  y1="0" x2="750"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
+  <line x1="900"  y1="0" x2="900"  y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
+  <line x1="1050" y1="0" x2="1050" y2="630" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
 
-  <!-- Top / bottom rules -->
-  <line x1="0" y1="0"   x2="1200" y2="0"   stroke="#ECE6DA" stroke-width="1" opacity="0.14"/>
-  <line x1="0" y1="629" x2="1200" y2="629" stroke="#ECE6DA" stroke-width="1" opacity="0.14"/>
+  <!-- Grid — horizontal lines (identical to EN) -->
+  <line x1="0" y1="90"  x2="1200" y2="90"  stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
+  <line x1="0" y1="180" x2="1200" y2="180" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
+  <line x1="0" y1="270" x2="1200" y2="270" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
+  <line x1="0" y1="360" x2="1200" y2="360" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
+  <line x1="0" y1="450" x2="1200" y2="450" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
+  <line x1="0" y1="540" x2="1200" y2="540" stroke="#0E0E10" stroke-width="1" opacity="0.06"/>
 
-  <!-- Cobalt right-side accent bar (RTL: accent on right) -->
-  <rect x="1133" y="0" width="3" height="630" fill="#151BB5"/>
+  <!-- Outer border (identical to EN) -->
+  <rect width="1200" height="630" fill="none" stroke="#0E0E10" stroke-width="1" opacity="0.14"/>
 
-  <!-- Ring glyph — upper LEFT (RTL mirror of EN's upper right) -->
-  <circle cx="140" cy="210" r="112" stroke="#151BB5" stroke-width="1" fill="none" opacity="0.18"/>
-  <circle cx="140" cy="210" r="54"  stroke="#151BB5" stroke-width="1.5" fill="none" opacity="0.28"/>
+  <!-- Decorative circles — upper LEFT (RTL mirror of EN's upper right) -->
+  <circle cx="140" cy="195" r="112" stroke="#0E0E10" stroke-width="1" fill="none" opacity="0.07"/>
+  <circle cx="140" cy="195" r="55"  stroke="#0E0E10" stroke-width="1" fill="none" opacity="0.11"/>
 
-  <!-- MP monogram — top right (RTL) -->
-  <text x="1118" y="84"
+  <!-- Header rule (identical to EN) -->
+  <line x1="64" y1="128" x2="1136" y2="128" stroke="#0E0E10" stroke-width="1" opacity="0.20"/>
+
+  <!-- MP monogram — top RIGHT (RTL mirror of EN's top left) -->
+  <text x="1136" y="72"
         font-family="Georgia, 'Times New Roman', Times, serif"
-        font-size="26" fill="#151BB5" letter-spacing="6" text-anchor="end">MP</text>
+        font-size="22" font-weight="400" fill="#0E0E10" letter-spacing="4" text-anchor="end">MP</text>
 
-  <!-- Brand name — right -->
-  <text x="1118" y="112"
+  <!-- Brand · location — right aligned -->
+  <text x="1136" y="100"
         font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
-        font-size="9" fill="#B9B2A5" letter-spacing="3" text-anchor="end">MINORITY PARTNERS</text>
+        font-size="9" fill="#0E0E10" opacity="0.42" letter-spacing="2.8" text-anchor="end">MINORITY PARTNERS  ·  MADINAH</text>
 
-  <!-- Full-width rule -->
-  <line x1="0" y1="140" x2="1200" y2="140" stroke="#ECE6DA" stroke-width="1" opacity="0.1"/>
-
-  <!-- Category · date in Arabic, right-aligned -->
-  <text x="1118" y="178"
+  <!-- Category · date · read time — Arabic, right aligned -->
+  <text x="1136" y="162"
         font-family="'Simplified Arabic', 'Geeza Pro', Arial, sans-serif"
-        font-size="13" fill="#B9B2A5" text-anchor="end" direction="rtl">رأي  ·  ١ يوليو ٢٠٢٦  ·  ٣ دقائق</text>
+        font-size="13" fill="#0E0E10" opacity="0.48" text-anchor="end" direction="rtl">رأي  ·  ١ يوليو ٢٠٢٦  ·  ٣ دقائق قراءة</text>
 
-  <!-- Arabic title -->
-  <text x="1118" y="276"
+  <!-- Title line 1 — ink, right aligned -->
+  <text x="1136" y="278"
         font-family="'Simplified Arabic', 'Geeza Pro', Arial, sans-serif"
-        font-size="52" fill="#ECE6DA" text-anchor="end" direction="rtl">ستة أشهر من البناء الهادئ</text>
+        font-size="62" font-weight="400" fill="#0E0E10" text-anchor="end" direction="rtl">ستة أشهر من</text>
 
-  <!-- Cobalt accent line below title -->
-  <line x1="64" y1="308" x2="1118" y2="308" stroke="#151BB5" stroke-width="1" opacity="0.45"/>
-
-  <!-- Arabic description -->
-  <text x="1118" y="360"
+  <!-- Title line 2 — cobalt (mirrors EN's cobalt italic second line) -->
+  <text x="1136" y="356"
         font-family="'Simplified Arabic', 'Geeza Pro', Arial, sans-serif"
-        font-size="17" fill="#ECE6DA" text-anchor="end" direction="rtl" opacity="0.62">انطلقت ماينورتي بارتنرز من المدينة المنورة في يناير ٢٠٢٦.</text>
-  <text x="1118" y="386"
+        font-size="62" font-weight="400" fill="#151BB5" text-anchor="end" direction="rtl">البناء الهادئ</text>
+
+  <!-- Description — Arabic, right aligned -->
+  <text x="1136" y="416"
         font-family="'Simplified Arabic', 'Geeza Pro', Arial, sans-serif"
-        font-size="17" fill="#ECE6DA" text-anchor="end" direction="rtl" opacity="0.62">النصف الأول — تأسيس حقيقي قبل توظيف أي ريال.</text>
-
-  <!-- Footer rule -->
-  <line x1="0" y1="548" x2="1200" y2="548" stroke="#ECE6DA" stroke-width="1" opacity="0.08"/>
-
-  <!-- Author right -->
-  <text x="1118" y="586"
+        font-size="17" fill="#0E0E10" opacity="0.52" text-anchor="end" direction="rtl">انطلقت ماينورتي بارتنرز من المدينة المنورة في يناير ٢٠٢٦.</text>
+  <text x="1136" y="442"
         font-family="'Simplified Arabic', 'Geeza Pro', Arial, sans-serif"
-        font-size="11" fill="#B9B2A5" text-anchor="end" direction="rtl">عبدالمجيد التركي  ·  شريك إداري</text>
+        font-size="17" fill="#0E0E10" opacity="0.52" text-anchor="end" direction="rtl">ستة أشهر من البناء الحقيقي — قبل توظيف أي ريال.</text>
 
-  <!-- Year left -->
-  <text x="64" y="586"
+  <!-- Footer rule (identical to EN) -->
+  <line x1="64" y1="550" x2="1136" y2="550" stroke="#0E0E10" stroke-width="1" opacity="0.20"/>
+
+  <!-- Author — right (RTL: name on the reading-start side) -->
+  <text x="1136" y="588"
+        font-family="'Simplified Arabic', 'Geeza Pro', Arial, sans-serif"
+        font-size="11" fill="#0E0E10" opacity="0.38" text-anchor="end" direction="rtl">عبدالمجيد التركي  ·  شريك إداري</text>
+
+  <!-- Year — left (opposite corner from author, same as EN's right-corner year) -->
+  <text x="64" y="588"
         font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
-        font-size="9" fill="#6E6961" letter-spacing="2.5">2026</text>
+        font-size="9" fill="#0E0E10" opacity="0.38" letter-spacing="2.5">2026</text>
 
 </svg>
