@@ -14,6 +14,8 @@
       "has_ar": true,
       "cover_image": "/insights/covers/six-months-of-building.svg",
       "cover_image_ar": "/insights/covers/six-months-of-building-ar.svg",
+      "cover_og": "/insights/covers/six-months-of-building.png",
+      "cover_og_ar": "/insights/covers/six-months-of-building-ar.png",
       "cover_alt_en": "Minority Partners article cover — The Foundation Was Not Built in Six Months",
       "cover_alt_ar": "غلاف مقال ماينورتي بارتنرز — الأساس لم يُبنَ في ستة أشهر",
       "tags": ["founding", "strategy", "investment-platform", "saudi-arabia", "madinah"],
