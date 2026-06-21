@@ -430,8 +430,9 @@
     var timeNum = article.reading_time_min;
     var time = timeNum ? toArabicNumerals(timeNum) + ' دقائق قراءة' : '';
     var altText = article.cover_alt_ar || '';
-    var img = article.cover_image
-      ? '<div class="ins-card__img-wrap"><img src="' + article.cover_image + '" alt="' + altText + '" loading="lazy" width="400" height="225"/></div>'
+    var imgSrc = article.cover_image_ar || article.cover_image;
+    var img = imgSrc
+      ? '<div class="ins-card__img-wrap"><img src="' + imgSrc + '" alt="' + altText + '" loading="lazy" width="400" height="225"/></div>'
       : '<div class="ins-card__no-img"><span class="ins-card__no-img-mark">MP</span></div>';
     var catLabel = CAT_LABELS_AR[article.category] || article.category;
     return '<a class="ins-card" href="' + href + '">' +
