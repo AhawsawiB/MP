@@ -260,8 +260,9 @@
     const gridArticles = featured ? allArticles.filter(function (a) { return a.id !== featured.id; }) : allArticles;
 
     // أضف المقال المميز مرة واحدة
-    if (featured) {
-      document.getElementById('ins-featured-slot').innerHTML = featuredHtml(featured);
+    const featSlotInit = document.getElementById('ins-featured-slot');
+    if (featured && featSlotInit) {
+      featSlotInit.innerHTML = featuredHtml(featured);
     }
 
     // مستمعو نقر التبويبات

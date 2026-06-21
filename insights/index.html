@@ -79,7 +79,7 @@
 
 <main id="ins-content" tabindex="-1">
 
-  <div class="ins-hub-header reveal">
+  <div class="ins-hub-header">
     <h1>Insights</h1>
     <p class="ins-hub-header__sub">Strategic thinking.<br>Partners' perspective.<br>Market intelligence.</p>
   </div>
@@ -245,8 +245,9 @@
     const gridArticles = featured ? allArticles.filter(function (a) { return a.id !== featured.id; }) : allArticles;
 
     // Inject featured HTML once
-    if (featured) {
-      document.getElementById('ins-featured-slot').innerHTML = featuredHtml(featured);
+    const featSlotInit = document.getElementById('ins-featured-slot');
+    if (featured && featSlotInit) {
+      featSlotInit.innerHTML = featuredHtml(featured);
     }
 
     // Tab click handlers
