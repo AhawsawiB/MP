@@ -635,8 +635,9 @@
     var desc = isAr ? article.description_ar : article.description_en;
     var author = isAr ? ((article.author && article.author.name_ar) || '') : ((article.author && article.author.name_en) || '');
     var altText = isAr ? (article.cover_alt_ar || '') : (article.cover_alt_en || '');
-    var img = article.cover_image
-      ? '<div class="ins-card__img-wrap"><img src="' + article.cover_image + '" alt="' + altText + '" loading="lazy" width="400" height="225"/></div>'
+    var imgSrc = isAr ? (article.cover_image_ar || article.cover_image) : article.cover_image;
+    var img = imgSrc
+      ? '<div class="ins-card__img-wrap"><img src="' + imgSrc + '" alt="' + altText + '" loading="lazy" width="400" height="225"/></div>'
       : '<div class="ins-card__no-img"><span class="ins-card__no-img-mark">MP</span></div>';
     var catLabel = (isAr ? CAT_LABELS_AR : CAT_LABELS)[article.category] || article.category;
     var date = isAr
