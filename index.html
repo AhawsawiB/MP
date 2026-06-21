@@ -10,9 +10,9 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://minoritypartners.sa/" />
 
-  <!-- ── Hreflang: bilingual single-page ──────────────────────────────── -->
-  <link rel="alternate" hreflang="en"       href="https://minoritypartners.sa/" />
-  <link rel="alternate" hreflang="ar"       href="https://minoritypartners.sa/" />
+  <!-- ── Hreflang: bilingual ──────────────────────────────────────────── -->
+  <link rel="alternate" hreflang="en"        href="https://minoritypartners.sa/" />
+  <link rel="alternate" hreflang="ar"        href="https://minoritypartners.sa/ar/" />
   <link rel="alternate" hreflang="x-default" href="https://minoritypartners.sa/" />
 
   <!-- ── Open Graph / Social ─────────────────────────────────────────── -->
@@ -88,31 +88,42 @@
       "name": "Minority Partners",
       "legalName": "Minority Partners LLC",
       "alternateName": ["MP", "ماينورِتي بارتنرز"],
-      "description": "Minority Partners is a strategic investment and partnerships platform that deploys patient capital through minority value-chain investments, public-private partnerships and BOT urban development models, and bridge investments connecting emerging markets with institutional capital. Headquartered in Madinah, Saudi Arabia.",
+      "description": "Minority Partners is a Saudi Arabia-headquartered strategic investment platform founded in 2026, operating across three disciplines: Value Creation Investments for strategic minority equity positions, Urban & Infrastructure Partnerships for public-private development initiatives, and Bridge Investments for cross-border emerging market connectivity.",
       "foundingDate": "2026",
       "url": "https://minoritypartners.sa/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://minoritypartners.sa/assets/minority-partners-logo.png"
-      },
+      "logo": "https://minoritypartners.sa/assets/og-cover.png",
       "image": "https://minoritypartners.sa/assets/og-cover.png",
       "email": "contact@minoritypartners.sa",
-      "sameAs": [
-        "https://www.linkedin.com/company/minoritypartners/"
-      ],
+      "sameAs": ["https://www.linkedin.com/company/minoritypartners/"],
       "areaServed": "Worldwide",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Madinah",
+        "addressRegion": "Madinah Region",
+        "addressCountry": "SA"
+      },
+      "location": [
+        { "@type": "Place", "name": "Madinah — Headquarters", "address": { "@type": "PostalAddress", "addressLocality": "Madinah", "addressCountry": "SA" } },
+        { "@type": "Place", "name": "Abu Dhabi — Offshore Office", "address": { "@type": "PostalAddress", "addressLocality": "Abu Dhabi", "addressCountry": "AE" } },
+        { "@type": "Place", "name": "Horn of Africa — Market Development Office", "address": { "@type": "PostalAddress", "addressRegion": "Horn of Africa" } }
+      ],
+      "founder": [
+        { "@type": "Person", "name": "Abdulmajeed AlTurki", "jobTitle": "Managing Partner", "sameAs": "https://www.linkedin.com/in/abdulmajeed-alturki-48b740153" },
+        { "@type": "Person", "name": "Abdullah AlHawsawi", "jobTitle": "Partner & Strategy", "sameAs": "https://www.linkedin.com/in/ahawsawib" }
+      ],
+      "employee": [
+        { "@type": "Person", "name": "Shouq AlSaedi", "jobTitle": "Partner & Investment", "sameAs": "https://www.linkedin.com/in/shouq-alsaedi" },
+        { "@type": "Person", "name": "Majed bin Tunbak", "jobTitle": "Partner & Development", "sameAs": "https://www.linkedin.com/in/majedbintenback" },
+        { "@type": "Person", "name": "Jana AlHazmi", "jobTitle": "Executive Assistant" }
+      ],
+      "numberOfEmployees": { "@type": "QuantitativeValue", "value": 5 },
       "knowsAbout": [
-        "Strategic Investment",
-        "Minority Investments",
-        "Value-Chain Investments",
-        "Urban Infrastructure Development",
+        "Strategic Minority Investments",
         "Public-Private Partnerships",
-        "BOT Models",
-        "Bridge Investments",
-        "Cross-Market Investments",
-        "Patient Capital",
+        "Urban Infrastructure Development",
+        "Cross-Border Bridge Investments",
         "Emerging Markets",
-        "Private Capital"
+        "Saudi Vision 2030"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
@@ -120,39 +131,52 @@
         "contactType": "Business Inquiries",
         "availableLanguage": [
           { "@type": "Language", "name": "English", "alternateName": "en" },
-          { "@type": "Language", "name": "Arabic",  "alternateName": "ar" }
+          { "@type": "Language", "name": "Arabic", "alternateName": "ar" }
         ]
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Madinah",
-        "addressCountry": "SA"
-      },
-      "location": [
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
         {
-          "@type": "Place",
-          "name": "Madinah — Headquarters",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Madinah",
-            "addressCountry": "SA"
+          "@type": "Question",
+          "name": "What is Minority Partners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Minority Partners is a strategic investment and partnerships platform headquartered in Saudi Arabia. It deploys capital through three disciplines: Value Creation Investments (strategic minority equity stakes), Urban & Infrastructure partnerships (PPP and greenfield initiatives), and Bridge Investments (cross-border emerging market connectivity)."
           }
         },
         {
-          "@type": "Place",
-          "name": "Abu Dhabi — Offshore Office",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Abu Dhabi",
-            "addressCountry": "AE"
+          "@type": "Question",
+          "name": "Where is Minority Partners based?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Minority Partners is headquartered in Madinah, Saudi Arabia, with an offshore entity in Abu Dhabi and a market development office in the Horn of Africa."
           }
         },
         {
-          "@type": "Place",
-          "name": "Horn of Africa — Market Development Office",
-          "address": {
-            "@type": "PostalAddress",
-            "addressRegion": "Horn of Africa"
+          "@type": "Question",
+          "name": "What is the investment horizon of Minority Partners?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Minority Partners operates on a generational investment horizon of 10 to 25 years, focusing on long-term value creation rather than short-cycle returns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of investments does Minority Partners make?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Minority Partners invests through three platforms: Value Creation Investments for strategic minority stakes across aligned value chains, Urban and Infrastructure Investments for public-private partnerships and infrastructure transformation, and Bridge Investments for cross-market capital flows connecting mature and frontier economies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Minority Partners take controlling positions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Minority Partners exclusively pursues minority investment positions, partnering alongside founders, operators, and institutional co-investors. The firm's model is built on strategic alignment and governance influence rather than operational control."
           }
         }
       ]
@@ -176,7 +200,7 @@
     <ul role="list">
       <li><a href="#overview" data-i18n="nav-overview">Overview</a></li>
       <li><a href="#strategy" data-i18n="nav-strategy">Strategy</a></li>
-      <li><a href="#approach" data-i18n="nav-approach">Approach</a></li>
+      <li><a href="/about.html" data-i18n="nav-about">About</a></li>
       <li><a href="#team" data-i18n="nav-team">The Team</a></li>
       <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
     </ul>
@@ -360,6 +384,49 @@
       Filed under Investment Philosophy<br>
       Vol. I &nbsp;·&nbsp; § II
     </div>
+  </div>
+
+</section>
+
+<div class="rule" role="separator" aria-hidden="true"></div>
+
+<!-- ── FAQ ─────────────────────────────────────────────────────────────── -->
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+
+  <div class="section-head reveal">
+    <div class="idx">
+      <span id="faq-heading" data-i18n="faq-label">FAQ</span>
+    </div>
+    <p class="eyebrow head-eyebrow" data-i18n="faq-eyebrow">Frequently asked questions</p>
+  </div>
+
+  <div class="faq-list reveal" style="--rd:120ms;">
+
+    <details class="faq-item">
+      <summary data-i18n="faq-q1">What is Minority Partners?</summary>
+      <p data-i18n="faq-a1">Minority Partners is a strategic investment and partnerships platform headquartered in Saudi Arabia. It deploys capital through three disciplines: Value Creation Investments (strategic minority equity stakes), Urban &amp; Infrastructure partnerships (PPP and greenfield initiatives), and Bridge Investments (cross-border emerging market connectivity).</p>
+    </details>
+
+    <details class="faq-item">
+      <summary data-i18n="faq-q2">Where is Minority Partners based?</summary>
+      <p data-i18n="faq-a2">Minority Partners is headquartered in Madinah, Saudi Arabia, with an offshore entity in Abu Dhabi and a market development office in the Horn of Africa.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary data-i18n="faq-q3">What is the investment horizon of Minority Partners?</summary>
+      <p data-i18n="faq-a3">Minority Partners operates on a generational investment horizon of 10 to 25 years, focusing on long-term value creation rather than short-cycle returns.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary data-i18n="faq-q4">What types of investments does Minority Partners make?</summary>
+      <p data-i18n="faq-a4">Minority Partners invests through three platforms: Value Creation Investments for strategic minority stakes across aligned value chains, Urban and Infrastructure Investments for public-private partnerships and infrastructure transformation, and Bridge Investments for cross-market capital flows connecting mature and frontier economies.</p>
+    </details>
+
+    <details class="faq-item">
+      <summary data-i18n="faq-q5">Does Minority Partners take controlling positions?</summary>
+      <p data-i18n="faq-a5">No. Minority Partners exclusively pursues minority investment positions, partnering alongside founders, operators, and institutional co-investors. The firm's model is built on strategic alignment and governance influence rather than operational control.</p>
+    </details>
+
   </div>
 
 </section>

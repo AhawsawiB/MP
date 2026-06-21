@@ -66,7 +66,7 @@
       'nav-established':    'Established · 2026',
       'nav-overview':       'Overview',
       'nav-strategy':       'Strategy',
-      'nav-approach':       'Approach',
+      'nav-about':          'About',
       'nav-team':           'The Team',
       'nav-contact':        'Contact',
 
@@ -156,6 +156,19 @@
       'footer-brand':       'Minority Partners',
       'footer-copy':        '© 2026 — All rights reserved  ·  <a href="/privacy.html">Privacy Policy</a>',
       'footer-tagline':     'Strategic Capital. Enduring Impact.',
+
+      'faq-label':          'FAQ',
+      'faq-eyebrow':        'Frequently asked questions',
+      'faq-q1':             'What is Minority Partners?',
+      'faq-a1':             'Minority Partners is a strategic investment and partnerships platform headquartered in Saudi Arabia. It deploys capital through three disciplines: Value Creation Investments (strategic minority equity stakes), Urban &amp; Infrastructure partnerships (PPP and greenfield initiatives), and Bridge Investments (cross-border emerging market connectivity).',
+      'faq-q2':             'Where is Minority Partners based?',
+      'faq-a2':             'Minority Partners is headquartered in Madinah, Saudi Arabia, with an offshore entity in Abu Dhabi and a market development office in the Horn of Africa.',
+      'faq-q3':             'What is the investment horizon of Minority Partners?',
+      'faq-a3':             'Minority Partners operates on a generational investment horizon of 10 to 25 years, focusing on long-term value creation rather than short-cycle returns.',
+      'faq-q4':             'What types of investments does Minority Partners make?',
+      'faq-a4':             'Minority Partners invests through three platforms: Value Creation Investments for strategic minority stakes across aligned value chains, Urban and Infrastructure Investments for public-private partnerships and infrastructure transformation, and Bridge Investments for cross-market capital flows connecting mature and frontier economies.',
+      'faq-q5':             'Does Minority Partners take controlling positions?',
+      "faq-a5":             "No. Minority Partners exclusively pursues minority investment positions, partnering alongside founders, operators, and institutional co-investors. The firm's model is built on strategic alignment and governance influence rather than operational control.",
     },
 
     ar: {
@@ -164,7 +177,7 @@
       'nav-established':    'تأسست · 2026',
       'nav-overview':       'نظرة عامة',
       'nav-strategy':       'الاستراتيجية',
-      'nav-approach':       'منهجنا',
+      'nav-about':          'عن الشركة',
       'nav-team':           'الفريق',
       'nav-contact':        'تواصل',
 
@@ -254,6 +267,19 @@
       'footer-brand':       'ماينورِتي بارتنرز',
       'footer-copy':        '© 2026 — جميع الحقوق محفوظة  ·  <a href="/privacy-ar.html">سياسة الخصوصية</a>',
       'footer-tagline':     'رأس مال استراتيجي. أثرٌ مستدام.',
+
+      'faq-label':          'أسئلة شائعة',
+      'faq-eyebrow':        'أسئلة متكررة',
+      'faq-q1':             'ما هي ماينورِتي بارتنرز؟',
+      'faq-a1':             'ماينورِتي بارتنرز منصة استثمار وشراكات استراتيجية مقرها المملكة العربية السعودية، تعمل عبر ثلاثة مسارات: استثمارات خلق القيمة (حصص أقلية استراتيجية)، وشراكات التطوير الحضري والبنية التحتية (PPP ومشاريع تأسيسية)، والاستثمارات العابرة للأسواق (ربط الأسواق الناشئة برأس المال الدولي).',
+      'faq-q2':             'أين مقر ماينورِتي بارتنرز؟',
+      'faq-a2':             'مقر ماينورِتي بارتنرز الرئيسي في المدينة المنورة بالمملكة العربية السعودية، مع كيان خارجي في أبوظبي ومكتب تطوير أسواق في القرن الأفريقي.',
+      'faq-q3':             'ما هو أفق الاستثمار في ماينورِتي بارتنرز؟',
+      'faq-a3':             'تعمل ماينورِتي بارتنرز وفق أفق استثماري ممتد من 10 إلى 25 سنة، مع تركيز على خلق القيمة طويلة الأمد بدلاً من عوائد الدورات القصيرة.',
+      'faq-q4':             'ما أنواع الاستثمارات التي تُنفذها ماينورِتي بارتنرز؟',
+      'faq-a4':             'تستثمر ماينورِتي بارتنرز عبر ثلاث منصات: استثمارات خلق القيمة لحصص الأقلية الاستراتيجية، واستثمارات التطوير الحضري والبنية التحتية للشراكات بين القطاعين العام والخاص، والاستثمارات العابرة للأسواق لربط الاقتصادات الناضجة والناشئة.',
+      'faq-q5':             'هل تأخذ ماينورِتي بارتنرز حصصاً مسيطرة؟',
+      "faq-a5":             'لا. تسعى ماينورِتي بارتنرز حصراً إلى مراكز استثمارية أقلية، بالشراكة مع المؤسسين والمشغّلين والمستثمرين المؤسسيين. يقوم نموذج الشركة على التوافق الاستراتيجي والتأثير في الحوكمة، لا على السيطرة التشغيلية.',
     }
   };
 
