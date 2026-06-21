@@ -1284,6 +1284,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(12px, 1.5vw, 20px);
+  text-align: center;
 }
 .ins-hub-header h1 {
   font-family: var(--serif);
@@ -1865,18 +1866,14 @@ footer {
 
 /* ── RTL: Insights hub ────────────────────────────────────────────────────── */
 
-/* Hub header — Arabic centers text; EN stays left-aligned by default */
-[dir="rtl"] .ins-hub-header { text-align: center; }
 [dir="rtl"] .ins-hub-header h1 {
   font-family: var(--ar-font);
   letter-spacing: 0;
-  text-align: center;
   line-height: 1.1;
 }
 [dir="rtl"] .ins-hub-header__sub {
   font-family: var(--ar-font);
   letter-spacing: 0;
-  text-align: center;
 }
 
 /* Featured strip */
