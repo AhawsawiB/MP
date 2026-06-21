@@ -83,18 +83,21 @@
     <p class="ins-hub-header__sub">تفكير استراتيجي.<br>رؤى الشركاء.<br>تحليل السوق.</p>
   </div>
 
+  <!-- المقال المميز — يظهر فقط عند اختيار "الكل" -->
   <div id="ins-featured-slot"></div>
 
+  <!-- تبويبات التصنيف -->
   <div class="ins-filters" role="tablist" aria-label="تصفية المقالات حسب الفئة">
-    <button class="ins-filter-tab" role="tab" aria-selected="true" data-cat="all">الكل</button>
+    <button class="ins-filter-tab" role="tab" aria-selected="true"  data-cat="all">الكل</button>
     <button class="ins-filter-tab" role="tab" aria-selected="false" data-cat="news">أخبار</button>
     <button class="ins-filter-tab" role="tab" aria-selected="false" data-cat="analysis">تحليل</button>
     <button class="ins-filter-tab" role="tab" aria-selected="false" data-cat="commentary">رأي</button>
   </div>
 
+  <!-- شبكة المقالات -->
   <section class="ins-section" id="ins-grid-section">
     <div class="ins-grid" id="ins-grid" role="list"></div>
-    <div class="ins-empty" id="ins-empty" aria-live="polite">
+    <div class="ins-empty" id="ins-empty" aria-live="polite" style="display:none">
       <p class="ins-empty__text">رؤى جديدة قريباً.</p>
     </div>
   </section>
@@ -116,78 +119,123 @@
   'use strict';
 
   // Scroll reveal
-  const obs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) { if(e.isIntersecting){ e.target.classList.add('is-in'); obs.unobserve(e.target); } });
-  }, { rootMargin:'0px 0px -8% 0px', threshold:0.05 });
-  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+  const obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); obs.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
 
   const nav = document.getElementById('nav');
-  if (nav) window.addEventListener('scroll', function() { nav.classList.toggle('is-scrolled', scrollY > 12); }, {passive:true});
+  if (nav) window.addEventListener('scroll', function () { nav.classList.toggle('is-scrolled', scrollY > 12); }, { passive: true });
 
-  const CAT_LABELS_AR = { all:'الكل', news:'أخبار', analysis:'تحليل', commentary:'رأي' };
+  const CAT_LABELS_AR = { all: 'الكل', news: 'أخبار', analysis: 'تحليل', commentary: 'رأي' };
   const MONTHS_AR = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
 
-  function toArabicNumerals(n) {
-    return String(n).replace(/[0-9]/g, function(d) { return '٠١٢٣٤٥٦٧٨٩'[d]; });
+  function toAr(n) {
+    return String(n).replace(/[0-9]/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'[d]; });
   }
 
-  function formatDateAr(dateStr) {
+  function formatDate(dateStr) {
     const d = new Date(dateStr + 'T00:00:00');
-    return toArabicNumerals(d.getDate()) + ' ' + MONTHS_AR[d.getMonth()] + ' ' + toArabicNumerals(d.getFullYear());
+    return toAr(d.getDate()) + ' ' + MONTHS_AR[d.getMonth()] + ' ' + toAr(d.getFullYear());
   }
 
-  function catLabelAr(cat) { return CAT_LABELS_AR[cat] || cat; }
+  function catLabel(cat) { return CAT_LABELS_AR[cat] || cat; }
 
   function imgHtml(article) {
-    var src = article.cover_image_ar || article.cover_image;
+    const src = article.cover_image_ar || article.cover_image;
     if (src) {
-      return '<div class="ins-card__img-wrap"><img src="' + src + '" alt="' + (article.cover_alt_ar || '') + '" loading="lazy" width="400" height="225" /></div>';
+      return '<div class="ins-card__img-wrap"><img src="' + src + '" alt="' + (article.cover_alt_ar || '') + '" loading="lazy" /></div>';
     }
     return '<div class="ins-card__no-img"><span class="ins-card__no-img-mark">MP</span></div>';
   }
 
   function cardHtml(article) {
-    const href = '/ar/insights/' + article.id;
+    const href       = '/ar/insights/' + article.id;
     const authorName = (article.author && article.author.name_ar) ? article.author.name_ar : '';
-    const timeNum = article.reading_time_min;
-    const time = timeNum ? toArabicNumerals(timeNum) + ' دقائق قراءة' : '';
-    return '<a class="ins-card" href="' + href + '" role="listitem" data-cat="' + article.category + '">' +
-      imgHtml(article) +
-      '<div class="ins-card__body">' +
-        '<div class="ins-card__meta">' +
-          '<span class="ins-card__cat">' + catLabelAr(article.category) + '</span>' +
-          '<span class="ins-card__sep">·</span>' +
-          '<span class="ins-card__date">' + formatDateAr(article.date) + '</span>' +
+    const time       = article.reading_time_min ? toAr(article.reading_time_min) + ' دقائق قراءة' : '';
+    return (
+      '<a class="ins-card" href="' + href + '" role="listitem" data-cat="' + article.category + '">' +
+        imgHtml(article) +
+        '<div class="ins-card__body">' +
+          '<div class="ins-card__meta">' +
+            '<span class="ins-card__cat">' + catLabel(article.category) + '</span>' +
+            '<span class="ins-card__sep">·</span>' +
+            '<span class="ins-card__date">' + formatDate(article.date) + '</span>' +
+          '</div>' +
+          '<h3 class="ins-card__title">' + article.title_ar + '</h3>' +
+          '<p class="ins-card__desc">' + (article.description_ar || '') + '</p>' +
+          '<div class="ins-card__footer">' +
+            '<span>' + authorName + '</span>' +
+            '<span>' + time + '</span>' +
+          '</div>' +
         '</div>' +
-        '<h3 class="ins-card__title">' + article.title_ar + '</h3>' +
-        '<p class="ins-card__desc">' + (article.description_ar || '') + '</p>' +
-        '<div class="ins-card__footer"><span>' + authorName + '</span><span>' + time + '</span></div>' +
-      '</div>' +
-    '</a>';
+      '</a>'
+    );
   }
 
   function featuredHtml(article) {
-    const href = '/ar/insights/' + article.id;
+    const href       = '/ar/insights/' + article.id;
     const authorName = (article.author && article.author.name_ar) ? article.author.name_ar : '';
-    const timeNum = article.reading_time_min;
-    const time = timeNum ? toArabicNumerals(timeNum) + ' دقائق قراءة' : '';
-    const src = article.cover_image_ar || article.cover_image;
-    const img = src
+    const time       = article.reading_time_min ? toAr(article.reading_time_min) + ' دقائق قراءة' : '';
+    const src        = article.cover_image_ar || article.cover_image;
+    const img        = src
       ? '<div class="ins-featured__img-wrap"><img src="' + src + '" alt="' + (article.cover_alt_ar || '') + '" loading="eager" /></div>'
       : '';
-    return '<div class="ins-featured"><div class="ins-featured__inner">' +
-      '<a href="' + href + '">' +
-        img +
-        '<div class="ins-featured__meta">' +
-          '<span class="ins-cat">' + catLabelAr(article.category) + '</span>' +
-          '<span class="sep">·</span>' +
-          '<span>' + formatDateAr(article.date) + '</span>' +
+    return (
+      '<div class="ins-featured">' +
+        '<div class="ins-featured__inner">' +
+          '<a href="' + href + '">' +
+            img +
+            '<div class="ins-featured__meta">' +
+              '<span class="ins-cat">' + catLabel(article.category) + '</span>' +
+              '<span class="sep">·</span>' +
+              '<span>' + formatDate(article.date) + '</span>' +
+            '</div>' +
+            '<h2 class="ins-featured__title">' + article.title_ar + '</h2>' +
+            '<p class="ins-featured__desc">' + (article.description_ar || '') + '</p>' +
+            '<span class="ins-featured__byline">' + authorName + (time ? ' · ' + time : '') + '</span>' +
+          '</a>' +
         '</div>' +
-        '<h2 class="ins-featured__title">' + article.title_ar + '</h2>' +
-        '<p class="ins-featured__desc">' + (article.description_ar || '') + '</p>' +
-        '<span class="ins-featured__byline">' + authorName + (time ? ' · ' + time : '') + '</span>' +
-      '</a>' +
-    '</div></div>';
+      '</div>'
+    );
+  }
+
+  function setActiveTab(cat) {
+    document.querySelectorAll('.ins-filter-tab').forEach(function (tab) {
+      tab.setAttribute('aria-selected', tab.dataset.cat === cat ? 'true' : 'false');
+    });
+  }
+
+  /* allArticles: كل المقالات مرتبة حسب التاريخ
+     featured: المقال المميز (أو null)
+     gridArticles: allArticles ناقص المقال المميز (يظهر في الشبكة عند "الكل") */
+  function render(allArticles, gridArticles, featured, cat) {
+    const grid     = document.getElementById('ins-grid');
+    const empty    = document.getElementById('ins-empty');
+    const featSlot = document.getElementById('ins-featured-slot');
+
+    if (cat === 'all') {
+      // أظهر المقال المميز؛ الشبكة تعرض باقي المقالات
+      if (featSlot) featSlot.style.display = '';
+      grid.innerHTML = gridArticles.map(cardHtml).join('');
+      const hasGrid = gridArticles.length > 0;
+      grid.style.display  = hasGrid ? '' : 'none';
+      empty.style.display = (hasGrid || !!featured) ? 'none' : '';
+    } else {
+      // أخفِ المقال المميز؛ الشبكة تعرض جميع مقالات هذا التصنيف
+      if (featSlot) featSlot.style.display = 'none';
+      const filtered = allArticles.filter(function (a) { return a.category === cat; });
+      grid.innerHTML = filtered.map(cardHtml).join('');
+      const hasItems = filtered.length > 0;
+      grid.style.display  = hasItems ? '' : 'none';
+      empty.style.display = hasItems ? 'none' : '';
+    }
+
+    setActiveTab(cat);
+    const url = cat === 'all' ? '/ar/insights' : '/ar/insights/category/' + cat;
+    history.replaceState(null, '', url);
   }
 
   function getInitialCategory() {
@@ -195,52 +243,40 @@
     return m ? m[1] : 'all';
   }
 
-  function setActiveTab(cat) {
-    document.querySelectorAll('.ins-filter-tab').forEach(function(tab) {
-      tab.setAttribute('aria-selected', tab.dataset.cat === cat ? 'true' : 'false');
-    });
-  }
-
-  function filterAndRender(articles, cat, hasFeatured) {
-    const grid = document.getElementById('ins-grid');
-    const empty = document.getElementById('ins-empty');
-    const filtered = cat === 'all' ? articles : articles.filter(function(a) { return a.category === cat; });
-    grid.innerHTML = filtered.map(cardHtml).join('');
-    const hasItems = filtered.length > 0;
-    grid.style.display = hasItems ? '' : 'none';
-    empty.style.display = (hasItems || hasFeatured) ? 'none' : '';
-    setActiveTab(cat);
-    const url = cat === 'all' ? '/ar/insights' : '/ar/insights/category/' + cat;
-    history.replaceState(null, '', url);
-  }
-
   async function init() {
-    const initCat = getInitialCategory();
-    let articles = [];
+    let allArticles = [];
+
     try {
       const res = await fetch('/insights/articles.json');
-      if (!res.ok) throw new Error();
+      if (!res.ok) throw new Error('fetch failed');
       const data = await res.json();
-      articles = (data.articles || []).filter(function(a) { return a.has_ar !== false; });
-      articles.sort(function(a, b) { return new Date(b.date) - new Date(a.date); });
-    } catch(e) {}
+      allArticles = (data.articles || []).filter(function (a) { return a.has_ar !== false; });
+      allArticles.sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
+    } catch (e) {
+      /* حالة فارغة */
+    }
 
-    const featured = articles.find(function(a) { return a.featured; });
-    if (featured) document.getElementById('ins-featured-slot').innerHTML = featuredHtml(featured);
+    const featured     = allArticles.find(function (a) { return a.featured; }) || null;
+    const gridArticles = featured ? allArticles.filter(function (a) { return a.id !== featured.id; }) : allArticles;
 
-    const gridArticles = featured ? articles.filter(function(a) { return a.id !== featured.id; }) : articles;
-    const hasFeatured = !!featured;
-    document.querySelectorAll('.ins-filter-tab').forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        filterAndRender(gridArticles, tab.dataset.cat, hasFeatured);
+    // أضف المقال المميز مرة واحدة
+    if (featured) {
+      document.getElementById('ins-featured-slot').innerHTML = featuredHtml(featured);
+    }
+
+    // مستمعو نقر التبويبات
+    document.querySelectorAll('.ins-filter-tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        render(allArticles, gridArticles, featured, tab.dataset.cat);
       });
     });
 
-    filterAndRender(gridArticles, initCat, hasFeatured);
-
-    if (articles.length === 0) {
-      document.querySelectorAll('.ins-filter-tab').forEach(function(t) { t.disabled = true; });
+    if (allArticles.length === 0) {
+      document.querySelectorAll('.ins-filter-tab').forEach(function (t) { t.disabled = true; });
     }
+
+    // العرض الأولي
+    render(allArticles, gridArticles, featured, getInitialCategory());
   }
 
   document.addEventListener('DOMContentLoaded', init);

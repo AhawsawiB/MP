@@ -55,22 +55,22 @@
 
 <header>
   <nav class="nav" id="nav" aria-label="Primary navigation">
-    <a href="/" class="wordmark" aria-label="Minority Partners — return to homepage" data-i18n-aria-label="nav-wordmark">
+    <a href="/" class="wordmark" aria-label="Minority Partners — return to homepage">
       <span class="mp" aria-hidden="true">MP</span>
-      <span class="name" data-i18n="nav-brand">Minority&nbsp;Partners</span>
+      <span class="name">Minority&nbsp;Partners</span>
     </a>
     <ul role="list">
-      <li><a href="/#overview" data-i18n="nav-overview">Overview</a></li>
-      <li><a href="/strategy.html" data-i18n="nav-strategy">Strategy</a></li>
-      <li><a href="/about.html" data-i18n="nav-about">About</a></li>
-      <li><a href="/insights" class="nav-active" data-i18n="nav-insights">Insights</a></li>
-      <li><a href="/team.html" data-i18n="nav-team">Team</a></li>
-      <li><a href="/#contact" data-i18n="nav-contact">Contact</a></li>
+      <li><a href="/#overview">Overview</a></li>
+      <li><a href="/strategy.html">Strategy</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/insights" class="nav-active">Insights</a></li>
+      <li><a href="/team.html">Team</a></li>
+      <li><a href="/#contact">Contact</a></li>
     </ul>
     <div class="nav-end">
       <div class="meta" aria-label="Established 2026">
         <span class="pulse" aria-hidden="true"></span>
-        <span data-i18n="nav-established">Established · 2026</span>
+        <span>Established · 2026</span>
       </div>
       <button class="lang-toggle" onclick="localStorage.setItem('mp-lang','ar'); location.href='/ar/insights'" aria-label="Switch to Arabic">AR</button>
     </div>
@@ -84,21 +84,21 @@
     <p class="ins-hub-header__sub">Strategic thinking.<br>Partners' perspective.<br>Market intelligence.</p>
   </div>
 
-  <!-- Featured article — rendered by JS if featured:true exists -->
+  <!-- Featured article — shown only on "All" tab -->
   <div id="ins-featured-slot"></div>
 
   <!-- Filter Tabs -->
   <div class="ins-filters" role="tablist" aria-label="Filter articles by category">
-    <button class="ins-filter-tab" role="tab" aria-selected="true" data-cat="all">All</button>
+    <button class="ins-filter-tab" role="tab" aria-selected="true"  data-cat="all">All</button>
     <button class="ins-filter-tab" role="tab" aria-selected="false" data-cat="news">News</button>
     <button class="ins-filter-tab" role="tab" aria-selected="false" data-cat="analysis">Analysis</button>
     <button class="ins-filter-tab" role="tab" aria-selected="false" data-cat="commentary">Commentary</button>
   </div>
 
-  <!-- Article grid — rendered by JS -->
+  <!-- Article grid -->
   <section class="ins-section" id="ins-grid-section">
     <div class="ins-grid" id="ins-grid" role="list"></div>
-    <div class="ins-empty" id="ins-empty" aria-live="polite">
+    <div class="ins-empty" id="ins-empty" aria-live="polite" style="display:none">
       <p class="ins-empty__text">New insights coming soon.</p>
     </div>
   </section>
@@ -108,10 +108,10 @@
 <footer role="contentinfo">
   <div class="coda">
     <div class="coda__left">
-      <span class="coda__brand" data-i18n="footer-brand">Minority Partners</span>
-      <span class="coda__copy" data-i18n="footer-copy">© 2026 — All rights reserved &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a></span>
+      <span class="coda__brand">Minority Partners</span>
+      <span class="coda__copy">© 2026 — All rights reserved &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a></span>
     </div>
-    <span class="coda__tagline" data-i18n="footer-tagline">Strategic Capital. Enduring Impact.</span>
+    <span class="coda__tagline">Strategic Capital. Enduring Impact.</span>
   </div>
 </footer>
 
@@ -132,29 +132,33 @@
 
   function imgHtml(article) {
     if (article.cover_image) {
-      return '<div class="ins-card__img-wrap"><img src="' + article.cover_image + '" alt="' + (article.cover_alt_en || '') + '" loading="lazy" width="400" height="225" /></div>';
+      return '<div class="ins-card__img-wrap"><img src="' + article.cover_image + '" alt="' + (article.cover_alt_en || '') + '" loading="lazy" /></div>';
     }
     return '<div class="ins-card__no-img"><span class="ins-card__no-img-mark">MP</span></div>';
   }
 
   function cardHtml(article) {
-    const slug = article.id;
-    const href = '/insights/' + slug;
+    const href = '/insights/' + article.id;
     const authorName = (article.author && article.author.name_en) ? article.author.name_en : '';
     const time = article.reading_time_min ? article.reading_time_min + ' min read' : '';
-    return '<a class="ins-card" href="' + href + '" role="listitem" data-cat="' + article.category + '">' +
-      imgHtml(article) +
-      '<div class="ins-card__body">' +
-        '<div class="ins-card__meta">' +
-          '<span class="ins-card__cat">' + catLabel(article.category) + '</span>' +
-          '<span class="ins-card__sep">·</span>' +
-          '<span class="ins-card__date">' + formatDate(article.date) + '</span>' +
+    return (
+      '<a class="ins-card" href="' + href + '" role="listitem" data-cat="' + article.category + '">' +
+        imgHtml(article) +
+        '<div class="ins-card__body">' +
+          '<div class="ins-card__meta">' +
+            '<span class="ins-card__cat">' + catLabel(article.category) + '</span>' +
+            '<span class="ins-card__sep">·</span>' +
+            '<span class="ins-card__date">' + formatDate(article.date) + '</span>' +
+          '</div>' +
+          '<h3 class="ins-card__title">' + article.title_en + '</h3>' +
+          '<p class="ins-card__desc">' + (article.description_en || '') + '</p>' +
+          '<div class="ins-card__footer">' +
+            '<span>' + authorName + '</span>' +
+            '<span>' + time + '</span>' +
+          '</div>' +
         '</div>' +
-        '<h3 class="ins-card__title">' + article.title_en + '</h3>' +
-        '<p class="ins-card__desc">' + (article.description_en || '') + '</p>' +
-        '<div class="ins-card__footer"><span>' + authorName + '</span><span>' + time + '</span></div>' +
-      '</div>' +
-    '</a>';
+      '</a>'
+    );
   }
 
   function featuredHtml(article) {
@@ -164,19 +168,59 @@
     const img = article.cover_image
       ? '<div class="ins-featured__img-wrap"><img src="' + article.cover_image + '" alt="' + (article.cover_alt_en || '') + '" loading="eager" /></div>'
       : '';
-    return '<div class="ins-featured"><div class="ins-featured__inner">' +
-      '<a href="' + href + '">' +
-        img +
-        '<div class="ins-featured__meta">' +
-          '<span class="ins-cat">' + catLabel(article.category) + '</span>' +
-          '<span class="sep">·</span>' +
-          '<span>' + formatDate(article.date) + '</span>' +
+    return (
+      '<div class="ins-featured">' +
+        '<div class="ins-featured__inner">' +
+          '<a href="' + href + '">' +
+            img +
+            '<div class="ins-featured__meta">' +
+              '<span class="ins-cat">' + catLabel(article.category) + '</span>' +
+              '<span class="sep">·</span>' +
+              '<span>' + formatDate(article.date) + '</span>' +
+            '</div>' +
+            '<h2 class="ins-featured__title">' + article.title_en + '</h2>' +
+            '<p class="ins-featured__desc">' + (article.description_en || '') + '</p>' +
+            '<span class="ins-featured__byline">' + authorName + (time ? ' · ' + time : '') + '</span>' +
+          '</a>' +
         '</div>' +
-        '<h2 class="ins-featured__title">' + article.title_en + '</h2>' +
-        '<p class="ins-featured__desc">' + (article.description_en || '') + '</p>' +
-        '<span class="ins-featured__byline">' + authorName + (time ? ' · ' + time : '') + '</span>' +
-      '</a>' +
-    '</div></div>';
+      '</div>'
+    );
+  }
+
+  function setActiveTab(cat) {
+    document.querySelectorAll('.ins-filter-tab').forEach(function (tab) {
+      tab.setAttribute('aria-selected', tab.dataset.cat === cat ? 'true' : 'false');
+    });
+  }
+
+  /* allArticles: every article sorted by date
+     featured: the featured article object (or null)
+     gridArticles: allArticles minus featured (shown in grid on "All" tab) */
+  function render(allArticles, gridArticles, featured, cat) {
+    const grid        = document.getElementById('ins-grid');
+    const empty       = document.getElementById('ins-empty');
+    const featSlot    = document.getElementById('ins-featured-slot');
+
+    if (cat === 'all') {
+      // Show featured strip; grid shows non-featured articles
+      if (featSlot) featSlot.style.display = '';
+      grid.innerHTML = gridArticles.map(cardHtml).join('');
+      const hasGrid = gridArticles.length > 0;
+      grid.style.display  = hasGrid ? '' : 'none';
+      empty.style.display = (hasGrid || !!featured) ? 'none' : '';
+    } else {
+      // Hide featured strip; grid shows ALL articles matching this category
+      if (featSlot) featSlot.style.display = 'none';
+      const filtered = allArticles.filter(function (a) { return a.category === cat; });
+      grid.innerHTML = filtered.map(cardHtml).join('');
+      const hasItems = filtered.length > 0;
+      grid.style.display  = hasItems ? '' : 'none';
+      empty.style.display = hasItems ? 'none' : '';
+    }
+
+    setActiveTab(cat);
+    const url = cat === 'all' ? '/insights' : '/insights/category/' + cat;
+    history.replaceState(null, '', url);
   }
 
   function getInitialCategory() {
@@ -184,61 +228,40 @@
     return m ? m[1] : 'all';
   }
 
-  function setActiveTab(cat) {
-    document.querySelectorAll('.ins-filter-tab').forEach(function(tab) {
-      tab.setAttribute('aria-selected', tab.dataset.cat === cat ? 'true' : 'false');
-    });
-  }
-
-  function filterAndRender(articles, cat, hasFeatured) {
-    const grid = document.getElementById('ins-grid');
-    const empty = document.getElementById('ins-empty');
-    const filtered = cat === 'all' ? articles : articles.filter(function(a) { return a.category === cat; });
-    grid.innerHTML = filtered.map(cardHtml).join('');
-    const hasItems = filtered.length > 0;
-    grid.style.display = hasItems ? '' : 'none';
-    empty.style.display = (hasItems || hasFeatured) ? 'none' : '';
-    setActiveTab(cat);
-    const url = cat === 'all' ? '/insights' : '/insights/category/' + cat;
-    history.replaceState(null, '', url);
-  }
-
   async function init() {
-    const initCat = getInitialCategory();
-    let articles = [];
+    let allArticles = [];
 
     try {
       const res = await fetch('/insights/articles.json');
       if (!res.ok) throw new Error('fetch failed');
       const data = await res.json();
-      articles = (data.articles || []).filter(function(a) { return a.has_en !== false; });
-      articles.sort(function(a, b) { return new Date(b.date) - new Date(a.date); });
+      allArticles = (data.articles || []).filter(function (a) { return a.has_en !== false; });
+      allArticles.sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
     } catch (e) {
-      // Keep empty state
+      /* keep empty state */
     }
 
-    // Featured
-    const featured = articles.find(function(a) { return a.featured; });
+    const featured     = allArticles.find(function (a) { return a.featured; }) || null;
+    const gridArticles = featured ? allArticles.filter(function (a) { return a.id !== featured.id; }) : allArticles;
+
+    // Inject featured HTML once
     if (featured) {
       document.getElementById('ins-featured-slot').innerHTML = featuredHtml(featured);
     }
 
-    // Filter tabs
-    const gridArticles = featured ? articles.filter(function(a) { return a.id !== featured.id; }) : articles;
-    const hasFeatured = !!featured;
-    document.querySelectorAll('.ins-filter-tab').forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        filterAndRender(gridArticles, tab.dataset.cat, hasFeatured);
+    // Tab click handlers
+    document.querySelectorAll('.ins-filter-tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        render(allArticles, gridArticles, featured, tab.dataset.cat);
       });
     });
 
-    // Initial render (exclude featured from grid)
-    filterAndRender(gridArticles, initCat, hasFeatured);
-
-    // Disable tabs if no articles at all
-    if (articles.length === 0) {
-      document.querySelectorAll('.ins-filter-tab').forEach(function(t) { t.disabled = true; });
+    if (allArticles.length === 0) {
+      document.querySelectorAll('.ins-filter-tab').forEach(function (t) { t.disabled = true; });
     }
+
+    // Initial render
+    render(allArticles, gridArticles, featured, getInitialCategory());
   }
 
   document.addEventListener('DOMContentLoaded', init);
