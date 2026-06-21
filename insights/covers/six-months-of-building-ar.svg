@@ -63,7 +63,7 @@
   <!-- Author right -->
   <text x="1118" y="586"
         font-family="'Simplified Arabic', 'Geeza Pro', Arial, sans-serif"
-        font-size="11" fill="#B9B2A5" text-anchor="end" direction="rtl">عبدالمجيد التركي  ·  الشريك المدير</text>
+        font-size="11" fill="#B9B2A5" text-anchor="end" direction="rtl">عبدالمجيد التركي  ·  شريك إداري</text>
 
   <!-- Year left -->
   <text x="64" y="586"
