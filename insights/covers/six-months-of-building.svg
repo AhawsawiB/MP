@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Minority Partners — Six Months of Building Before Launching">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Minority Partners — The Foundation Was Not Built in Six Months">
 
   <!-- Background: warm parchment, clearly distinct from site bone #ECE6DA -->
   <rect width="1200" height="630" fill="#CBC3B2"/>
@@ -48,20 +48,20 @@
   <!-- Title line 1 — ink -->
   <text x="64" y="276"
         font-family="Georgia, 'Times New Roman', Times, serif"
-        font-size="60" font-weight="400" fill="#0E0E10" letter-spacing="-1.5">Six Months of Building</text>
+        font-size="60" font-weight="400" fill="#0E0E10" letter-spacing="-1.5">The Foundation Was Not</text>
 
   <!-- Title line 2 — cobalt italic -->
   <text x="64" y="350"
         font-family="Georgia, 'Times New Roman', Times, serif"
-        font-size="60" font-style="italic" font-weight="400" fill="#151BB5" letter-spacing="-1.5">Before Launching</text>
+        font-size="60" font-style="italic" font-weight="400" fill="#151BB5" letter-spacing="-1.5">Built in Six Months</text>
 
   <!-- Description -->
   <text x="64" y="412"
         font-family="Georgia, 'Times New Roman', Times, serif"
-        font-size="16" fill="#0E0E10" opacity="0.54">Minority Partners was founded in Madinah in January 2026.</text>
+        font-size="16" fill="#0E0E10" opacity="0.54">Minority Partners was founded in January 2026. What was built in the first half</text>
   <text x="64" y="436"
         font-family="Georgia, 'Times New Roman', Times, serif"
-        font-size="16" fill="#0E0E10" opacity="0.54">Six months building thesis and architecture — before a single riyal.</text>
+        font-size="16" fill="#0E0E10" opacity="0.54">was not the product of six months — shaped by years of experience.</text>
 
   <!-- Footer rule -->
   <line x1="64" y1="550" x2="1136" y2="550" stroke="#0E0E10" stroke-width="1" opacity="0.22"/>

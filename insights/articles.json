@@ -2,10 +2,10 @@
   "articles": [
     {
       "id": "six-months-of-building",
-      "title_en": "Six Months of Building Before Launching",
-      "title_ar": "ستة أشهر من البناء الهادئ",
-      "description_en": "Minority Partners was founded in Madinah in January 2026. The first half was spent building the thesis, the model, and the architecture — before deploying a single riyal.",
-      "description_ar": "انطلقت ماينورتي بارتنرز من المدينة المنورة في يناير ٢٠٢٦. النصف الأول كان مرحلة تأسيس حقيقي — قبل توظيف أي ريال.",
+      "title_en": "The Foundation Was Not Built in Six Months",
+      "title_ar": "الأساس لم يُبنَ في ستة أشهر",
+      "description_en": "Minority Partners was founded in January 2026. What was built in the first half was not the product of six months — it was shaped by years of experience across engineering, technology, finance, and operations.",
+      "description_ar": "تأسست ماينورتي بارتنرز مطلع ٢٠٢٦. ما بُني في النصف الأول لم يكن نتاج ستة أشهر — بل نتاج سنوات من الخبرة في الهندسة والتقنية والتحليل المالي والتشغيل.",
       "category": "commentary",
       "date": "2026-07-01",
       "reading_time_min": 3,
@@ -14,8 +14,8 @@
       "has_ar": true,
       "cover_image": "/insights/covers/six-months-of-building.svg",
       "cover_image_ar": "/insights/covers/six-months-of-building-ar.svg",
-      "cover_alt_en": "Minority Partners article cover — Six Months of Building Before Launching",
-      "cover_alt_ar": "غلاف مقال ماينورتي بارتنرز — ستة أشهر من البناء الهادئ",
+      "cover_alt_en": "Minority Partners article cover — The Foundation Was Not Built in Six Months",
+      "cover_alt_ar": "غلاف مقال ماينورتي بارتنرز — الأساس لم يُبنَ في ستة أشهر",
       "tags": ["founding", "strategy", "investment-platform", "saudi-arabia", "madinah"],
       "author": {
         "name_en": "Abdulmajeed AlTurki",
