@@ -67,7 +67,7 @@
       'nav-overview':       'Overview',
       'nav-strategy':       'Strategy',
       'nav-about':          'About',
-      'nav-team':           'The Team',
+      'nav-team':           'Team',
       'nav-contact':        'Contact',
       'nav-insights':       'Insights',
       'insights-label':     'Latest Insights',
