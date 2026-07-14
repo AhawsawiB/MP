@@ -1,6 +1,32 @@
 {
   "articles": [
     {
+      "id": "bridge-investments-horn-of-africa-mou",
+      "title_en": "MP and AIM United to Establish Joint Market Development Office in Djibouti",
+      "title_ar": "ماينورِتي بارتنرز وإيم يونيتد تؤسسان مكتباً مشتركاً لتطوير الأسواق في جيبوتي",
+      "description_en": "Minority Partners and AIM United sign an MOU to establish a joint Market Development Office in Djibouti, focused on commercial opportunities between Saudi Arabia and the Horn of Africa.",
+      "description_ar": "ماينورِتي بارتنرز وإيم يونيتد توقّعان مذكرة تفاهم لتأسيس مكتب مشترك لتطوير الأسواق في جيبوتي يركّز على الفرص التجارية بين السعودية والقرن الأفريقي.",
+      "category": "news",
+      "date": "2026-07-15",
+      "reading_time_min": 2,
+      "featured": false,
+      "has_en": true,
+      "has_ar": true,
+      "cover_image": "/insights/covers/bridge-investments-horn-of-africa-mou.jpg",
+      "cover_image_ar": "/insights/covers/bridge-investments-horn-of-africa-mou.jpg",
+      "cover_og": "/insights/covers/bridge-investments-horn-of-africa-mou.jpg",
+      "cover_og_ar": "/insights/covers/bridge-investments-horn-of-africa-mou.jpg",
+      "cover_alt_en": "Minority Partners and AIM United representatives signing the MOU",
+      "cover_alt_ar": "ممثلو ماينورتي بارتنرز وإيم يونيتد خلال توقيع مذكرة التفاهم",
+      "tags": ["bridge-investments", "horn-of-africa", "aim-united", "djibouti", "emerging-markets"],
+      "author": {
+        "name_en": "Jana AlHazmi",
+        "name_ar": "جنى الحازمي",
+        "role_en": "Executive Assistant",
+        "role_ar": "مساعدة تنفيذية"
+      }
+    },
+    {
       "id": "six-months-of-building",
       "title_en": "The Foundation Was Not Built in Six Months",
       "title_ar": "الأساس لم يُبنَ في ستة أشهر",
